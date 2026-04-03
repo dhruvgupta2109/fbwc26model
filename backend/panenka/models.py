@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 Position = Literal["GK", "CB", "FB", "WB", "DM", "CM", "AM", "W", "ST"]
 DefensiveLine = Literal["high", "mid", "low"]
 Mentality = Literal["attack", "balanced", "defend"]
-EventType = Literal["goal", "shot", "turnover"]
+EventType = Literal["goal", "shot", "turnover", "substitution"]
 PossessionSide = Literal["home", "away", "unknown"]
 
 
@@ -59,6 +59,16 @@ class MatchSnapshot(BaseModel):
     away_momentum: float = Field(0.0, ge=0.0, le=1.0)
     home_fatigue: float = Field(1.0, ge=0.0, le=1.0)
     away_fatigue: float = Field(1.0, ge=0.0, le=1.0)
+    home_tactics_override: Optional[TeamTactics] = None
+    away_tactics_override: Optional[TeamTactics] = None
+    substitutions: List["Substitution"] = Field(default_factory=list)
+
+
+class Substitution(BaseModel):
+    minute: int = Field(0, ge=0, le=120)
+    team_side: Literal["home", "away"]
+    player_out_id: str
+    player_in: PlayerInput
 
 
 class SimulationInput(BaseModel):
