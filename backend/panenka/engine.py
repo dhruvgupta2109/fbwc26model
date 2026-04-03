@@ -6,7 +6,15 @@ from typing import Tuple
 import numpy as np
 
 from .fatigue import team_fatigue_factor
-from .models import MatchEvent, MonteCarloResult, SimulationInput, SimulationResult
+from .models import (
+    MatchEvent,
+    MatchSnapshot,
+    MonteCarloResult,
+    SimulationInput,
+    SimulationResult,
+    Substitution,
+    TeamInput,
+)
 from .momentum import momentum_multiplier, update_momentum
 from .tactics import build_possession_transition, tactic_modifiers
 
@@ -35,6 +43,74 @@ def _aggregate_team_attributes(team) -> Tuple[float, float, float]:
     return attack, defense, stamina
 
 
+def _apply_substitutions(
+    team: TeamInput,
+    substitutions: list[Substitution],
+    team_side: str,
+    snapshot_minute: int,
+) -> tuple[TeamInput, list[MatchEvent]]:
+    if not substitutions:
+        return team, []
+
+    updated_players = list(team.players)
+    events: list[MatchEvent] = []
+
+    for sub in substitutions:
+        if sub.team_side != team_side:
+            continue
+        if sub.minute > snapshot_minute:
+            continue
+
+        out_index = next(
+            (
+                idx
+                for idx, player in enumerate(updated_players)
+                if player.player_id == sub.player_out_id
+            ),
+            None,
+        )
+        if out_index is None:
+            continue
+
+        out_name = updated_players[out_index].name
+        updated_players[out_index] = sub.player_in
+        minute = sub.minute if sub.minute > 0 else snapshot_minute
+
+        events.append(
+            MatchEvent(
+                minute=minute,
+                team_id=team.team_id,
+                event_type="substitution",
+                description=f"Substitution: {out_name} -> {sub.player_in.name}",
+            )
+        )
+
+    if events:
+        team = team.model_copy(update={"players": updated_players})
+
+    return team, events
+
+
+def _apply_snapshot_overrides(
+    home: TeamInput,
+    away: TeamInput,
+    snapshot: MatchSnapshot,
+) -> tuple[TeamInput, TeamInput, list[MatchEvent]]:
+    if snapshot.home_tactics_override:
+        home = home.model_copy(update={"tactics": snapshot.home_tactics_override})
+    if snapshot.away_tactics_override:
+        away = away.model_copy(update={"tactics": snapshot.away_tactics_override})
+
+    home, home_events = _apply_substitutions(
+        home, snapshot.substitutions, "home", snapshot.minute
+    )
+    away, away_events = _apply_substitutions(
+        away, snapshot.substitutions, "away", snapshot.minute
+    )
+
+    return home, away, home_events + away_events
+
+
 def _lambda_for_team(
     base_per_minute: float,
     attack_strength: float,
@@ -55,17 +131,21 @@ def simulate_match(payload: SimulationInput, seed_override: int | None = None) -
     base_per_minute = config.base_xg_per_team / max(1, duration)
     rng = np.random.default_rng(seed_override if seed_override is not None else config.seed)
 
-    home_attack, home_defense, home_stamina = _aggregate_team_attributes(payload.home)
-    away_attack, away_defense, away_stamina = _aggregate_team_attributes(payload.away)
-
-    home_mods = tactic_modifiers(payload.home.tactics)
-    away_mods = tactic_modifiers(payload.away.tactics)
-
-    home_keep, away_keep = build_possession_transition(
-        payload.home.tactics, payload.away.tactics
-    )
-
     snapshot = payload.snapshot
+    home = payload.home
+    away = payload.away
+    pre_events: list[MatchEvent] = []
+
+    if snapshot:
+        home, away, pre_events = _apply_snapshot_overrides(home, away, snapshot)
+
+    home_attack, home_defense, home_stamina = _aggregate_team_attributes(home)
+    away_attack, away_defense, away_stamina = _aggregate_team_attributes(away)
+
+    home_mods = tactic_modifiers(home.tactics)
+    away_mods = tactic_modifiers(away.tactics)
+
+    home_keep, away_keep = build_possession_transition(home.tactics, away.tactics)
     start_minute = 1
     home_score = 0
     away_score = 0
@@ -90,7 +170,7 @@ def simulate_match(payload: SimulationInput, seed_override: int | None = None) -
     possession_timeline = ["unknown" for _ in range(duration)]
     momentum_home = [0.0 for _ in range(duration)]
     momentum_away = [0.0 for _ in range(duration)]
-    events: list[MatchEvent] = []
+    events: list[MatchEvent] = list(pre_events)
 
     for minute in range(start_minute, duration + 1):
         idx = minute - 1
@@ -143,7 +223,7 @@ def simulate_match(payload: SimulationInput, seed_override: int | None = None) -
                 events.append(
                     MatchEvent(
                         minute=minute,
-                        team_id=payload.home.team_id,
+                        team_id=home.team_id,
                         event_type="goal",
                         xg=min(0.9, max(0.05, effective_home * 2.5)),
                         description="Open play goal",
@@ -158,7 +238,7 @@ def simulate_match(payload: SimulationInput, seed_override: int | None = None) -
                 events.append(
                     MatchEvent(
                         minute=minute,
-                        team_id=payload.away.team_id,
+                        team_id=away.team_id,
                         event_type="goal",
                         xg=min(0.9, max(0.05, effective_away * 2.5)),
                         description="Open play goal",
@@ -182,9 +262,9 @@ def simulate_match(payload: SimulationInput, seed_override: int | None = None) -
             events.append(
                 MatchEvent(
                     minute=minute,
-                    team_id=payload.home.team_id
+                    team_id=home.team_id
                     if new_possession == "home"
-                    else payload.away.team_id,
+                    else away.team_id,
                     event_type="turnover",
                     description="Forced turnover",
                 )
