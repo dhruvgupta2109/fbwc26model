@@ -1,0 +1,341 @@
+{
+  "home": {
+    "team_id": "ARG",
+    "name": "Argentina",
+    "tactics": {
+      "formation": "4-3-3",
+      "defensive_line": "high",
+      "press_intensity": 0.65,
+      "transition_speed": 0.6,
+      "mentality": "attack"
+    },
+    "players": [
+      {
+        "player_id": "ARG-GK1",
+        "name": "Emi Martinez",
+        "position": "GK",
+        "attributes": {
+          "attack": 0.2,
+          "defense": 0.86,
+          "stamina": 0.7,
+          "passing": 0.62,
+          "finishing": 0.1
+        },
+        "form": 1.02,
+        "injury_risk": 0.05
+      },
+      {
+        "player_id": "ARG-CB1",
+        "name": "Cristian Romero",
+        "position": "CB",
+        "attributes": {
+          "attack": 0.35,
+          "defense": 0.82,
+          "stamina": 0.78,
+          "passing": 0.6,
+          "finishing": 0.2
+        },
+        "form": 1.01,
+        "injury_risk": 0.07
+      },
+      {
+        "player_id": "ARG-CB2",
+        "name": "Lisandro Martinez",
+        "position": "CB",
+        "attributes": {
+          "attack": 0.33,
+          "defense": 0.8,
+          "stamina": 0.76,
+          "passing": 0.62,
+          "finishing": 0.2
+        },
+        "form": 1.0,
+        "injury_risk": 0.06
+      },
+      {
+        "player_id": "ARG-FB1",
+        "name": "Nahuel Molina",
+        "position": "FB",
+        "attributes": {
+          "attack": 0.58,
+          "defense": 0.68,
+          "stamina": 0.8,
+          "passing": 0.64,
+          "finishing": 0.35
+        },
+        "form": 0.98,
+        "injury_risk": 0.08
+      },
+      {
+        "player_id": "ARG-FB2",
+        "name": "Nicolas Tagliafico",
+        "position": "FB",
+        "attributes": {
+          "attack": 0.52,
+          "defense": 0.7,
+          "stamina": 0.77,
+          "passing": 0.6,
+          "finishing": 0.3
+        },
+        "form": 0.97,
+        "injury_risk": 0.08
+      },
+      {
+        "player_id": "ARG-DM1",
+        "name": "Rodrigo De Paul",
+        "position": "DM",
+        "attributes": {
+          "attack": 0.62,
+          "defense": 0.72,
+          "stamina": 0.82,
+          "passing": 0.74,
+          "finishing": 0.4
+        },
+        "form": 1.03,
+        "injury_risk": 0.07
+      },
+      {
+        "player_id": "ARG-CM1",
+        "name": "Enzo Fernandez",
+        "position": "CM",
+        "attributes": {
+          "attack": 0.7,
+          "defense": 0.68,
+          "stamina": 0.8,
+          "passing": 0.8,
+          "finishing": 0.5
+        },
+        "form": 1.05,
+        "injury_risk": 0.06
+      },
+      {
+        "player_id": "ARG-CM2",
+        "name": "Alexis Mac Allister",
+        "position": "CM",
+        "attributes": {
+          "attack": 0.68,
+          "defense": 0.66,
+          "stamina": 0.78,
+          "passing": 0.78,
+          "finishing": 0.5
+        },
+        "form": 1.04,
+        "injury_risk": 0.05
+      },
+      {
+        "player_id": "ARG-AM1",
+        "name": "Lionel Messi",
+        "position": "AM",
+        "attributes": {
+          "attack": 0.9,
+          "defense": 0.35,
+          "stamina": 0.62,
+          "passing": 0.9,
+          "finishing": 0.92
+        },
+        "form": 1.08,
+        "injury_risk": 0.09
+      },
+      {
+        "player_id": "ARG-W1",
+        "name": "Angel Di Maria",
+        "position": "W",
+        "attributes": {
+          "attack": 0.8,
+          "defense": 0.4,
+          "stamina": 0.7,
+          "passing": 0.82,
+          "finishing": 0.78
+        },
+        "form": 1.02,
+        "injury_risk": 0.1
+      },
+      {
+        "player_id": "ARG-ST1",
+        "name": "Julian Alvarez",
+        "position": "ST",
+        "attributes": {
+          "attack": 0.82,
+          "defense": 0.38,
+          "stamina": 0.76,
+          "passing": 0.6,
+          "finishing": 0.84
+        },
+        "form": 1.04,
+        "injury_risk": 0.08
+      }
+    ]
+  },
+  "away": {
+    "team_id": "FRA",
+    "name": "France",
+    "tactics": {
+      "formation": "4-2-3-1",
+      "defensive_line": "mid",
+      "press_intensity": 0.48,
+      "transition_speed": 0.58,
+      "mentality": "balanced"
+    },
+    "players": [
+      {
+        "player_id": "FRA-GK1",
+        "name": "Mike Maignan",
+        "position": "GK",
+        "attributes": {
+          "attack": 0.18,
+          "defense": 0.84,
+          "stamina": 0.72,
+          "passing": 0.6,
+          "finishing": 0.1
+        },
+        "form": 1.01,
+        "injury_risk": 0.06
+      },
+      {
+        "player_id": "FRA-CB1",
+        "name": "William Saliba",
+        "position": "CB",
+        "attributes": {
+          "attack": 0.34,
+          "defense": 0.83,
+          "stamina": 0.79,
+          "passing": 0.64,
+          "finishing": 0.2
+        },
+        "form": 1.03,
+        "injury_risk": 0.07
+      },
+      {
+        "player_id": "FRA-CB2",
+        "name": "Dayot Upamecano",
+        "position": "CB",
+        "attributes": {
+          "attack": 0.32,
+          "defense": 0.8,
+          "stamina": 0.78,
+          "passing": 0.6,
+          "finishing": 0.2
+        },
+        "form": 1.0,
+        "injury_risk": 0.08
+      },
+      {
+        "player_id": "FRA-FB1",
+        "name": "Jules Kounde",
+        "position": "FB",
+        "attributes": {
+          "attack": 0.54,
+          "defense": 0.72,
+          "stamina": 0.8,
+          "passing": 0.62,
+          "finishing": 0.3
+        },
+        "form": 0.99,
+        "injury_risk": 0.08
+      },
+      {
+        "player_id": "FRA-FB2",
+        "name": "Theo Hernandez",
+        "position": "FB",
+        "attributes": {
+          "attack": 0.66,
+          "defense": 0.68,
+          "stamina": 0.82,
+          "passing": 0.65,
+          "finishing": 0.45
+        },
+        "form": 1.02,
+        "injury_risk": 0.09
+      },
+      {
+        "player_id": "FRA-DM1",
+        "name": "Aurelien Tchouameni",
+        "position": "DM",
+        "attributes": {
+          "attack": 0.58,
+          "defense": 0.76,
+          "stamina": 0.82,
+          "passing": 0.72,
+          "finishing": 0.4
+        },
+        "form": 1.01,
+        "injury_risk": 0.07
+      },
+      {
+        "player_id": "FRA-CM1",
+        "name": "Adrien Rabiot",
+        "position": "CM",
+        "attributes": {
+          "attack": 0.64,
+          "defense": 0.68,
+          "stamina": 0.8,
+          "passing": 0.7,
+          "finishing": 0.45
+        },
+        "form": 0.98,
+        "injury_risk": 0.06
+      },
+      {
+        "player_id": "FRA-AM1",
+        "name": "Antoine Griezmann",
+        "position": "AM",
+        "attributes": {
+          "attack": 0.86,
+          "defense": 0.48,
+          "stamina": 0.78,
+          "passing": 0.86,
+          "finishing": 0.82
+        },
+        "form": 1.05,
+        "injury_risk": 0.07
+      },
+      {
+        "player_id": "FRA-W1",
+        "name": "Kylian Mbappe",
+        "position": "W",
+        "attributes": {
+          "attack": 0.92,
+          "defense": 0.35,
+          "stamina": 0.82,
+          "passing": 0.78,
+          "finishing": 0.9
+        },
+        "form": 1.07,
+        "injury_risk": 0.08
+      },
+      {
+        "player_id": "FRA-W2",
+        "name": "Ousmane Dembele",
+        "position": "W",
+        "attributes": {
+          "attack": 0.78,
+          "defense": 0.38,
+          "stamina": 0.78,
+          "passing": 0.8,
+          "finishing": 0.7
+        },
+        "form": 1.01,
+        "injury_risk": 0.1
+      },
+      {
+        "player_id": "FRA-ST1",
+        "name": "Olivier Giroud",
+        "position": "ST",
+        "attributes": {
+          "attack": 0.76,
+          "defense": 0.34,
+          "stamina": 0.68,
+          "passing": 0.58,
+          "finishing": 0.82
+        },
+        "form": 0.96,
+        "injury_risk": 0.09
+      }
+    ]
+  },
+  "config": {
+    "duration_minutes": 90,
+    "base_xg_per_team": 1.35,
+    "seed": 42
+  }
+}
