@@ -1,0 +1,4 @@
+fastapi>=0.111
+uvicorn[standard]>=0.30
+numpy>=1.26
+pydantic>=2.5
