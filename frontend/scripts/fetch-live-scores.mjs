@@ -7,6 +7,7 @@ const SUMMARY_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.w
 const OUTPUT_PATH = path.join(process.cwd(), 'public/data/live-scores.json');
 const TOURNAMENT_START = new Date('2026-06-11T00:00:00Z');
 const TOURNAMENT_END = new Date('2026-07-19T23:59:59Z');
+const REFRESH_INTERVAL_MS = 60 * 60 * 1000;
 const CACHE_TIME_ZONE = 'Asia/Kolkata';
 const force = process.argv.includes('--force');
 
@@ -48,6 +49,13 @@ async function readExisting() {
   } catch {
     return undefined;
   }
+}
+
+function isFresh(existing, now) {
+  if (!Array.isArray(existing?.matches)) return false;
+  const generatedAt = new Date(existing.generatedAt).getTime();
+  if (!Number.isFinite(generatedAt)) return false;
+  return now.getTime() - generatedAt < REFRESH_INTERVAL_MS;
 }
 
 async function fetchJson(url) {
@@ -183,8 +191,8 @@ async function main() {
   const today = cacheDateKey(now);
   const existing = await readExisting();
 
-  if (!force && existing?.cacheDate === today && Array.isArray(existing.matches)) {
-    console.log(`Live score cache is current for ${today}; skipped ESPN fetch.`);
+  if (!force && existing?.cacheDate === today && isFresh(existing, now)) {
+    console.log(`Live score cache is less than one hour old for ${today}; skipped ESPN fetch.`);
     return;
   }
 
