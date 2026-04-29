@@ -70,6 +70,8 @@ export interface BracketSlot {
   teamA?: string;
   teamB?: string;
   winner?: string;
+  scoreA?: number;
+  scoreB?: number;
   winA?: number;
   winB?: number;
   upset?: boolean;
