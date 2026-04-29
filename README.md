@@ -25,6 +25,16 @@ uvicorn main:app --reload
 
 Player attributes are normalized to 0-1 in the current engine.
 
+## Frontend quick start
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
 ## Data ingestion scaffolding
 
 - Seed JSON: [backend/data/seed_teams.json](backend/data/seed_teams.json)
