@@ -10,6 +10,7 @@ export function useTheme() {
     const next = saved ?? 'dark';
     setTheme(next);
     document.documentElement.classList.toggle('dark', next === 'dark');
+    document.documentElement.style.colorScheme = next;
   }, []);
 
   function toggleTheme() {
@@ -17,6 +18,7 @@ export function useTheme() {
       const next = current === 'dark' ? 'light' : 'dark';
       localStorage.setItem('wc26-theme', next);
       document.documentElement.classList.toggle('dark', next === 'dark');
+      document.documentElement.style.colorScheme = next;
       return next;
     });
   }
