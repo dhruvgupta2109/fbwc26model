@@ -53,9 +53,10 @@ void main() {
     c = mix(c, rc, vec3(ring(p, uBaseRadius + fi * uRadiusStep, pow(uRingGap, fi), i == 0 ? 0.0 : 2.95 * fi, px)));
   }
 
+  float alpha = max(c.r, max(c.g, c.b)) * uOpacity;
   float n = fract(sin(dot(gl_FragCoord.xy + uTime * 100.0, vec2(12.9898, 78.233))) * 43758.5453);
-  c += (n - 0.5) * uNoiseAmount;
-  gl_FragColor = vec4(c, max(c.r, max(c.g, c.b)) * uOpacity);
+  c += (n - 0.5) * uNoiseAmount * alpha;
+  gl_FragColor = vec4(max(c, vec3(0.0)), alpha);
 }
 `;
 
