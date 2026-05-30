@@ -14,6 +14,7 @@
   --color-success: 22 163 74;
   --color-danger: 220 38 38;
   --font-mono: 'SFMono-Regular';
+  color-scheme: light;
 }
 
 .dark {
@@ -26,6 +27,7 @@
   --color-muted: 139 148 158;
   --color-success: 34 197 94;
   --color-danger: 248 113 113;
+  color-scheme: dark;
 }
 
 * {
@@ -33,13 +35,16 @@
 }
 
 html {
+  min-height: 100%;
+  background: rgb(var(--color-canvas));
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgb(var(--color-canvas)) 0%, rgb(var(--color-canvas)) 48%, rgba(var(--color-primary), 0.08) 100%);
+    radial-gradient(circle at 18% -10%, rgb(var(--color-primary) / 0.08), transparent 34rem),
+    linear-gradient(180deg, rgb(var(--color-canvas)) 0%, rgb(var(--color-canvas)) 48%, rgb(var(--color-primary) / 0.08) 100%);
   color: rgb(var(--color-ink));
   overflow-x: hidden;
 }
@@ -72,8 +77,8 @@ select {
   pointer-events: none;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(var(--color-primary), 0.14), transparent 34%),
-    linear-gradient(315deg, rgba(var(--color-accent), 0.12), transparent 36%);
+    linear-gradient(135deg, rgb(var(--color-primary) / 0.14), transparent 34%),
+    linear-gradient(315deg, rgb(var(--color-accent) / 0.12), transparent 36%);
 }
 
 .app-background::after {
@@ -81,8 +86,8 @@ select {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(var(--color-canvas), 0.35), rgba(var(--color-canvas), 0.92)),
-    radial-gradient(circle at 50% 120%, rgba(var(--color-primary), 0.18), transparent 52%);
+    linear-gradient(180deg, rgb(var(--color-canvas) / 0.35), rgb(var(--color-canvas) / 0.92)),
+    radial-gradient(circle at 50% 120%, rgb(var(--color-primary) / 0.18), transparent 52%);
 }
 
 .app-background-grid {
@@ -90,8 +95,8 @@ select {
   inset: 0;
   opacity: 0.24;
   background-image:
-    linear-gradient(rgba(var(--color-line), 0.42) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--color-line), 0.42) 1px, transparent 1px);
+    linear-gradient(rgb(var(--color-line) / 0.42) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-line) / 0.42) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
@@ -136,11 +141,11 @@ select {
 .hero-panel {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(var(--color-line), 0.9);
+  border: 1px solid rgb(var(--color-line) / 0.9);
   border-radius: 18px;
   background:
-    linear-gradient(135deg, rgba(var(--color-surface), 0.94), rgba(var(--color-surface), 0.72)),
-    linear-gradient(120deg, rgba(var(--color-primary), 0.16), transparent 42%, rgba(var(--color-accent), 0.16));
+    linear-gradient(135deg, rgb(var(--color-surface) / 0.94), rgb(var(--color-surface) / 0.72)),
+    linear-gradient(120deg, rgb(var(--color-primary) / 0.16), transparent 42%, rgb(var(--color-accent) / 0.16));
   box-shadow: 0 30px 90px rgba(2, 6, 23, 0.18);
   backdrop-filter: blur(18px);
 }
@@ -151,7 +156,7 @@ select {
   inset: 0;
   background:
     linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent),
-    linear-gradient(rgba(var(--color-line), 0.2) 1px, transparent 1px);
+    linear-gradient(rgb(var(--color-line) / 0.2) 1px, transparent 1px);
   background-size: 220% 100%, 100% 18px;
   animation: hero-sheen 8s ease-in-out infinite;
   pointer-events: none;
@@ -167,7 +172,7 @@ select {
 }
 
 .cinematic-card:hover {
-  border-color: rgba(var(--color-primary), 0.55);
+  border-color: rgb(var(--color-primary) / 0.55);
   box-shadow: 0 18px 50px rgba(2, 6, 23, 0.16);
   transform: translateY(-2px);
 }
@@ -186,6 +191,97 @@ select {
   gap: 1rem;
   min-width: 1220px;
   padding-right: 2rem;
+}
+
+.structured-bracket {
+  display: grid;
+  grid-template-columns: minmax(480px, 1fr) 170px minmax(480px, 1fr);
+  gap: 0.75rem;
+  min-width: 1160px;
+  align-items: stretch;
+}
+
+.structured-bracket-side {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.75rem;
+}
+
+.structured-bracket-labels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(108px, 1fr));
+  gap: 0.5rem;
+}
+
+.structured-bracket-right .structured-bracket-labels {
+  direction: rtl;
+}
+
+.structured-round-label {
+  color: rgb(var(--color-muted));
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.structured-bracket-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(108px, 1fr));
+  grid-template-rows: repeat(8, minmax(52px, 1fr));
+  gap: 0.5rem;
+  min-height: 520px;
+}
+
+.structured-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.structured-slot-left::after,
+.structured-slot-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.75rem;
+  height: 1px;
+  background: rgb(var(--color-line));
+}
+
+.structured-slot-left::after {
+  right: -0.75rem;
+}
+
+.structured-slot-right::after {
+  left: -0.75rem;
+}
+
+.structured-match-card {
+  width: 100%;
+  min-height: 64px;
+  overflow: hidden;
+  border: 1px solid rgb(var(--color-line));
+  border-radius: 0.5rem;
+  background: rgb(var(--color-surface) / 0.76);
+  padding: 0.55rem;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.08);
+}
+
+.structured-match-card-active {
+  border-color: rgb(var(--color-primary) / 0.7);
+  background:
+    linear-gradient(135deg, rgb(var(--color-primary) / 0.18), transparent 56%),
+    rgb(var(--color-surface) / 0.82);
+}
+
+.structured-bracket-center {
+  display: grid;
+  align-content: center;
+  gap: 0.75rem;
+  min-height: 520px;
 }
 
 @keyframes hero-sheen {
