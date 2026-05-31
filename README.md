@@ -1,31 +1,8 @@
-# Project Panenka
+# WC26 Oracle
 
-Stochastic, event-driven football simulation engine for tactical match intelligence and
-what-if scenario testing (World Cup 2026).
+A static Next.js portfolio app that predicts the FIFA World Cup 2026 with a client-side Monte Carlo engine.
 
-## Structure
-
-- backend/ - FastAPI service and simulation engine
-- frontend/ - Placeholder for the React/Next.js dashboard
-
-## Backend quick start
-
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-### API endpoints
-
-- POST /simulate
-- POST /simulate/monte-carlo
-
-Player attributes are normalized to 0-1 in the current engine.
-
-## Frontend quick start
+## Run locally
 
 ```bash
 cd frontend
@@ -33,27 +10,26 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser.
+Open http://localhost:3000.
 
-## Data ingestion scaffolding
-
-- Seed JSON: [backend/data/seed_teams.json](backend/data/seed_teams.json)
-- Loader and update hooks: [backend/panenka/ingestion.py](backend/panenka/ingestion.py)
-- API client stub: [backend/panenka/data_sources.py](backend/panenka/data_sources.py)
-
-Environment variables for live API polling:
-
-- `SPORTS_API_BASE_URL`
-- `SPORTS_API_KEY`
-
-## Sample payload and harness
-
-- Payload: [backend/sample_payload.json](backend/sample_payload.json)
-- Harness: [backend/scripts/run_sample.py](backend/scripts/run_sample.py)
-
-Run the harness from backend/:
+## Build
 
 ```bash
-cd backend
-PYTHONPATH=. python scripts/run_sample.py
+cd frontend
+npm run build
 ```
+
+The app uses `output: 'export'` in `next.config.js`, so production output is written to `frontend/out/` for GitHub Pages.
+
+## What is included
+
+- 48-team static data pack in `frontend/public/data/teams.json`
+- 10,000 iteration group-stage-to-final simulation engine
+- Web Worker progress updates
+- Separate static pages for Overview, Bracket, Groups, Teams, Model, and Live
+- Dark/light mode persistence
+- Bracket, groups, teams, model settings, live scores, and team detail pages
+- Animated shader-ring background and animated gradient headline treatment
+- Shareable prediction card PNG download
+
+Predictions are probabilistic and for entertainment/demo purposes.
