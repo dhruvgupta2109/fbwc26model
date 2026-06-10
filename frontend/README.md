@@ -1,16 +1,19 @@
-# Panenka Frontend
+# WC26 Oracle Frontend
 
-Next.js app for the Project Panenka website and demo.
-
-## Run locally
+Static Next.js app for the FIFA World Cup 2026 prediction model.
 
 ```bash
-cd frontend
 npm install
 npm run dev
+npm run build
 ```
 
-Open http://localhost:3000 in your browser.
+Routes:
 
-If the backend is running at http://localhost:8000 the demo page will run a sample
-simulation and show the response.
+- `/overview`
+- `/bracket`
+- `/groups`
+- `/teams`
+- `/model`
+- `/live`
+- `/team/[code]`
