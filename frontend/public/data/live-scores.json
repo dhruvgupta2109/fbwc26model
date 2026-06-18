@@ -1,0 +1,2822 @@
+{
+  "source": "ESPN FIFA World Cup scoreboard",
+  "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
+  "cacheDate": "2026-06-28",
+  "generatedAt": "2026-06-27T19:20:56.870Z",
+  "matches": [
+    {
+      "id": "760488",
+      "kickoff": "2026-06-30T01:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Estadio BBVA",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760488",
+      "home": "Netherlands",
+      "away": "Morocco",
+      "homeCode": "NED",
+      "awayCode": "MAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760489",
+      "kickoff": "2026-06-29T20:30Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760489",
+      "home": "Germany",
+      "away": "Paraguay",
+      "homeCode": "GER",
+      "awayCode": "PAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760487",
+      "kickoff": "2026-06-29T17:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760487",
+      "home": "Brazil",
+      "away": "Japan",
+      "homeCode": "BRA",
+      "awayCode": "JPN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760486",
+      "kickoff": "2026-06-28T19:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760486",
+      "home": "South Africa",
+      "away": "Canada",
+      "homeCode": "RSA",
+      "awayCode": "CAN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760484",
+      "kickoff": "2026-06-28T02:00Z",
+      "stage": "FIFA World Cup, Group J",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760484",
+      "home": "Algeria",
+      "away": "Austria",
+      "homeCode": "ALG",
+      "awayCode": "AUT",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760483",
+      "kickoff": "2026-06-28T02:00Z",
+      "stage": "FIFA World Cup, Group J",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760483",
+      "home": "Jordan",
+      "away": "Argentina",
+      "homeCode": "JOR",
+      "awayCode": "ARG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760481",
+      "kickoff": "2026-06-27T23:30Z",
+      "stage": "FIFA World Cup, Group K",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760481",
+      "home": "Colombia",
+      "away": "Portugal",
+      "homeCode": "COL",
+      "awayCode": "POR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760482",
+      "kickoff": "2026-06-27T23:30Z",
+      "stage": "FIFA World Cup, Group K",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760482",
+      "home": "Congo DR",
+      "away": "Uzbekistan",
+      "homeCode": "COD",
+      "awayCode": "UZB",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760480",
+      "kickoff": "2026-06-27T21:00Z",
+      "stage": "FIFA World Cup, Group L",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760480",
+      "home": "Croatia",
+      "away": "Ghana",
+      "homeCode": "CRO",
+      "awayCode": "GHA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760485",
+      "kickoff": "2026-06-27T21:00Z",
+      "stage": "FIFA World Cup, Group L",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760485",
+      "home": "Panama",
+      "away": "England",
+      "homeCode": "PAN",
+      "awayCode": "ENG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760476",
+      "kickoff": "2026-06-27T03:00Z",
+      "stage": "FIFA World Cup, Group G",
+      "venue": "Lumen Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760476",
+      "home": "Egypt",
+      "away": "Iran",
+      "homeCode": "EGY",
+      "awayCode": "IRN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Egypt",
+          "minute": "5",
+          "scorer": "Mahmoud Saber",
+          "assist": "Trézéguet",
+          "text": "Goal! Egypt 1, IR Iran 0. Mahmoud Saber (Egypt) left footed shot from the left side of the box to the bottom left corner. Assisted by Trezeguet."
+        },
+        {
+          "team": "Iran",
+          "minute": "14",
+          "scorer": "Ramin Rezaeian",
+          "text": "Goal! Egypt 1, IR Iran 1. Ramin Rezaeian (IR Iran) right footed shot from the right side of the six yard box to the bottom right corner."
+        }
+      ],
+      "motm": "Trézéguet (EGY)"
+    },
+    {
+      "id": "760477",
+      "kickoff": "2026-06-27T03:00Z",
+      "stage": "FIFA World Cup, Group G",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760477",
+      "home": "New Zealand",
+      "away": "Belgium",
+      "homeCode": "NZL",
+      "awayCode": "BEL",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+      "homeScore": 1,
+      "awayScore": 5,
+      "score": "1-5",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Belgium",
+          "minute": "28",
+          "scorer": "Leandro Trossard",
+          "text": "Goal! New Zealand 0, Belgium 1. Leandro Trossard (Belgium) right footed shot from very close range to the bottom right corner following a corner."
+        },
+        {
+          "team": "Belgium",
+          "minute": "50",
+          "scorer": "Leandro Trossard",
+          "assist": "Hans Vanaken",
+          "text": "Goal! New Zealand 0, Belgium 2. Leandro Trossard (Belgium) right footed shot from the centre of the box to the top left corner. Assisted by Hans Vanaken."
+        },
+        {
+          "team": "Belgium",
+          "minute": "66",
+          "scorer": "Kevin De Bruyne",
+          "text": "Goal! New Zealand 0, Belgium 3. Kevin De Bruyne (Belgium) left footed shot from outside the box to the bottom right corner."
+        },
+        {
+          "team": "New Zealand",
+          "minute": "84",
+          "scorer": "Elijah Just",
+          "text": "Goal! New Zealand 1, Belgium 3. Elijah Just (New Zealand) left footed shot from the centre of the box to the high centre of the goal following a corner."
+        },
+        {
+          "team": "Belgium",
+          "minute": "86",
+          "scorer": "Romelu Lukaku",
+          "assist": "Nicolas Raskin",
+          "text": "Goal! New Zealand 1, Belgium 4. Romelu Lukaku (Belgium) header from very close range to the centre of the goal. Assisted by Nicolas Raskin with a cross."
+        },
+        {
+          "team": "Belgium",
+          "minute": "90+4'",
+          "scorer": "Alexis Saelemaekers",
+          "assist": "Romelu Lukaku",
+          "text": "Goal! New Zealand 1, Belgium 5. Alexis Saelemaekers (Belgium) right footed shot from the centre of the box to the bottom left corner. Assisted by Romelu Lukaku following a fast break."
+        }
+      ],
+      "motm": "Leandro Trossard (BEL)"
+    },
+    {
+      "id": "760478",
+      "kickoff": "2026-06-27T00:00Z",
+      "stage": "FIFA World Cup, Group H",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760478",
+      "home": "Cape Verde",
+      "away": "Saudi Arabia",
+      "homeCode": "CPV",
+      "awayCode": "KSA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "FT",
+      "goals": [],
+      "motm": "Kevin Pina (CPV)"
+    },
+    {
+      "id": "760479",
+      "kickoff": "2026-06-27T00:00Z",
+      "stage": "FIFA World Cup, Group H",
+      "venue": "Estadio Akron",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760479",
+      "home": "Uruguay",
+      "away": "Spain",
+      "homeCode": "URU",
+      "awayCode": "ESP",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "42",
+          "scorer": "Álex Baena",
+          "assist": "Marcos Llorente",
+          "text": "Goal! Uruguay 0, Spain 1. Álex Baena (Spain) right footed shot from the centre of the box to the bottom left corner. Assisted by Marcos Llorente with a cross."
+        }
+      ],
+      "motm": "Pau Cubarsí (ESP)"
+    },
+    {
+      "id": "760475",
+      "kickoff": "2026-06-26T19:00Z",
+      "stage": "FIFA World Cup, Group I",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760475",
+      "home": "Norway",
+      "away": "France",
+      "homeCode": "NOR",
+      "awayCode": "FRA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "homeScore": 1,
+      "awayScore": 4,
+      "score": "1-4",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "France",
+          "minute": "7",
+          "scorer": "Ousmane Dembélé",
+          "assist": "Kylian Mbappé",
+          "text": "Goal! Norway 0, France 1. Ousmane Dembélé (France) right footed shot from the right side of the box to the bottom left corner. Assisted by Kylian Mbappé."
+        },
+        {
+          "team": "France",
+          "minute": "20",
+          "scorer": "Ousmane Dembélé",
+          "assist": "Kylian Mbappé",
+          "text": "Goal! Norway 0, France 2. Ousmane Dembélé (France) left footed shot from outside the box to the bottom left corner. Assisted by Kylian Mbappé following a fast break."
+        },
+        {
+          "team": "Norway",
+          "minute": "21",
+          "scorer": "Thelo Aasgaard",
+          "assist": "Andreas Schjelderup",
+          "text": "Goal! Norway 1, France 2. Thelo Aasgaard (Norway) right footed shot from the centre of the box to the bottom left corner. Assisted by Andreas Schjelderup."
+        },
+        {
+          "team": "France",
+          "minute": "32",
+          "scorer": "Ousmane Dembélé",
+          "assist": "Aurélien Tchouaméni",
+          "text": "Goal! Norway 1, France 3. Ousmane Dembélé (France) left footed shot from the centre of the box to the bottom left corner. Assisted by Aurélien Tchouaméni."
+        },
+        {
+          "team": "France",
+          "minute": "90+4'",
+          "scorer": "Désiré Doué",
+          "assist": "Bradley Barcola",
+          "text": "Goal! Norway 1, France 4. Désiré Doué (France) header from the centre of the box to the bottom right corner. Assisted by Bradley Barcola with a cross."
+        }
+      ],
+      "motm": "Désiré Doué (FRA)"
+    },
+    {
+      "id": "760474",
+      "kickoff": "2026-06-26T19:00Z",
+      "stage": "FIFA World Cup, Group I",
+      "venue": "BMO Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760474",
+      "home": "Senegal",
+      "away": "Iraq",
+      "homeCode": "SEN",
+      "awayCode": "IRQ",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+      "homeScore": 5,
+      "awayScore": 0,
+      "score": "5-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Senegal",
+          "minute": "4",
+          "scorer": "Habib Diarra",
+          "assist": "Abdoulaye Seck",
+          "text": "Goal! Senegal 1, Iraq 0. Habib Diarra (Senegal) right footed shot from very close range to the top right corner. Assisted by Abdoulaye Seck following a corner."
+        },
+        {
+          "team": "Senegal",
+          "minute": "56",
+          "scorer": "Ismaïla Sarr",
+          "assist": "Lamine Camara",
+          "text": "Goal! Senegal 2, Iraq 0. Ismaïla Sarr (Senegal) right footed shot from very close range to the top left corner. Assisted by Lamine Camara."
+        },
+        {
+          "team": "Senegal",
+          "minute": "59",
+          "scorer": "Pape Gueye",
+          "assist": "Ismaïla Sarr",
+          "text": "Goal! Senegal 3, Iraq 0. Pape Gueye (Senegal) left footed shot from outside the box to the top left corner. Assisted by Ismaïla Sarr."
+        },
+        {
+          "team": "Senegal",
+          "minute": "71",
+          "scorer": "Pape Gueye",
+          "assist": "Iliman Ndiaye",
+          "text": "Goal! Senegal 4, Iraq 0. Pape Gueye (Senegal) left footed shot from the centre of the box to the bottom left corner. Assisted by Iliman Ndiaye with a headed pass."
+        },
+        {
+          "team": "Senegal",
+          "minute": "82",
+          "scorer": "Iliman Ndiaye",
+          "assist": "Pape Gueye",
+          "text": "Goal! Senegal 5, Iraq 0. Iliman Ndiaye (Senegal) right footed shot from outside the box to the top right corner. Assisted by Pape Gueye."
+        }
+      ],
+      "motm": "Pape Gueye (SEN)"
+    },
+    {
+      "id": "760469",
+      "kickoff": "2026-06-26T02:00Z",
+      "stage": "FIFA World Cup, Group D",
+      "venue": "Levi's Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760469",
+      "home": "Paraguay",
+      "away": "Australia",
+      "homeCode": "PAR",
+      "awayCode": "AUS",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "FT",
+      "goals": [],
+      "motm": "Jordan Bos (AUS)"
+    },
+    {
+      "id": "760470",
+      "kickoff": "2026-06-26T02:00Z",
+      "stage": "FIFA World Cup, Group D",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760470",
+      "home": "Türkiye",
+      "away": "United States",
+      "homeCode": "TUR",
+      "awayCode": "USA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "homeScore": 3,
+      "awayScore": 2,
+      "score": "3-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "United States",
+          "minute": "3",
+          "scorer": "Auston Trusty",
+          "assist": "Sebastian Berhalter",
+          "text": "Goal! Türkiye 0, USA 1. Auston Trusty (USA) left footed shot from a difficult angle on the right to the bottom right corner. Assisted by Sebastian Berhalter with a cross following a corner."
+        },
+        {
+          "team": "Türkiye",
+          "minute": "10",
+          "scorer": "Arda Güler",
+          "assist": "Baris Alper Yilmaz",
+          "text": "Goal! Türkiye 1, USA 1. Arda Güler (Türkiye) left footed shot from the centre of the box to the centre of the goal. Assisted by Baris Alper Yilmaz."
+        },
+        {
+          "team": "Türkiye",
+          "minute": "31",
+          "scorer": "Baris Alper Yilmaz",
+          "assist": "Orkun Kökçü",
+          "text": "Goal! Türkiye 2, USA 1. Baris Alper Yilmaz (Türkiye) right footed shot from very close range to the bottom right corner. Assisted by Orkun Kökçü."
+        },
+        {
+          "team": "United States",
+          "minute": "49",
+          "scorer": "Sebastian Berhalter",
+          "text": "Goal! Türkiye 2, USA 2. Sebastian Berhalter (USA) right footed shot from outside the box to the bottom left corner."
+        },
+        {
+          "team": "Türkiye",
+          "minute": "90+8'",
+          "scorer": "Kaan Ayhan",
+          "text": "Goal! Türkiye 3, USA 2. Kaan Ayhan (Türkiye) right footed shot from very close range to the bottom right corner."
+        }
+      ],
+      "motm": "Auston Trusty (USA)"
+    },
+    {
+      "id": "760471",
+      "kickoff": "2026-06-25T23:00Z",
+      "stage": "FIFA World Cup, Group F",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760471",
+      "home": "Japan",
+      "away": "Sweden",
+      "homeCode": "JPN",
+      "awayCode": "SWE",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Japan",
+          "minute": "56",
+          "scorer": "Daizen Maeda",
+          "assist": "Ritsu Doan",
+          "text": "Goal! Japan 1, Sweden 0. Daizen Maeda (Japan) right footed shot from the centre of the box to the bottom left corner. Assisted by Ritsu Doan with a through ball."
+        },
+        {
+          "team": "Sweden",
+          "minute": "62",
+          "scorer": "Anthony Elanga",
+          "assist": "Viktor Gyökeres",
+          "text": "Goal! Japan 1, Sweden 1. Anthony Elanga (Sweden) left footed shot from outside the box to the bottom left corner. Assisted by Viktor Gyökeres."
+        }
+      ],
+      "motm": "Daizen Maeda (JPN)"
+    },
+    {
+      "id": "760472",
+      "kickoff": "2026-06-25T23:00Z",
+      "stage": "FIFA World Cup, Group F",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760472",
+      "home": "Tunisia",
+      "away": "Netherlands",
+      "homeCode": "TUN",
+      "awayCode": "NED",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+      "homeScore": 1,
+      "awayScore": 3,
+      "score": "1-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Netherlands",
+          "minute": "3",
+          "scorer": "Ellyes Skhiri",
+          "text": "Own Goal by Ellyes Skhiri, Tunisia. Tunisia 0, Netherlands 1."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "7",
+          "scorer": "Brian Brobbey",
+          "assist": "Virgil van Dijk",
+          "text": "Goal! Tunisia 0, Netherlands 2. Brian Brobbey (Netherlands) right footed shot from the centre of the box to the top right corner. Assisted by Virgil van Dijk with a headed pass following a set piece situation."
+        },
+        {
+          "team": "Tunisia",
+          "minute": "54",
+          "scorer": "Hazem Mastouri",
+          "assist": "Hannibal Mejbri",
+          "text": "Goal! Tunisia 1, Netherlands 2. Hazem Mastouri (Tunisia) header from the centre of the box to the bottom left corner. Assisted by Hannibal Mejbri with a cross following a corner."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "62",
+          "scorer": "Jan Paul van Hecke",
+          "assist": "Tijjani Reijnders",
+          "text": "Goal! Tunisia 1, Netherlands 3. Jan Paul van Hecke (Netherlands) header from the left side of the six yard box to the top right corner. Assisted by Tijjani Reijnders with a cross following a corner."
+        }
+      ],
+      "motm": "Denzel Dumfries (NED)"
+    },
+    {
+      "id": "760473",
+      "kickoff": "2026-06-25T20:00Z",
+      "stage": "FIFA World Cup, Group E",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760473",
+      "home": "Curaçao",
+      "away": "Ivory Coast",
+      "homeCode": "CUW",
+      "awayCode": "CIV",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+      "homeScore": 0,
+      "awayScore": 2,
+      "score": "0-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Ivory Coast",
+          "minute": "7",
+          "scorer": "Nicolas Pépé",
+          "assist": "Yan Diomande",
+          "text": "Goal! Curaçao 0, Côte d'Ivoire 1. Nicolas Pépé (Côte d'Ivoire) left footed shot from very close range to the centre of the goal. Assisted by Yan Diomande."
+        },
+        {
+          "team": "Ivory Coast",
+          "minute": "64",
+          "scorer": "Nicolas Pépé",
+          "assist": "Ibrahim Sangaré",
+          "text": "Goal! Curaçao 0, Côte d'Ivoire 2. Nicolas Pépé (Côte d'Ivoire) left footed shot from the right side of the box to the top left corner. Assisted by Ibrahim Sangaré."
+        }
+      ],
+      "motm": "Tahith Chong (CUW)"
+    },
+    {
+      "id": "760468",
+      "kickoff": "2026-06-25T20:00Z",
+      "stage": "FIFA World Cup, Group E",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760468",
+      "home": "Ecuador",
+      "away": "Germany",
+      "homeCode": "ECU",
+      "awayCode": "GER",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Germany",
+          "minute": "2",
+          "scorer": "Leroy Sané",
+          "assist": "Florian Wirtz",
+          "text": "Goal! Ecuador 0, Germany 1. Leroy Sané (Germany) left footed shot from the centre of the box to the bottom left corner. Assisted by Florian Wirtz."
+        },
+        {
+          "team": "Ecuador",
+          "minute": "9",
+          "scorer": "Nilson Angulo",
+          "assist": "Pedro Vite",
+          "text": "Goal! Ecuador 1, Germany 1. Nilson Angulo (Ecuador) right footed shot from outside the box to the bottom right corner. Assisted by Pedro Vite."
+        },
+        {
+          "team": "Ecuador",
+          "minute": "77",
+          "scorer": "Gonzalo Plata",
+          "assist": "Kevin Rodríguez",
+          "text": "Goal! Ecuador 2, Germany 1. Gonzalo Plata (Ecuador) left footed shot from very close range to the top right corner. Assisted by Kevin Rodríguez with a headed pass following a corner."
+        }
+      ],
+      "motm": "Gonzalo Plata (ECU)"
+    },
+    {
+      "id": "760467",
+      "kickoff": "2026-06-25T01:00Z",
+      "stage": "FIFA World Cup, Group A",
+      "venue": "Estadio Banorte",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760467",
+      "home": "Czechia",
+      "away": "Mexico",
+      "homeCode": "CZE",
+      "awayCode": "MEX",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+      "homeScore": 0,
+      "awayScore": 3,
+      "score": "0-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Mexico",
+          "minute": "55",
+          "scorer": "Mateo Chávez",
+          "assist": "Luis Romo",
+          "text": "Goal! Czechia 0, Mexico 1. Mateo Chávez (Mexico) left footed shot from the centre of the box to the bottom left corner. Assisted by Luis Romo."
+        },
+        {
+          "team": "Mexico",
+          "minute": "61",
+          "scorer": "Julián Quiñones",
+          "assist": "Jorge Sánchez",
+          "text": "Goal! Czechia 0, Mexico 2. Julián Quiñones (Mexico) right footed shot from very close range to the centre of the goal. Assisted by Jorge Sánchez following a fast break."
+        },
+        {
+          "team": "Mexico",
+          "minute": "90+4'",
+          "scorer": "Álvaro Fidalgo",
+          "assist": "Roberto Alvarado",
+          "text": "Goal! Czechia 0, Mexico 3. Álvaro Fidalgo (Mexico) right footed shot from the centre of the box to the top left corner. Assisted by Roberto Alvarado."
+        }
+      ],
+      "motm": "Julián Quiñones (MEX)"
+    },
+    {
+      "id": "760466",
+      "kickoff": "2026-06-25T01:00Z",
+      "stage": "FIFA World Cup, Group A",
+      "venue": "Estadio BBVA",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760466",
+      "home": "South Africa",
+      "away": "South Korea",
+      "homeCode": "RSA",
+      "awayCode": "KOR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+      "homeScore": 1,
+      "awayScore": 0,
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "South Africa",
+          "minute": "63",
+          "scorer": "Thapelo Maseko",
+          "assist": "Tshepang Moremi",
+          "text": "Goal! South Africa 1, Korea Republic 0. Thapelo Maseko (South Africa) left footed shot from the centre of the box to the bottom right corner. Assisted by Tshepang Moremi following a fast break."
+        }
+      ],
+      "motm": "Thapelo Maseko (RSA)"
+    },
+    {
+      "id": "760464",
+      "kickoff": "2026-06-24T22:00Z",
+      "stage": "FIFA World Cup, Group C",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760464",
+      "home": "Morocco",
+      "away": "Haiti",
+      "homeCode": "MAR",
+      "awayCode": "HAI",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+      "homeScore": 4,
+      "awayScore": 2,
+      "score": "4-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Haiti",
+          "minute": "10",
+          "scorer": "Yassine Bounou",
+          "assist": "Jean-Kévin Duverne",
+          "text": "Own Goal by Yassine Bounou, Morocco. Morocco 0, Haiti 1."
+        },
+        {
+          "team": "Morocco",
+          "minute": "39",
+          "scorer": "Achraf Hakimi",
+          "text": "Goal! Morocco 1, Haiti 1. Achraf Hakimi (Morocco) left footed shot from very close range to the centre of the goal."
+        },
+        {
+          "team": "Haiti",
+          "minute": "43",
+          "scorer": "Wilson Isidor",
+          "assist": "Jean-Kévin Duverne",
+          "text": "Goal! Morocco 1, Haiti 2. Wilson Isidor (Haiti) right footed shot from outside the box to the top left corner. Assisted by Jean-Kévin Duverne."
+        },
+        {
+          "team": "Morocco",
+          "minute": "45+1'",
+          "scorer": "Ismael Saibari",
+          "assist": "Achraf Hakimi",
+          "text": "Goal! Morocco 2, Haiti 2. Ismael Saibari (Morocco) right footed shot from the centre of the box to the bottom left corner. Assisted by Achraf Hakimi."
+        },
+        {
+          "team": "Morocco",
+          "minute": "78",
+          "scorer": "Soufiane Rahimi",
+          "assist": "Chadi Riad",
+          "text": "Goal! Morocco 3, Haiti 2. Soufiane Rahimi (Morocco) right footed shot from the centre of the box to the top right corner. Assisted by Chadi Riad following a corner."
+        },
+        {
+          "team": "Morocco",
+          "minute": "89",
+          "scorer": "Gessime Yassine",
+          "assist": "Soufiane Rahimi",
+          "text": "Goal! Morocco 4, Haiti 2. Gessime Yassine (Morocco) left footed shot from the centre of the box to the centre of the goal. Assisted by Soufiane Rahimi."
+        }
+      ],
+      "motm": "Achraf Hakimi (MAR)"
+    },
+    {
+      "id": "760465",
+      "kickoff": "2026-06-24T22:00Z",
+      "stage": "FIFA World Cup, Group C",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760465",
+      "home": "Scotland",
+      "away": "Brazil",
+      "homeCode": "SCO",
+      "awayCode": "BRA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "homeScore": 0,
+      "awayScore": 3,
+      "score": "0-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Brazil",
+          "minute": "7",
+          "scorer": "Vinícius Júnior",
+          "assist": "Rayan",
+          "text": "Goal! Scotland 0, Brazil 1. Vinícius Júnior (Brazil) right footed shot from the centre of the box to the centre of the goal. Assisted by Rayan."
+        },
+        {
+          "team": "Brazil",
+          "minute": "45+3'",
+          "scorer": "Vinícius Júnior",
+          "assist": "Bruno Guimarães",
+          "text": "Goal! Scotland 0, Brazil 2. Vinícius Júnior (Brazil) header from very close range to the top left corner. Assisted by Bruno Guimarães with a cross."
+        },
+        {
+          "team": "Brazil",
+          "minute": "60",
+          "scorer": "Matheus Cunha",
+          "assist": "Bruno Guimarães",
+          "text": "Goal! Scotland 0, Brazil 3. Matheus Cunha (Brazil) right footed shot from the centre of the box to the bottom right corner. Assisted by Bruno Guimarães."
+        }
+      ],
+      "motm": "Vinícius Júnior (BRA)"
+    },
+    {
+      "id": "760462",
+      "kickoff": "2026-06-24T19:00Z",
+      "stage": "FIFA World Cup, Group B",
+      "venue": "Lumen Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760462",
+      "home": "Bosnia-Herzegovina",
+      "away": "Qatar",
+      "homeCode": "BIH",
+      "awayCode": "QAT",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+      "homeScore": 3,
+      "awayScore": 1,
+      "score": "3-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Bosnia-Herzegovina",
+          "minute": "29",
+          "scorer": "Kerim Alajbegovic",
+          "assist": "Ivan Basic",
+          "text": "Goal! Bosnia and Herzegovina 1, Qatar 0. Kerim Alajbegovic (Bosnia and Herzegovina) right footed shot from outside the box to the top right corner. Assisted by Ivan Basic."
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "minute": "34",
+          "scorer": "Mahmoud Abunada",
+          "text": "Own Goal by Mahmoud Abunada, Qatar. Bosnia and Herzegovina 2, Qatar 0."
+        },
+        {
+          "team": "Qatar",
+          "minute": "42",
+          "scorer": "Hassan Al-Haydos",
+          "assist": "Edmílson Junior",
+          "text": "Goal! Bosnia and Herzegovina 2, Qatar 1. Hassan Al Haydos (Qatar) right footed shot from very close range to the centre of the goal. Assisted by Edmílson Junior."
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "minute": "80",
+          "scorer": "Ermin Mahmic",
+          "assist": "Dennis Hadzikadunic",
+          "text": "Goal! Bosnia and Herzegovina 3, Qatar 1. Ermin Mahmic (Bosnia and Herzegovina) right footed shot from the centre of the box to the centre of the goal. Assisted by Dennis Hadzikadunic following a corner."
+        }
+      ],
+      "motm": "Pedro Miguel (QAT)"
+    },
+    {
+      "id": "760463",
+      "kickoff": "2026-06-24T19:00Z",
+      "stage": "FIFA World Cup, Group B",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760463",
+      "home": "Switzerland",
+      "away": "Canada",
+      "homeCode": "SUI",
+      "awayCode": "CAN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Switzerland",
+          "minute": "46",
+          "scorer": "Rubén Vargas",
+          "assist": "Johan Manzambi",
+          "text": "Goal! Switzerland 1, Canada 0. Rubén Vargas (Switzerland) right footed shot from the centre of the box to the bottom left corner. Assisted by Johan Manzambi with a cross."
+        },
+        {
+          "team": "Switzerland",
+          "minute": "57",
+          "scorer": "Johan Manzambi",
+          "assist": "Breel Embolo",
+          "text": "Goal! Switzerland 2, Canada 0. Johan Manzambi (Switzerland) right footed shot from the right side of the box to the centre of the goal. Assisted by Breel Embolo."
+        },
+        {
+          "team": "Canada",
+          "minute": "76",
+          "scorer": "Promise David",
+          "assist": "Nathan Saliba",
+          "text": "Goal! Switzerland 2, Canada 1. Promise David (Canada) right footed shot from the centre of the box to the bottom left corner. Assisted by Nathan Saliba."
+        }
+      ],
+      "motm": "Promise David (CAN)"
+    },
+    {
+      "id": "760459",
+      "kickoff": "2026-06-24T02:00Z",
+      "stage": "FIFA World Cup, Group K",
+      "venue": "Estadio Akron",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760459",
+      "home": "Colombia",
+      "away": "Congo DR",
+      "homeCode": "COL",
+      "awayCode": "COD",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+      "homeScore": 1,
+      "awayScore": 0,
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Colombia",
+          "minute": "76",
+          "scorer": "Daniel Muñoz",
+          "assist": "Juan Fernando Quintero",
+          "text": "Goal! Colombia 1, Congo DR 0. Daniel Muñoz (Colombia) left footed shot from the right side of the box to the bottom right corner. Assisted by Juan Fernando Quintero."
+        }
+      ],
+      "motm": "Gustavo Puerta (COL)"
+    },
+    {
+      "id": "760460",
+      "kickoff": "2026-06-23T23:00Z",
+      "stage": "FIFA World Cup, Group L",
+      "venue": "BMO Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760460",
+      "home": "Panama",
+      "away": "Croatia",
+      "homeCode": "PAN",
+      "awayCode": "CRO",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Croatia",
+          "minute": "54",
+          "scorer": "Ante Budimir",
+          "assist": "Josip Stanisic",
+          "text": "Goal! Panama 0, Croatia 1. Ante Budimir (Croatia) left footed shot from very close range to the bottom left corner. Assisted by Josip Stanisic with a cross."
+        }
+      ],
+      "motm": "Amir Murillo (PAN)"
+    },
+    {
+      "id": "760458",
+      "kickoff": "2026-06-23T20:00Z",
+      "stage": "FIFA World Cup, Group L",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760458",
+      "home": "England",
+      "away": "Ghana",
+      "homeCode": "ENG",
+      "awayCode": "GHA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "FT",
+      "goals": [],
+      "motm": "Elliot Anderson (ENG)"
+    },
+    {
+      "id": "760461",
+      "kickoff": "2026-06-23T17:00Z",
+      "stage": "FIFA World Cup, Group K",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760461",
+      "home": "Portugal",
+      "away": "Uzbekistan",
+      "homeCode": "POR",
+      "awayCode": "UZB",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "homeScore": 5,
+      "awayScore": 0,
+      "score": "5-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Portugal",
+          "minute": "6",
+          "scorer": "Cristiano Ronaldo",
+          "assist": "João Cancelo",
+          "text": "Goal! Portugal 1, Uzbekistan 0. Cristiano Ronaldo (Portugal) right footed shot from the centre of the box to the bottom right corner. Assisted by João Cancelo with a cross."
+        },
+        {
+          "team": "Portugal",
+          "minute": "17",
+          "scorer": "Nuno Mendes",
+          "text": "Goal! Portugal 2, Uzbekistan 0. Nuno Mendes (Portugal) from a free kick with a left footed shot to the bottom left corner."
+        },
+        {
+          "team": "Portugal",
+          "minute": "39",
+          "scorer": "Cristiano Ronaldo",
+          "assist": "Bruno Fernandes",
+          "text": "Goal! Portugal 3, Uzbekistan 0. Cristiano Ronaldo (Portugal) right footed shot from the right side of the box to the bottom left corner. Assisted by Bruno Fernandes with a through ball following a fast break."
+        },
+        {
+          "team": "Portugal",
+          "minute": "60",
+          "scorer": "Abduvohid Nematov",
+          "text": "Own Goal by Abduvokhid Nematov, Uzbekistan. Portugal 4, Uzbekistan 0."
+        },
+        {
+          "team": "Portugal",
+          "minute": "87",
+          "scorer": "Rafael Leão",
+          "text": "Goal! Portugal 5, Uzbekistan 0. Rafael Leão (Portugal) right footed shot from the centre of the box to the top left corner."
+        }
+      ],
+      "motm": "Cristiano Ronaldo (POR)"
+    },
+    {
+      "id": "760455",
+      "kickoff": "2026-06-23T03:00Z",
+      "stage": "FIFA World Cup, Group J",
+      "venue": "Levi's Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760455",
+      "home": "Jordan",
+      "away": "Algeria",
+      "homeCode": "JOR",
+      "awayCode": "ALG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+      "homeScore": 1,
+      "awayScore": 2,
+      "score": "1-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Jordan",
+          "minute": "36",
+          "scorer": "Nizar Al-Rashdan",
+          "assist": "Mousa Al-Tamari",
+          "text": "Goal! Jordan 1, Algeria 0. Nizar Al Rashdan (Jordan) right footed shot from the centre of the box to the bottom right corner. Assisted by Mousa Al Tamari."
+        },
+        {
+          "team": "Algeria",
+          "minute": "69",
+          "scorer": "Nadhir Benbouali",
+          "assist": "Riyad Mahrez",
+          "text": "Goal! Jordan 1, Algeria 1. Nadhir Benbouali (Algeria) header from the centre of the box to the bottom left corner. Assisted by Riyad Mahrez with a cross following a corner."
+        },
+        {
+          "team": "Algeria",
+          "minute": "82",
+          "scorer": "Amine Gouiri",
+          "text": "Goal! Jordan 1, Algeria 2. Amine Gouiri (Algeria) right footed shot from very close range to the centre of the goal following a corner."
+        }
+      ],
+      "motm": "Ibrahim Maza (ALG)"
+    },
+    {
+      "id": "760454",
+      "kickoff": "2026-06-23T00:00Z",
+      "stage": "FIFA World Cup, Group I",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760454",
+      "home": "Norway",
+      "away": "Senegal",
+      "homeCode": "NOR",
+      "awayCode": "SEN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+      "homeScore": 3,
+      "awayScore": 2,
+      "score": "3-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Norway",
+          "minute": "43",
+          "scorer": "Marcus Holmgren Pedersen",
+          "text": "Goal! Norway 1, Senegal 0. Marcus Pedersen (Norway) right footed shot from the right side of the box to the top right corner."
+        },
+        {
+          "team": "Norway",
+          "minute": "48",
+          "scorer": "Erling Haaland",
+          "assist": "Martin Ødegaard",
+          "text": "Goal! Norway 2, Senegal 0. Erling Haaland (Norway) left footed shot from the centre of the box to the top right corner. Assisted by Martin Ødegaard with a through ball following a fast break."
+        },
+        {
+          "team": "Senegal",
+          "minute": "53",
+          "scorer": "Ismaïla Sarr",
+          "assist": "Sadio Mané",
+          "text": "Goal! Norway 2, Senegal 1. Ismaïla Sarr (Senegal) right footed shot from the centre of the box to the top right corner. Assisted by Sadio Mané."
+        },
+        {
+          "team": "Norway",
+          "minute": "58",
+          "scorer": "Erling Haaland",
+          "assist": "Patrick Berg",
+          "text": "Goal! Norway 3, Senegal 1. Erling Haaland (Norway) right footed shot from the centre of the box to the high centre of the goal. Assisted by Patrick Berg."
+        },
+        {
+          "team": "Senegal",
+          "minute": "90+3'",
+          "scorer": "Ismaïla Sarr",
+          "assist": "Nicolas Jackson",
+          "text": "Goal! Norway 3, Senegal 2. Ismaïla Sarr (Senegal) right footed shot from the centre of the box to the top right corner. Assisted by Nicolas Jackson."
+        }
+      ],
+      "motm": "Ismaïla Sarr (SEN)"
+    },
+    {
+      "id": "760457",
+      "kickoff": "2026-06-22T21:00Z",
+      "stage": "FIFA World Cup, Group I",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760457",
+      "home": "France",
+      "away": "Iraq",
+      "homeCode": "FRA",
+      "awayCode": "IRQ",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+      "homeScore": 3,
+      "awayScore": 0,
+      "score": "3-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "France",
+          "minute": "14",
+          "scorer": "Kylian Mbappé",
+          "assist": "Michael Olise",
+          "text": "Goal! France 1, Iraq 0. Kylian Mbappé (France) left footed shot from outside the box to the bottom left corner. Assisted by Michael Olise."
+        },
+        {
+          "team": "France",
+          "minute": "54",
+          "scorer": "Kylian Mbappé",
+          "assist": "Ousmane Dembélé",
+          "text": "Goal! France 2, Iraq 0. Kylian Mbappé (France) right footed shot from the centre of the box to the bottom right corner. Assisted by Ousmane Dembélé."
+        },
+        {
+          "team": "France",
+          "minute": "66",
+          "scorer": "Ousmane Dembélé",
+          "assist": "Michael Olise",
+          "text": "Goal! France 3, Iraq 0. Ousmane Dembélé (France) right footed shot from the centre of the box to the bottom left corner. Assisted by Michael Olise with a through ball."
+        }
+      ],
+      "motm": "Kylian Mbappé (FRA)"
+    },
+    {
+      "id": "760456",
+      "kickoff": "2026-06-22T17:00Z",
+      "stage": "FIFA World Cup, Group J",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760456",
+      "home": "Argentina",
+      "away": "Austria",
+      "homeCode": "ARG",
+      "awayCode": "AUT",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+      "homeScore": 2,
+      "awayScore": 0,
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Argentina",
+          "minute": "38",
+          "scorer": "Lionel Messi",
+          "assist": "Facundo Medina",
+          "text": "Goal! Argentina 1, Austria 0. Lionel Messi (Argentina) left footed shot from the centre of the box to the bottom left corner. Assisted by Facundo Medina following a fast break."
+        },
+        {
+          "team": "Argentina",
+          "minute": "90+5'",
+          "scorer": "Lionel Messi",
+          "text": "Goal! Argentina 2, Austria 0. Lionel Messi (Argentina) left footed shot from the left side of the six yard box to the centre of the goal following a fast break."
+        }
+      ],
+      "motm": "Lionel Messi (ARG)"
+    },
+    {
+      "id": "760452",
+      "kickoff": "2026-06-22T01:00Z",
+      "stage": "FIFA World Cup, Group G",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760452",
+      "home": "New Zealand",
+      "away": "Egypt",
+      "homeCode": "NZL",
+      "awayCode": "EGY",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+      "homeScore": 1,
+      "awayScore": 3,
+      "score": "1-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "New Zealand",
+          "minute": "15",
+          "scorer": "Finn Surman",
+          "assist": "Tim Payne",
+          "text": "Goal! New Zealand 1, Egypt 0. Finn Surman (New Zealand) header from the centre of the box to the top left corner. Assisted by Tim Payne with a cross following a corner."
+        },
+        {
+          "team": "Egypt",
+          "minute": "58",
+          "scorer": "Mostafa Zico",
+          "assist": "Mohamed Hany",
+          "text": "Goal! New Zealand 1, Egypt 1. Mostafa Zico (Egypt) header from the centre of the box to the high centre of the goal. Assisted by Mohamed Hany with a cross."
+        },
+        {
+          "team": "Egypt",
+          "minute": "67",
+          "scorer": "Mohamed Salah",
+          "assist": "Mostafa Zico",
+          "text": "Goal! New Zealand 1, Egypt 2. Mohamed Salah (Egypt) left footed shot from the centre of the box to the bottom left corner. Assisted by Mostafa Zico."
+        },
+        {
+          "team": "Egypt",
+          "minute": "82",
+          "scorer": "Trézéguet",
+          "assist": "Mohamed Salah",
+          "text": "Goal! New Zealand 1, Egypt 3. Trezeguet (Egypt) header from the centre of the box to the bottom left corner. Assisted by Mohamed Salah with a cross following a corner."
+        }
+      ],
+      "motm": "Mohamed Salah (EGY)"
+    },
+    {
+      "id": "760450",
+      "kickoff": "2026-06-21T22:00Z",
+      "stage": "FIFA World Cup, Group H",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760450",
+      "home": "Uruguay",
+      "away": "Cape Verde",
+      "homeCode": "URU",
+      "awayCode": "CPV",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "score": "2-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Cape Verde",
+          "minute": "21",
+          "scorer": "Kevin Pina",
+          "text": "Goal! Uruguay 0, Cabo Verde 1. Kevin Pina (Cabo Verde) from a free kick with a right footed shot to the bottom right corner."
+        },
+        {
+          "team": "Uruguay",
+          "minute": "44",
+          "scorer": "Maxi Araújo",
+          "text": "Goal! Uruguay 1, Cabo Verde 1. Maxi Araújo (Uruguay) header from very close range to the centre of the goal."
+        },
+        {
+          "team": "Uruguay",
+          "minute": "45+6'",
+          "scorer": "Agustín Canobbio",
+          "assist": "Maxi Araújo",
+          "text": "Goal! Uruguay 2, Cabo Verde 1. Agustín Canobbio (Uruguay) right footed shot from the centre of the box to the centre of the goal. Assisted by Maxi Araújo with a headed pass."
+        },
+        {
+          "team": "Cape Verde",
+          "minute": "61",
+          "scorer": "Hélio Varela",
+          "text": "Goal! Uruguay 2, Cabo Verde 2. Hélio Varela (Cabo Verde) right footed shot from outside the box to the centre of the goal."
+        }
+      ],
+      "motm": "Federico Valverde (URU)"
+    },
+    {
+      "id": "760451",
+      "kickoff": "2026-06-21T19:00Z",
+      "stage": "FIFA World Cup, Group G",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760451",
+      "home": "Belgium",
+      "away": "Iran",
+      "homeCode": "BEL",
+      "awayCode": "IRN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "FT",
+      "goals": [],
+      "motm": "Maxim De Cuyper (BEL)"
+    },
+    {
+      "id": "760453",
+      "kickoff": "2026-06-21T16:00Z",
+      "stage": "FIFA World Cup, Group H",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760453",
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "homeCode": "ESP",
+      "awayCode": "KSA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+      "homeScore": 4,
+      "awayScore": 0,
+      "score": "4-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "10",
+          "scorer": "Lamine Yamal",
+          "assist": "Mikel Oyarzabal",
+          "text": "Goal! Spain 1, Saudi Arabia 0. Lamine Yamal (Spain) right footed shot from the right side of the six yard box to the bottom right corner. Assisted by Mikel Oyarzabal with a cross."
+        },
+        {
+          "team": "Spain",
+          "minute": "21",
+          "scorer": "Mikel Oyarzabal",
+          "assist": "Aymeric Laporte",
+          "text": "Goal! Spain 2, Saudi Arabia 0. Mikel Oyarzabal (Spain) left footed shot from the left side of the six yard box to the bottom right corner. Assisted by Aymeric Laporte with a headed pass following a corner."
+        },
+        {
+          "team": "Spain",
+          "minute": "24",
+          "scorer": "Mikel Oyarzabal",
+          "assist": "Dani Olmo",
+          "text": "Goal! Spain 3, Saudi Arabia 0. Mikel Oyarzabal (Spain) left footed shot from very close range to the top right corner. Assisted by Dani Olmo with a headed pass."
+        },
+        {
+          "team": "Spain",
+          "minute": "49",
+          "scorer": "Hassan Al-Tambakti",
+          "text": "Own Goal by Hassan Al Tambakti, Saudi Arabia. Spain 4, Saudi Arabia 0."
+        }
+      ],
+      "motm": "Lamine Yamal (ESP)"
+    },
+    {
+      "id": "760449",
+      "kickoff": "2026-06-21T04:00Z",
+      "stage": "FIFA World Cup, Group F",
+      "venue": "Estadio BBVA",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760449",
+      "home": "Tunisia",
+      "away": "Japan",
+      "homeCode": "TUN",
+      "awayCode": "JPN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+      "homeScore": 0,
+      "awayScore": 4,
+      "score": "0-4",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Japan",
+          "minute": "4",
+          "scorer": "Daichi Kamada",
+          "assist": "Keito Nakamura",
+          "text": "Goal! Tunisia 0, Japan 1. Daichi Kamada (Japan) left footed shot from very close range to the centre of the goal. Assisted by Keito Nakamura."
+        },
+        {
+          "team": "Japan",
+          "minute": "31",
+          "scorer": "Ayase Ueda",
+          "assist": "Kou Itakura",
+          "text": "Goal! Tunisia 0, Japan 2. Ayase Ueda (Japan) right footed shot from the right side of the box to the bottom left corner. Assisted by Ko Itakura following a fast break."
+        },
+        {
+          "team": "Japan",
+          "minute": "69",
+          "scorer": "Junya Ito",
+          "assist": "Ayase Ueda",
+          "text": "Goal! Tunisia 0, Japan 3. Junya Ito (Japan) right footed shot from the centre of the box to the bottom right corner. Assisted by Ayase Ueda with a through ball."
+        },
+        {
+          "team": "Japan",
+          "minute": "83",
+          "scorer": "Ayase Ueda",
+          "assist": "Kaishu Sano",
+          "text": "Goal! Tunisia 0, Japan 4. Ayase Ueda (Japan) header from the centre of the box to the bottom right corner. Assisted by Kaishu Sano with a cross."
+        }
+      ],
+      "motm": "Ayase Ueda (JPN)"
+    },
+    {
+      "id": "760446",
+      "kickoff": "2026-06-21T00:00Z",
+      "stage": "FIFA World Cup, Group E",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760446",
+      "home": "Ecuador",
+      "away": "Curaçao",
+      "homeCode": "ECU",
+      "awayCode": "CUW",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "FT",
+      "goals": [],
+      "motm": "Enner Valencia (ECU)"
+    },
+    {
+      "id": "760448",
+      "kickoff": "2026-06-20T20:00Z",
+      "stage": "FIFA World Cup, Group E",
+      "venue": "BMO Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760448",
+      "home": "Germany",
+      "away": "Ivory Coast",
+      "homeCode": "GER",
+      "awayCode": "CIV",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Ivory Coast",
+          "minute": "30",
+          "scorer": "Franck Kessié",
+          "text": "Goal! Germany 0, Côte d'Ivoire 1. Franck Kessie (Côte d'Ivoire) right footed shot from the centre of the box to the bottom left corner."
+        },
+        {
+          "team": "Germany",
+          "minute": "68",
+          "scorer": "Deniz Undav",
+          "assist": "Nadiem Amiri",
+          "text": "Goal! Germany 1, Côte d'Ivoire 1. Deniz Undav (Germany) left footed shot from very close range to the high centre of the goal. Assisted by Nadiem Amiri with a cross."
+        },
+        {
+          "team": "Germany",
+          "minute": "90+4'",
+          "scorer": "Deniz Undav",
+          "assist": "Felix Nmecha",
+          "text": "Goal! Germany 2, Côte d'Ivoire 1. Deniz Undav (Germany) left footed shot from the centre of the box to the bottom left corner. Assisted by Felix Nmecha with a through ball."
+        }
+      ],
+      "motm": "Kai Havertz (GER)"
+    },
+    {
+      "id": "760447",
+      "kickoff": "2026-06-20T17:00Z",
+      "stage": "FIFA World Cup, Group F",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760447",
+      "home": "Netherlands",
+      "away": "Sweden",
+      "homeCode": "NED",
+      "awayCode": "SWE",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+      "homeScore": 5,
+      "awayScore": 1,
+      "score": "5-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Netherlands",
+          "minute": "5",
+          "scorer": "Brian Brobbey",
+          "assist": "Cody Gakpo",
+          "text": "Goal! Netherlands 1, Sweden 0. Brian Brobbey (Netherlands) right footed shot from very close range to the centre of the goal. Assisted by Cody Gakpo with a cross."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "17",
+          "scorer": "Brian Brobbey",
+          "assist": "Denzel Dumfries",
+          "text": "Goal! Netherlands 2, Sweden 0. Brian Brobbey (Netherlands) right footed shot from very close range to the bottom left corner. Assisted by Denzel Dumfries with a cross."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "47",
+          "scorer": "Cody Gakpo",
+          "assist": "Denzel Dumfries",
+          "text": "Goal! Netherlands 3, Sweden 0. Cody Gakpo (Netherlands) left footed shot from very close range to the centre of the goal. Assisted by Denzel Dumfries with a cross."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "54",
+          "scorer": "Cody Gakpo",
+          "assist": "Crysencio Summerville",
+          "text": "Goal! Netherlands 4, Sweden 0. Cody Gakpo (Netherlands) right footed shot from the left side of the box to the bottom left corner. Assisted by Crysencio Summerville following a fast break."
+        },
+        {
+          "team": "Sweden",
+          "minute": "59",
+          "scorer": "Anthony Elanga",
+          "assist": "Alexander Isak",
+          "text": "Goal! Netherlands 4, Sweden 1. Anthony Elanga (Sweden) left footed shot from the centre of the box to the bottom left corner. Assisted by Alexander Isak with a through ball following a fast break."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "89",
+          "scorer": "Crysencio Summerville",
+          "assist": "Memphis Depay",
+          "text": "Goal! Netherlands 5, Sweden 1. Crysencio Summerville (Netherlands) right footed shot from outside the box to the bottom left corner. Assisted by Memphis Depay."
+        }
+      ],
+      "motm": "Cody Gakpo (NED)"
+    },
+    {
+      "id": "760443",
+      "kickoff": "2026-06-20T03:00Z",
+      "stage": "FIFA World Cup, Group D",
+      "venue": "Levi's Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760443",
+      "home": "Türkiye",
+      "away": "Paraguay",
+      "homeCode": "TUR",
+      "awayCode": "PAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Paraguay",
+          "minute": "2",
+          "scorer": "Matías Galarza",
+          "assist": "Julio Enciso",
+          "text": "Goal! Türkiye 0, Paraguay 1. Matías Galarza (Paraguay) left footed shot from outside the box to the bottom right corner. Assisted by Julio Enciso."
+        }
+      ],
+      "motm": "Kenan Yildiz (TUR)"
+    },
+    {
+      "id": "760444",
+      "kickoff": "2026-06-20T00:30Z",
+      "stage": "FIFA World Cup, Group C",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760444",
+      "home": "Brazil",
+      "away": "Haiti",
+      "homeCode": "BRA",
+      "awayCode": "HAI",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+      "homeScore": 3,
+      "awayScore": 0,
+      "score": "3-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Brazil",
+          "minute": "23",
+          "scorer": "Matheus Cunha",
+          "text": "Goal! Brazil 1, Haiti 0. Matheus Cunha (Brazil) left footed shot from the centre of the box to the bottom left corner following a fast break."
+        },
+        {
+          "team": "Brazil",
+          "minute": "36",
+          "scorer": "Matheus Cunha",
+          "assist": "Vinícius Júnior",
+          "text": "Goal! Brazil 2, Haiti 0. Matheus Cunha (Brazil) left footed shot from the left side of the box to the top left corner. Assisted by Vinícius Júnior with a through ball following a fast break."
+        },
+        {
+          "team": "Brazil",
+          "minute": "45+3'",
+          "scorer": "Vinícius Júnior",
+          "assist": "Lucas Paquetá",
+          "text": "Goal! Brazil 3, Haiti 0. Vinícius Júnior (Brazil) right footed shot from the left side of the box to the centre of the goal. Assisted by Lucas Paquetá with a through ball."
+        }
+      ],
+      "motm": "Vinícius Júnior (BRA)"
+    },
+    {
+      "id": "760445",
+      "kickoff": "2026-06-19T22:00Z",
+      "stage": "FIFA World Cup, Group C",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760445",
+      "home": "Scotland",
+      "away": "Morocco",
+      "homeCode": "SCO",
+      "awayCode": "MAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Morocco",
+          "minute": "2",
+          "scorer": "Ismael Saibari",
+          "assist": "Brahim Díaz",
+          "text": "Goal! Scotland 0, Morocco 1. Ismael Saibari (Morocco) right footed shot from the right side of the box to the high centre of the goal. Assisted by Brahim Díaz with a through ball."
+        }
+      ],
+      "motm": "Achraf Hakimi (MAR)"
+    },
+    {
+      "id": "760442",
+      "kickoff": "2026-06-19T19:00Z",
+      "stage": "FIFA World Cup, Group D",
+      "venue": "Lumen Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760442",
+      "home": "United States",
+      "away": "Australia",
+      "homeCode": "USA",
+      "awayCode": "AUS",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "homeScore": 2,
+      "awayScore": 0,
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "United States",
+          "minute": "11",
+          "scorer": "Cameron Burgess",
+          "text": "Own Goal by Cameron Burgess, Australia. USA 1, Australia 0."
+        },
+        {
+          "team": "United States",
+          "minute": "43",
+          "scorer": "Alex Freeman",
+          "text": "Goal! USA 2, Australia 0. Alex Freeman (USA) header from very close range to the bottom right corner following a set piece situation.Goal awarded following VAR Review."
+        }
+      ],
+      "motm": "Sergiño Dest (USA)"
+    },
+    {
+      "id": "760441",
+      "kickoff": "2026-06-19T01:00Z",
+      "stage": "FIFA World Cup, Group A",
+      "venue": "Estadio Akron",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760441",
+      "home": "Mexico",
+      "away": "South Korea",
+      "homeCode": "MEX",
+      "awayCode": "KOR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+      "homeScore": 1,
+      "awayScore": 0,
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Mexico",
+          "minute": "50",
+          "scorer": "Luis Romo",
+          "text": "Goal! Mexico 1, Korea Republic 0. Luis Romo (Mexico) right footed shot from the centre of the box to the centre of the goal."
+        }
+      ],
+      "motm": "Raúl Jiménez (MEX)"
+    },
+    {
+      "id": "760440",
+      "kickoff": "2026-06-18T22:00Z",
+      "stage": "FIFA World Cup, Group B",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760440",
+      "home": "Canada",
+      "away": "Qatar",
+      "homeCode": "CAN",
+      "awayCode": "QAT",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+      "homeScore": 6,
+      "awayScore": 0,
+      "score": "6-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Canada",
+          "minute": "16",
+          "scorer": "Cyle Larin",
+          "text": "Goal! Canada 1, Qatar 0. Cyle Larin (Canada) left footed shot from very close range to the bottom right corner following a corner."
+        },
+        {
+          "team": "Canada",
+          "minute": "29",
+          "scorer": "Jonathan David",
+          "text": "Goal! Canada 2, Qatar 0. Jonathan David (Canada) right footed shot from the right side of the box to the bottom right corner."
+        },
+        {
+          "team": "Canada",
+          "minute": "45+3'",
+          "scorer": "Jonathan David",
+          "text": "Goal! Canada 3, Qatar 0. Jonathan David (Canada) right footed shot from very close range to the centre of the goal."
+        },
+        {
+          "team": "Canada",
+          "minute": "64",
+          "scorer": "Nathan Saliba",
+          "text": "Goal! Canada 4, Qatar 0. Nathan Saliba (Canada) from a free kick with a right footed shot to the bottom right corner."
+        },
+        {
+          "team": "Canada",
+          "minute": "75",
+          "scorer": "Mohamed Manai",
+          "text": "Own Goal by Mohammad Al Manai, Qatar. Canada 5, Qatar 0."
+        },
+        {
+          "team": "Canada",
+          "minute": "90+2'",
+          "scorer": "Jonathan David",
+          "assist": "Nathan Saliba",
+          "text": "Goal! Canada 6, Qatar 0. Jonathan David (Canada) left footed shot from the centre of the box to the top left corner. Assisted by Nathan Saliba."
+        }
+      ],
+      "motm": "Jonathan David (CAN)"
+    },
+    {
+      "id": "760439",
+      "kickoff": "2026-06-18T19:00Z",
+      "stage": "FIFA World Cup, Group B",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760439",
+      "home": "Switzerland",
+      "away": "Bosnia-Herzegovina",
+      "homeCode": "SUI",
+      "awayCode": "BIH",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+      "homeScore": 4,
+      "awayScore": 1,
+      "score": "4-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Switzerland",
+          "minute": "74",
+          "scorer": "Johan Manzambi",
+          "text": "Goal! Switzerland 1, Bosnia and Herzegovina 0. Johan Manzambi (Switzerland) right footed shot from the centre of the box to the top right corner."
+        },
+        {
+          "team": "Switzerland",
+          "minute": "84",
+          "scorer": "Rubén Vargas",
+          "assist": "Breel Embolo",
+          "text": "Goal! Switzerland 2, Bosnia and Herzegovina 0. Rubén Vargas (Switzerland) right footed shot from the centre of the box to the bottom right corner. Assisted by Breel Embolo."
+        },
+        {
+          "team": "Switzerland",
+          "minute": "90",
+          "scorer": "Johan Manzambi",
+          "assist": "Rubén Vargas",
+          "text": "Goal! Switzerland 3, Bosnia and Herzegovina 0. Johan Manzambi (Switzerland) right footed shot from the centre of the box to the centre of the goal. Assisted by Rubén Vargas."
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "minute": "90+3'",
+          "scorer": "Ermin Mahmic",
+          "text": "Goal! Switzerland 3, Bosnia and Herzegovina 1. Ermin Mahmic (Bosnia and Herzegovina) right footed shot from the centre of the box to the high centre of the goal following a corner."
+        },
+        {
+          "team": "Switzerland",
+          "minute": "90+7'",
+          "scorer": "Granit Xhaka",
+          "text": "Goal! Switzerland 4, Bosnia and Herzegovina 1. Granit Xhaka (Switzerland) converts the penalty with a left footed shot to the bottom right corner."
+        }
+      ],
+      "motm": "Dan Ndoye (SUI)"
+    },
+    {
+      "id": "760438",
+      "kickoff": "2026-06-18T16:00Z",
+      "stage": "FIFA World Cup, Group A",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760438",
+      "home": "Czechia",
+      "away": "South Africa",
+      "homeCode": "CZE",
+      "awayCode": "RSA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Czechia",
+          "minute": "6",
+          "scorer": "Michal Sadílek",
+          "assist": "Alexandr Sojka",
+          "text": "Goal! Czechia 1, South Africa 0. Michal Sadílek (Czechia) left footed shot from the centre of the box to the centre of the goal. Assisted by Alexandr Sojka."
+        },
+        {
+          "team": "South Africa",
+          "minute": "83",
+          "scorer": "Teboho Mokoena",
+          "text": "Goal! Czechia 1, South Africa 1. Teboho Mokoena (South Africa) converts the penalty with a right footed shot to the bottom left corner."
+        }
+      ],
+      "motm": "Ladislav Krejcí (CZE)"
+    },
+    {
+      "id": "760436",
+      "kickoff": "2026-06-18T02:00Z",
+      "stage": "FIFA World Cup, Group K",
+      "venue": "Estadio Banorte",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760436",
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "homeCode": "UZB",
+      "awayCode": "COL",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+      "homeScore": 1,
+      "awayScore": 3,
+      "score": "1-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Colombia",
+          "minute": "40",
+          "scorer": "Daniel Muñoz",
+          "assist": "Luis Díaz",
+          "text": "Goal! Uzbekistan 0, Colombia 1. Daniel Muñoz (Colombia) right footed shot from the centre of the box to the high centre of the goal. Assisted by Luis Díaz with a through ball."
+        },
+        {
+          "team": "Uzbekistan",
+          "minute": "60",
+          "scorer": "Abbosbek Fayzullaev",
+          "text": "Goal! Uzbekistan 1, Colombia 1. Abbosbek Fayzullaev (Uzbekistan) header from very close range to the top left corner."
+        },
+        {
+          "team": "Colombia",
+          "minute": "65",
+          "scorer": "Luis Díaz",
+          "assist": "Gustavo Puerta",
+          "text": "Goal! Uzbekistan 1, Colombia 2. Luis Díaz (Colombia) right footed shot from the centre of the box to the bottom right corner. Assisted by Gustavo Puerta."
+        },
+        {
+          "team": "Colombia",
+          "minute": "90+9'",
+          "scorer": "Jáminton Campaz",
+          "assist": "Cucho Hernández",
+          "text": "Goal! Uzbekistan 1, Colombia 3. Jaminton Campaz (Colombia) header from the centre of the box to the bottom left corner. Assisted by Cucho Hernández with a cross."
+        }
+      ],
+      "motm": "Jefferson Lerma (COL)"
+    },
+    {
+      "id": "760434",
+      "kickoff": "2026-06-17T23:00Z",
+      "stage": "FIFA World Cup, Group L",
+      "venue": "BMO Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760434",
+      "home": "Ghana",
+      "away": "Panama",
+      "homeCode": "GHA",
+      "awayCode": "PAN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+      "homeScore": 1,
+      "awayScore": 0,
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Ghana",
+          "minute": "90+5'",
+          "scorer": "Caleb Yirenkyi",
+          "assist": "Brandon Thomas-Asante",
+          "text": "Goal! Ghana 1, Panama 0. Caleb Yirenkyi (Ghana) right footed shot from very close range to the top right corner. Assisted by Brandon Thomas-Asante following a fast break."
+        }
+      ],
+      "motm": "Caleb Yirenkyi (GHA)"
+    },
+    {
+      "id": "760437",
+      "kickoff": "2026-06-17T20:00Z",
+      "stage": "FIFA World Cup, Group L",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760437",
+      "home": "England",
+      "away": "Croatia",
+      "homeCode": "ENG",
+      "awayCode": "CRO",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+      "homeScore": 4,
+      "awayScore": 2,
+      "score": "4-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "England",
+          "minute": "12",
+          "scorer": "Harry Kane",
+          "text": "Goal! England 1, Croatia 0. Harry Kane (England) converts the penalty with a right footed shot to the bottom right corner."
+        },
+        {
+          "team": "Croatia",
+          "minute": "36",
+          "scorer": "Martin Baturina",
+          "assist": "Petar Sucic",
+          "text": "Goal! England 1, Croatia 1. Martin Baturina (Croatia) right footed shot from outside the box to the top left corner. Assisted by Petar Sucic."
+        },
+        {
+          "team": "England",
+          "minute": "42",
+          "scorer": "Harry Kane",
+          "assist": "Declan Rice",
+          "text": "Goal! England 2, Croatia 1. Harry Kane (England) header from the centre of the box to the bottom left corner. Assisted by Declan Rice with a cross following a corner."
+        },
+        {
+          "team": "Croatia",
+          "minute": "45+5'",
+          "scorer": "Petar Musa",
+          "assist": "Ivan Perisic",
+          "text": "Goal! England 2, Croatia 2. Petar Musa (Croatia) right footed shot from the centre of the box to the centre of the goal. Assisted by Ivan Perisic with a headed pass."
+        },
+        {
+          "team": "England",
+          "minute": "47",
+          "scorer": "Jude Bellingham",
+          "assist": "Elliot Anderson",
+          "text": "Goal! England 3, Croatia 2. Jude Bellingham (England) right footed shot from the right side of the box to the bottom left corner. Assisted by Elliot Anderson."
+        },
+        {
+          "team": "England",
+          "minute": "85",
+          "scorer": "Marcus Rashford",
+          "assist": "Bukayo Saka",
+          "text": "Goal! England 4, Croatia 2. Marcus Rashford (England) right footed shot from the centre of the box to the bottom right corner. Assisted by Bukayo Saka."
+        }
+      ],
+      "motm": "Harry Kane (ENG)"
+    },
+    {
+      "id": "760435",
+      "kickoff": "2026-06-17T17:00Z",
+      "stage": "FIFA World Cup, Group K",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760435",
+      "home": "Portugal",
+      "away": "Congo DR",
+      "homeCode": "POR",
+      "awayCode": "COD",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Portugal",
+          "minute": "6",
+          "scorer": "João Neves",
+          "assist": "Pedro Neto",
+          "text": "Goal! Portugal 1, Congo DR 0. João Neves (Portugal) header from the centre of the box to the bottom right corner. Assisted by Pedro Neto with a cross."
+        },
+        {
+          "team": "Congo DR",
+          "minute": "45+5'",
+          "scorer": "Yoane Wissa",
+          "assist": "Arthur Masuaku",
+          "text": "Goal! Portugal 1, Congo DR 1. Yoane Wissa (Congo DR) header from very close range to the top left corner. Assisted by Arthur Masuaku with a cross following a corner."
+        }
+      ],
+      "motm": "Cristiano Ronaldo (POR)"
+    },
+    {
+      "id": "760431",
+      "kickoff": "2026-06-17T04:00Z",
+      "stage": "FIFA World Cup, Group J",
+      "venue": "Levi's Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760431",
+      "home": "Austria",
+      "away": "Jordan",
+      "homeCode": "AUT",
+      "awayCode": "JOR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+      "homeScore": 3,
+      "awayScore": 1,
+      "score": "3-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Austria",
+          "minute": "21",
+          "scorer": "Romano Schmid",
+          "assist": "Xaver Schlager",
+          "text": "Goal! Austria 1, Jordan 0. Romano Schmid (Austria) right footed shot from outside the box to the top right corner. Assisted by Xaver Schlager."
+        },
+        {
+          "team": "Jordan",
+          "minute": "50",
+          "scorer": "Ali Olwan",
+          "assist": "Noor Al-Rawabdeh",
+          "text": "Goal! Austria 1, Jordan 1. Ali Olwan (Jordan) right footed shot from the left side of the box to the bottom right corner. Assisted by Noor Al Rawabdeh following a fast break."
+        },
+        {
+          "team": "Austria",
+          "minute": "76",
+          "scorer": "Yazan Al-Arab",
+          "text": "Own Goal by Yazan Al Arab, Jordan. Austria 2, Jordan 1."
+        },
+        {
+          "team": "Austria",
+          "minute": "90+12'",
+          "scorer": "Marko Arnautovic",
+          "text": "Goal! Austria 3, Jordan 1. Marko Arnautovic (Austria) converts the penalty with a right footed shot to the bottom left corner."
+        }
+      ],
+      "motm": "Ali Olwan (JOR)"
+    },
+    {
+      "id": "760433",
+      "kickoff": "2026-06-17T01:00Z",
+      "stage": "FIFA World Cup, Group J",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760433",
+      "home": "Argentina",
+      "away": "Algeria",
+      "homeCode": "ARG",
+      "awayCode": "ALG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+      "homeScore": 3,
+      "awayScore": 0,
+      "score": "3-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Argentina",
+          "minute": "17",
+          "scorer": "Lionel Messi",
+          "assist": "Rodrigo De Paul",
+          "text": "Goal! Argentina 1, Algeria 0. Lionel Messi (Argentina) left footed shot from outside the box to the top right corner. Assisted by Rodrigo De Paul."
+        },
+        {
+          "team": "Argentina",
+          "minute": "60",
+          "scorer": "Lionel Messi",
+          "text": "Goal! Argentina 2, Algeria 0. Lionel Messi (Argentina) right footed shot from the centre of the box to the bottom right corner."
+        },
+        {
+          "team": "Argentina",
+          "minute": "76",
+          "scorer": "Lionel Messi",
+          "assist": "Nico González",
+          "text": "Goal! Argentina 3, Algeria 0. Lionel Messi (Argentina) left footed shot from the centre of the box to the bottom left corner. Assisted by Nico González."
+        }
+      ],
+      "motm": "Lionel Messi (ARG)"
+    },
+    {
+      "id": "760430",
+      "kickoff": "2026-06-16T22:00Z",
+      "stage": "FIFA World Cup, Group I",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760430",
+      "home": "Iraq",
+      "away": "Norway",
+      "homeCode": "IRQ",
+      "awayCode": "NOR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+      "homeScore": 1,
+      "awayScore": 4,
+      "score": "1-4",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Norway",
+          "minute": "29",
+          "scorer": "Erling Haaland",
+          "assist": "David Møller Wolfe",
+          "text": "Goal! Iraq 0, Norway 1. Erling Haaland (Norway) left footed shot from very close range to the top right corner. Assisted by David Møller Wolfe with a cross."
+        },
+        {
+          "team": "Iraq",
+          "minute": "39",
+          "scorer": "Aymen Hussein",
+          "assist": "Amir Al-Ammari",
+          "text": "Goal! Iraq 1, Norway 1. Aymen Hussein (Iraq) header from the centre of the box to the bottom right corner. Assisted by Amir Al Ammari with a cross."
+        },
+        {
+          "team": "Norway",
+          "minute": "43",
+          "scorer": "Erling Haaland",
+          "text": "Goal! Iraq 1, Norway 2. Erling Haaland (Norway) right footed shot from very close range to the centre of the goal."
+        },
+        {
+          "team": "Norway",
+          "minute": "76",
+          "scorer": "Leo Østigard",
+          "assist": "Martin Ødegaard",
+          "text": "Goal! Iraq 1, Norway 3. Leo Østigård (Norway) header from very close range to the high centre of the goal. Assisted by Martin Ødegaard with a cross following a corner."
+        },
+        {
+          "team": "Norway",
+          "minute": "90+6'",
+          "scorer": "Aymen Hussein",
+          "text": "Own Goal by Aymen Hussein, Iraq. Iraq 1, Norway 4."
+        }
+      ],
+      "motm": "Erling Haaland (NOR)"
+    },
+    {
+      "id": "760432",
+      "kickoff": "2026-06-16T19:00Z",
+      "stage": "FIFA World Cup, Group I",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760432",
+      "home": "France",
+      "away": "Senegal",
+      "homeCode": "FRA",
+      "awayCode": "SEN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+      "homeScore": 3,
+      "awayScore": 1,
+      "score": "3-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "France",
+          "minute": "66",
+          "scorer": "Kylian Mbappé",
+          "assist": "Michael Olise",
+          "text": "Goal! France 1, Senegal 0. Kylian Mbappé (France) right footed shot from the centre of the box to the centre of the goal. Assisted by Michael Olise with a through ball."
+        },
+        {
+          "team": "France",
+          "minute": "82",
+          "scorer": "Bradley Barcola",
+          "assist": "Adrien Rabiot",
+          "text": "Goal! France 2, Senegal 0. Bradley Barcola (France) right footed shot from the right side of the box to the bottom right corner. Assisted by Adrien Rabiot with a through ball following a fast break."
+        },
+        {
+          "team": "Senegal",
+          "minute": "90+5'",
+          "scorer": "Ibrahim Mbaye",
+          "assist": "Iliman Ndiaye",
+          "text": "Goal! France 2, Senegal 1. Ibrahim Mbaye (Senegal) right footed shot from the right side of the box to the top right corner. Assisted by Iliman Ndiaye following a fast break."
+        },
+        {
+          "team": "France",
+          "minute": "90+6'",
+          "scorer": "Kylian Mbappé",
+          "text": "Goal! France 3, Senegal 1. Kylian Mbappé (France) right footed shot from outside the box to the top left corner."
+        }
+      ],
+      "motm": "Kylian Mbappé (FRA)"
+    },
+    {
+      "id": "760427",
+      "kickoff": "2026-06-16T01:00Z",
+      "stage": "FIFA World Cup, Group G",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760427",
+      "home": "Iran",
+      "away": "New Zealand",
+      "homeCode": "IRN",
+      "awayCode": "NZL",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "score": "2-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "New Zealand",
+          "minute": "7",
+          "scorer": "Elijah Just",
+          "assist": "Chris Wood",
+          "text": "Goal! IR Iran 0, New Zealand 1. Elijah Just (New Zealand) right footed shot from the centre of the box to the high centre of the goal. Assisted by Chris Wood."
+        },
+        {
+          "team": "Iran",
+          "minute": "32",
+          "scorer": "Ramin Rezaeian",
+          "text": "Goal! IR Iran 1, New Zealand 1. Ramin Rezaeian (IR Iran) right footed shot from the centre of the box to the bottom left corner."
+        },
+        {
+          "team": "New Zealand",
+          "minute": "54",
+          "scorer": "Elijah Just",
+          "assist": "Chris Wood",
+          "text": "Goal! IR Iran 1, New Zealand 2. Elijah Just (New Zealand) right footed shot from the right side of the box to the centre of the goal. Assisted by Chris Wood following a fast break."
+        },
+        {
+          "team": "Iran",
+          "minute": "64",
+          "scorer": "Mohammad Mohebbi",
+          "assist": "Ramin Rezaeian",
+          "text": "Goal! IR Iran 2, New Zealand 2. Mohammad Mohebbi (IR Iran) header from the centre of the box to the bottom left corner. Assisted by Ramin Rezaeian with a cross."
+        }
+      ],
+      "motm": "Chris Wood (NZL)"
+    },
+    {
+      "id": "760429",
+      "kickoff": "2026-06-15T22:00Z",
+      "stage": "FIFA World Cup, Group H",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760429",
+      "home": "Saudi Arabia",
+      "away": "Uruguay",
+      "homeCode": "KSA",
+      "awayCode": "URU",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Saudi Arabia",
+          "minute": "41",
+          "scorer": "Abdulelah Al-Amri",
+          "text": "Goal! Saudi Arabia 1, Uruguay 0. Abdulelah Al Amri (Saudi Arabia) right footed shot from very close range to the centre of the goal following a corner."
+        },
+        {
+          "team": "Uruguay",
+          "minute": "80",
+          "scorer": "Maxi Araújo",
+          "text": "Goal! Saudi Arabia 1, Uruguay 1. Maxi Araújo (Uruguay) left footed shot from the left side of the six yard box to the bottom left corner."
+        }
+      ],
+      "motm": "Federico Viñas (URU)"
+    },
+    {
+      "id": "760426",
+      "kickoff": "2026-06-15T19:00Z",
+      "stage": "FIFA World Cup, Group G",
+      "venue": "Lumen Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760426",
+      "home": "Belgium",
+      "away": "Egypt",
+      "homeCode": "BEL",
+      "awayCode": "EGY",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Egypt",
+          "minute": "20",
+          "scorer": "Emam Ashour",
+          "assist": "Mohamed Salah",
+          "text": "Goal! Belgium 0, Egypt 1. Emam Ashour (Egypt) right footed shot from outside the box to the bottom left corner. Assisted by Mohamed Salah."
+        },
+        {
+          "team": "Belgium",
+          "minute": "66",
+          "scorer": "Mohamed Hany",
+          "text": "Own Goal by Mohamed Hany, Egypt. Belgium 1, Egypt 1."
+        }
+      ],
+      "motm": "Kevin De Bruyne (BEL)"
+    },
+    {
+      "id": "760428",
+      "kickoff": "2026-06-15T16:00Z",
+      "stage": "FIFA World Cup, Group H",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760428",
+      "home": "Spain",
+      "away": "Cape Verde",
+      "homeCode": "ESP",
+      "awayCode": "CPV",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "FT",
+      "goals": [],
+      "motm": "Mikel Oyarzabal (ESP)"
+    },
+    {
+      "id": "760424",
+      "kickoff": "2026-06-15T02:00Z",
+      "stage": "FIFA World Cup, Group F",
+      "venue": "Estadio BBVA",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760424",
+      "home": "Sweden",
+      "away": "Tunisia",
+      "homeCode": "SWE",
+      "awayCode": "TUN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+      "homeScore": 5,
+      "awayScore": 1,
+      "score": "5-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Sweden",
+          "minute": "7",
+          "scorer": "Yasin Ayari",
+          "text": "Goal! Sweden 1, Tunisia 0. Yasin Ayari (Sweden) right footed shot from outside the box to the top right corner."
+        },
+        {
+          "team": "Sweden",
+          "minute": "30",
+          "scorer": "Alexander Isak",
+          "assist": "Viktor Gyökeres",
+          "text": "Goal! Sweden 2, Tunisia 0. Alexander Isak (Sweden) right footed shot from outside the box to the bottom right corner. Assisted by Viktor Gyökeres following a fast break."
+        },
+        {
+          "team": "Tunisia",
+          "minute": "43",
+          "scorer": "Omar Rekik",
+          "assist": "Hannibal Mejbri",
+          "text": "Goal! Sweden 2, Tunisia 1. Omar Rekik (Tunisia) header from the centre of the box to the bottom left corner. Assisted by Hannibal Mejbri with a cross."
+        },
+        {
+          "team": "Sweden",
+          "minute": "59",
+          "scorer": "Viktor Gyökeres",
+          "assist": "Alexander Isak",
+          "text": "Goal! Sweden 3, Tunisia 1. Viktor Gyökeres (Sweden) right footed shot from the centre of the box to the bottom left corner. Assisted by Alexander Isak."
+        },
+        {
+          "team": "Sweden",
+          "minute": "84",
+          "scorer": "Mattias Svanberg",
+          "assist": "Alexander Isak",
+          "text": "Goal! Sweden 4, Tunisia 1. Mattias Svanberg (Sweden) right footed shot from the centre of the box to the centre of the goal. Assisted by Alexander Isak following a set piece situation.Goal awarded following VAR Review."
+        },
+        {
+          "team": "Sweden",
+          "minute": "90+6'",
+          "scorer": "Yasin Ayari",
+          "assist": "Lucas Bergvall",
+          "text": "Goal! Sweden 5, Tunisia 1. Yasin Ayari (Sweden) right footed shot from outside the box to the bottom left corner. Assisted by Lucas Bergvall."
+        }
+      ],
+      "motm": "Viktor Gyökeres (SWE)"
+    },
+    {
+      "id": "760423",
+      "kickoff": "2026-06-14T23:00Z",
+      "stage": "FIFA World Cup, Group E",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760423",
+      "home": "Ivory Coast",
+      "away": "Ecuador",
+      "homeCode": "CIV",
+      "awayCode": "ECU",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+      "homeScore": 1,
+      "awayScore": 0,
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Ivory Coast",
+          "minute": "90",
+          "scorer": "Amad Diallo",
+          "assist": "Wilfried Singo",
+          "text": "Goal! Côte d'Ivoire 1, Ecuador 0. Amad Diallo (Côte d'Ivoire) left footed shot from the centre of the box to the bottom left corner. Assisted by Wilfried Singo."
+        }
+      ],
+      "motm": "Seko Fofana (CIV)"
+    },
+    {
+      "id": "760425",
+      "kickoff": "2026-06-14T20:00Z",
+      "stage": "FIFA World Cup, Group F",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760425",
+      "home": "Netherlands",
+      "away": "Japan",
+      "homeCode": "NED",
+      "awayCode": "JPN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "score": "2-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Netherlands",
+          "minute": "51",
+          "scorer": "Virgil van Dijk",
+          "assist": "Ryan Gravenberch",
+          "text": "Goal! Netherlands 1, Japan 0. Virgil van Dijk (Netherlands) header from the centre of the box to the bottom right corner. Assisted by Ryan Gravenberch with a cross following a set piece situation."
+        },
+        {
+          "team": "Japan",
+          "minute": "57",
+          "scorer": "Keito Nakamura",
+          "assist": "Takefusa Kubo",
+          "text": "Goal! Netherlands 1, Japan 1. Keito Nakamura (Japan) right footed shot from outside the box to the bottom left corner. Assisted by Takefusa Kubo."
+        },
+        {
+          "team": "Netherlands",
+          "minute": "64",
+          "scorer": "Crysencio Summerville",
+          "assist": "Ryan Gravenberch",
+          "text": "Goal! Netherlands 2, Japan 1. Crysencio Summerville (Netherlands) left footed shot from the right side of the box to the bottom left corner. Assisted by Ryan Gravenberch."
+        },
+        {
+          "team": "Japan",
+          "minute": "89",
+          "scorer": "Daichi Kamada",
+          "assist": "Koki Ogawa",
+          "text": "Goal! Netherlands 2, Japan 2. Daichi Kamada (Japan) header from the centre of the box to the top right corner. Assisted by Koki Ogawa following a corner."
+        }
+      ],
+      "motm": "Keito Nakamura (JPN)"
+    },
+    {
+      "id": "760422",
+      "kickoff": "2026-06-14T17:00Z",
+      "stage": "FIFA World Cup, Group E",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760422",
+      "home": "Germany",
+      "away": "Curaçao",
+      "homeCode": "GER",
+      "awayCode": "CUW",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+      "homeScore": 7,
+      "awayScore": 1,
+      "score": "7-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Germany",
+          "minute": "6",
+          "scorer": "Felix Nmecha",
+          "assist": "Florian Wirtz",
+          "text": "Goal! Germany 1, Curaçao 0. Felix Nmecha (Germany) right footed shot from the centre of the box to the bottom right corner. Assisted by Florian Wirtz."
+        },
+        {
+          "team": "Curaçao",
+          "minute": "21",
+          "scorer": "Livano Comenencia",
+          "text": "Goal! Germany 1, Curaçao 1. Livano Comenencia (Curaçao) left footed shot from the centre of the box to the bottom left corner."
+        },
+        {
+          "team": "Germany",
+          "minute": "38",
+          "scorer": "Nico Schlotterbeck",
+          "assist": "Nathaniel Brown",
+          "text": "Goal! Germany 2, Curaçao 1. Nico Schlotterbeck (Germany) header from very close range to the bottom left corner. Assisted by Nathaniel Brown with a cross following a corner."
+        },
+        {
+          "team": "Germany",
+          "minute": "45+5'",
+          "scorer": "Kai Havertz",
+          "text": "Goal! Germany 3, Curaçao 1. Kai Havertz (Germany) converts the penalty with a left footed shot to the bottom left corner."
+        },
+        {
+          "team": "Germany",
+          "minute": "47",
+          "scorer": "Jamal Musiala",
+          "assist": "Joshua Kimmich",
+          "text": "Goal! Germany 4, Curaçao 1. Jamal Musiala (Germany) right footed shot from the right side of the box to the bottom left corner. Assisted by Joshua Kimmich with a through ball."
+        },
+        {
+          "team": "Germany",
+          "minute": "68",
+          "scorer": "Nathaniel Brown",
+          "assist": "Deniz Undav",
+          "text": "Goal! Germany 5, Curaçao 1. Nathaniel Brown (Germany) right footed shot from the centre of the box to the bottom right corner. Assisted by Deniz Undav."
+        },
+        {
+          "team": "Germany",
+          "minute": "78",
+          "scorer": "Deniz Undav",
+          "assist": "Joshua Kimmich",
+          "text": "Goal! Germany 6, Curaçao 1. Deniz Undav (Germany) right footed shot from the centre of the box to the bottom left corner. Assisted by Joshua Kimmich."
+        },
+        {
+          "team": "Germany",
+          "minute": "88",
+          "scorer": "Kai Havertz",
+          "assist": "Deniz Undav",
+          "text": "Goal! Germany 7, Curaçao 1. Kai Havertz (Germany) left footed shot from the centre of the box to the centre of the goal. Assisted by Deniz Undav with a through ball following a fast break."
+        }
+      ],
+      "motm": "Kai Havertz (GER)"
+    },
+    {
+      "id": "760421",
+      "kickoff": "2026-06-14T04:00Z",
+      "stage": "FIFA World Cup, Group D",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760421",
+      "home": "Australia",
+      "away": "Türkiye",
+      "homeCode": "AUS",
+      "awayCode": "TUR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+      "homeScore": 2,
+      "awayScore": 0,
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Australia",
+          "minute": "27",
+          "scorer": "Nestory Irankunda",
+          "assist": "Paul Okon-Engstler",
+          "text": "Goal! Australia 1, Türkiye 0. Nestory Irankunda (Australia) right footed shot from the centre of the box to the bottom left corner. Assisted by Paul Okon-Engstler."
+        },
+        {
+          "team": "Australia",
+          "minute": "75",
+          "scorer": "Connor Metcalfe",
+          "text": "Goal! Australia 2, Türkiye 0. Connor Metcalfe (Australia) left footed shot from outside the box to the bottom right corner."
+        }
+      ],
+      "motm": "Arda Güler (TUR)"
+    },
+    {
+      "id": "760418",
+      "kickoff": "2026-06-14T01:00Z",
+      "stage": "FIFA World Cup, Group C",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760418",
+      "home": "Haiti",
+      "away": "Scotland",
+      "homeCode": "HAI",
+      "awayCode": "SCO",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Scotland",
+          "minute": "28",
+          "scorer": "John McGinn",
+          "text": "Goal! Haiti 0, Scotland 1. John McGinn (Scotland) left footed shot from the centre of the box to the high centre of the goal."
+        }
+      ],
+      "motm": "Frantzdy Pierrot (HAI)"
+    },
+    {
+      "id": "760419",
+      "kickoff": "2026-06-13T22:00Z",
+      "stage": "FIFA World Cup, Group C",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760419",
+      "home": "Brazil",
+      "away": "Morocco",
+      "homeCode": "BRA",
+      "awayCode": "MAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Morocco",
+          "minute": "21",
+          "scorer": "Ismael Saibari",
+          "assist": "Brahim Díaz",
+          "text": "Goal! Brazil 0, Morocco 1. Ismael Saibari (Morocco) right footed shot from outside the box to the centre of the goal. Assisted by Brahim Díaz with a through ball following a fast break."
+        },
+        {
+          "team": "Brazil",
+          "minute": "32",
+          "scorer": "Vinícius Júnior",
+          "assist": "Bruno Guimarães",
+          "text": "Goal! Brazil 1, Morocco 1. Vinícius Júnior (Brazil) right footed shot from the left side of the box to the top right corner. Assisted by Bruno Guimarães."
+        }
+      ],
+      "motm": "Raphinha  (BRA)"
+    },
+    {
+      "id": "760420",
+      "kickoff": "2026-06-13T19:00Z",
+      "stage": "FIFA World Cup, Group B",
+      "venue": "Levi's Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760420",
+      "home": "Qatar",
+      "away": "Switzerland",
+      "homeCode": "QAT",
+      "awayCode": "SUI",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Switzerland",
+          "minute": "17",
+          "scorer": "Breel Embolo",
+          "text": "Goal! Qatar 0, Switzerland 1. Breel Embolo (Switzerland) converts the penalty with a right footed shot to the bottom left corner."
+        },
+        {
+          "team": "Qatar",
+          "minute": "90+4'",
+          "scorer": "Miro Muheim",
+          "assist": "Homam Ahmed",
+          "text": "Own Goal by Miro Muheim, Switzerland. Qatar 1, Switzerland 1."
+        }
+      ],
+      "motm": "Dan Ndoye (SUI)"
+    },
+    {
+      "id": "760417",
+      "kickoff": "2026-06-13T01:00Z",
+      "stage": "FIFA World Cup, Group D",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760417",
+      "home": "United States",
+      "away": "Paraguay",
+      "homeCode": "USA",
+      "awayCode": "PAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+      "homeScore": 4,
+      "awayScore": 1,
+      "score": "4-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "United States",
+          "minute": "7",
+          "scorer": "Damián Bobadilla",
+          "text": "Own Goal by Damián Bobadilla, Paraguay. USA 1, Paraguay 0."
+        },
+        {
+          "team": "United States",
+          "minute": "31",
+          "scorer": "Folarin Balogun",
+          "assist": "Christian Pulisic",
+          "text": "Goal! USA 2, Paraguay 0. Folarin Balogun (USA) right footed shot from the centre of the box to the bottom right corner. Assisted by Christian Pulisic."
+        },
+        {
+          "team": "United States",
+          "minute": "45+5'",
+          "scorer": "Folarin Balogun",
+          "assist": "Malik Tillman",
+          "text": "Goal! USA 3, Paraguay 0. Folarin Balogun (USA) left footed shot from the centre of the box to the top left corner. Assisted by Malik Tillman."
+        },
+        {
+          "team": "Paraguay",
+          "minute": "73",
+          "scorer": "Maurício",
+          "assist": "Julio Enciso",
+          "text": "Goal! USA 3, Paraguay 1. Mauricio (Paraguay) left footed shot from the centre of the box to the bottom right corner. Assisted by Julio Enciso following a set piece situation."
+        },
+        {
+          "team": "United States",
+          "minute": "90+8'",
+          "scorer": "Giovanni Reyna",
+          "assist": "Alex Freeman",
+          "text": "Goal! USA 4, Paraguay 1. Giovanni Reyna (USA) right footed shot from the centre of the box to the bottom left corner. Assisted by Alex Freeman."
+        }
+      ],
+      "motm": "Malik Tillman (USA)"
+    },
+    {
+      "id": "760416",
+      "kickoff": "2026-06-12T19:00Z",
+      "stage": "FIFA World Cup, Group B",
+      "venue": "BMO Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760416",
+      "home": "Canada",
+      "away": "Bosnia-Herzegovina",
+      "homeCode": "CAN",
+      "awayCode": "BIH",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Bosnia-Herzegovina",
+          "minute": "21",
+          "scorer": "Jovo Lukic",
+          "assist": "Sead Kolasinac",
+          "text": "Goal! Canada 0, Bosnia and Herzegovina 1. Jovo Lukic (Bosnia and Herzegovina) header from very close range to the centre of the goal. Assisted by Sead Kolasinac with a headed pass following a corner."
+        },
+        {
+          "team": "Canada",
+          "minute": "78",
+          "scorer": "Cyle Larin",
+          "assist": "Promise David",
+          "text": "Goal! Canada 1, Bosnia and Herzegovina 1. Cyle Larin (Canada) right footed shot from the centre of the box to the bottom right corner. Assisted by Promise David."
+        }
+      ],
+      "motm": "Jovo Lukic (BIH)"
+    },
+    {
+      "id": "760414",
+      "kickoff": "2026-06-12T02:00Z",
+      "stage": "FIFA World Cup, Group A",
+      "venue": "Estadio Akron",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760414",
+      "home": "South Korea",
+      "away": "Czechia",
+      "homeCode": "KOR",
+      "awayCode": "CZE",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Czechia",
+          "minute": "59",
+          "scorer": "Ladislav Krejcí",
+          "assist": "Vladimír Coufal",
+          "text": "Goal! Korea Republic 0, Czechia 1. Ladislav Krejcí (Czechia) header from very close range to the bottom right corner. Assisted by Vladimír Coufal."
+        },
+        {
+          "team": "South Korea",
+          "minute": "67",
+          "scorer": "Hwang In-Beom",
+          "assist": "Lee Kang-In",
+          "text": "Goal! Korea Republic 1, Czechia 1. Hwang In-Beom (Korea Republic) right footed shot from the centre of the box to the bottom right corner. Assisted by Lee Kang-In."
+        },
+        {
+          "team": "South Korea",
+          "minute": "80",
+          "scorer": "Oh Hyeon-Gyu",
+          "assist": "Hwang In-Beom",
+          "text": "Goal! Korea Republic 2, Czechia 1. Oh Hyeon-Gyu (Korea Republic) left footed shot from very close range to the bottom left corner. Assisted by Hwang In-Beom."
+        }
+      ],
+      "motm": "Son Heung-Min (KOR)"
+    },
+    {
+      "id": "760415",
+      "kickoff": "2026-06-11T19:00Z",
+      "stage": "FIFA World Cup, Group A",
+      "venue": "Estadio Banorte",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760415",
+      "home": "Mexico",
+      "away": "South Africa",
+      "homeCode": "MEX",
+      "awayCode": "RSA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+      "homeScore": 2,
+      "awayScore": 0,
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Mexico",
+          "minute": "9",
+          "scorer": "Julián Quiñones",
+          "assist": "Érik Lira",
+          "text": "Goal! Mexico 1, South Africa 0. Julián Quiñones (Mexico) right footed shot from the centre of the box to the centre of the goal. Assisted by Érik Lira."
+        },
+        {
+          "team": "Mexico",
+          "minute": "67",
+          "scorer": "Raúl Jiménez",
+          "assist": "Roberto Alvarado",
+          "text": "Goal! Mexico 2, South Africa 0. Raúl Jiménez (Mexico) header from very close range to the bottom left corner. Assisted by Roberto Alvarado with a cross."
+        }
+      ],
+      "motm": "Julián Quiñones (MEX)"
+    }
+  ]
+}
