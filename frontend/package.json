@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/fetch-live-scores.mjs",
     "build": "next build",
     "lint": "next lint",
+    "refresh-live": "node scripts/fetch-live-scores.mjs --force",
     "start": "next start"
   },
   "dependencies": {
