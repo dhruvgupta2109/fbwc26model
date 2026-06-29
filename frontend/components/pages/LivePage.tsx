@@ -114,7 +114,7 @@ export function LivePage() {
 
         {error ? (
           <div className="mt-5 rounded-lg border border-danger/30 bg-danger/10 p-3 text-sm font-semibold text-danger">
-            Could not load the daily ESPN score cache.
+            Could not load the hourly ESPN score cache.
           </div>
         ) : null}
 
