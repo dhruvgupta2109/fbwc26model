@@ -1,9 +1,12 @@
 'use client';
 
 import useSWR from 'swr';
+import { withBasePath } from '@/lib/basePath';
 
 const TOURNAMENT_START = new Date('2026-06-11T00:00:00Z');
 const TOURNAMENT_END = new Date('2026-07-19T23:59:59Z');
+const LIVE_FEED_REFRESH_UNTIL = new Date('2026-07-20T23:59:59Z');
+const LIVE_FEED_REFRESH_INTERVAL_MS = 60 * 60 * 1000;
 
 export interface GoalEvent {
   team: string;
@@ -51,8 +54,9 @@ async function fetcher(url: string): Promise<LiveScoreCache> {
 export function useLiveScores() {
   const now = new Date();
   const inTournamentWindow = now >= TOURNAMENT_START && now <= TOURNAMENT_END;
-  const { data, error, isLoading, mutate } = useSWR('/data/live-scores.json', fetcher, {
-    refreshInterval: 86_400_000,
+  const inLiveFeedRefreshWindow = now >= TOURNAMENT_START && now <= LIVE_FEED_REFRESH_UNTIL;
+  const { data, error, isLoading, mutate } = useSWR(withBasePath('/data/live-scores.json'), fetcher, {
+    refreshInterval: inLiveFeedRefreshWindow ? LIVE_FEED_REFRESH_INTERVAL_MS : 0,
     revalidateOnFocus: false
   });
 
