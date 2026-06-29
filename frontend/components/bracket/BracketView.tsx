@@ -1,16 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { GitBranch, Route, Trophy } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { teams } from '@/lib/data';
-import { Badge } from '@/components/ui/Badge';
+import { flagUrl, teams } from '@/lib/data';
 import { Button } from '@/components/ui/Button';
 import { Flag } from '@/components/ui/Flag';
 import type { BracketSlot, GoldenBootProjection, Team } from '@/simulation/types';
 
-const sideStages: BracketSlot['stage'][] = ['R32', 'R16', 'QF', 'SF'];
+type MatchStage = Exclude<BracketSlot['stage'], 'Champion'>;
+
+const CENTER = 500;
+const LEAF_COUNT = 32;
+const START_ANGLE = -90;
+const TEAM_RADIUS = 438;
+const SVG_SIZE = 1000;
+const TEAM_MARKER_SIZE = 46;
+
 const stageLabels: Record<BracketSlot['stage'], string> = {
   R32: 'R32',
   R16: 'R16',
@@ -20,40 +26,305 @@ const stageLabels: Record<BracketSlot['stage'], string> = {
   Champion: 'Champion'
 };
 
-const stageColumn: Record<BracketSlot['stage'], number> = {
-  R32: 1,
-  R16: 2,
-  QF: 3,
-  SF: 4,
-  Final: 1,
-  Champion: 1
+const stageRadii: Record<MatchStage, number> = {
+  R32: 360,
+  R16: 286,
+  QF: 214,
+  SF: 146,
+  Final: 78
 };
 
-const stageSpan: Record<BracketSlot['stage'], number> = {
-  R32: 1,
-  R16: 2,
-  QF: 4,
-  SF: 8,
-  Final: 1,
-  Champion: 1
-};
+interface DraftEntrant {
+  kind: 'entrant';
+  id: string;
+  parentSlot?: BracketSlot;
+  teamCode?: string;
+}
 
-const emptyActualBracket: BracketSlot[] = [
-  ...Array.from({ length: 16 }, (_, index) => ({ id: `actual-r32-${index + 1}`, stage: 'R32' as const })),
-  ...Array.from({ length: 8 }, (_, index) => ({ id: `actual-r16-${index + 1}`, stage: 'R16' as const })),
-  ...Array.from({ length: 4 }, (_, index) => ({ id: `actual-qf-${index + 1}`, stage: 'QF' as const })),
-  ...Array.from({ length: 2 }, (_, index) => ({ id: `actual-sf-${index + 1}`, stage: 'SF' as const })),
-  { id: 'actual-final', stage: 'Final' },
-  { id: 'actual-champion', stage: 'Champion' }
-];
+interface DraftMatch {
+  kind: 'match';
+  id: string;
+  stage: MatchStage;
+  index: number;
+  slot?: BracketSlot;
+  children: DraftNode[];
+}
 
-export function BracketView({ bracket, goldenBoot, champion }: { bracket: BracketSlot[]; goldenBoot: GoldenBootProjection[]; champion: string }) {
+type DraftNode = DraftEntrant | DraftMatch;
+
+interface RadialBase {
+  id: string;
+  angle: number;
+  position: number;
+  radius: number;
+  x: number;
+  y: number;
+  active: boolean;
+  title: string;
+}
+
+interface RadialEntrant extends RadialBase {
+  kind: 'entrant';
+  parentSlot?: BracketSlot;
+  team?: Team;
+}
+
+interface RadialMatch extends RadialBase {
+  kind: 'match';
+  stage: MatchStage;
+  index: number;
+  slot?: BracketSlot;
+  children: RadialNode[];
+}
+
+type RadialNode = RadialEntrant | RadialMatch;
+
+interface RadialLayout {
+  entrants: RadialEntrant[];
+  matches: RadialMatch[];
+  finalSlot?: BracketSlot;
+  centerTeam?: Team;
+  centerLabel: string;
+}
+
+const teamByCode = new Map(teams.map((team) => [team.code, team]));
+
+function teamForCode(code?: string) {
+  return code ? teamByCode.get(code) : undefined;
+}
+
+function sanitizeId(value: string) {
+  return value.replace(/[^a-zA-Z0-9_-]/g, '-');
+}
+
+function pointOnCircle(angle: number, radius: number) {
+  const radians = (angle * Math.PI) / 180;
+  return {
+    x: CENTER + Math.cos(radians) * radius,
+    y: CENTER + Math.sin(radians) * radius
+  };
+}
+
+function angleForPosition(position: number) {
+  return START_ANGLE + (360 / LEAF_COUNT) * position;
+}
+
+function childMatchIndexes(stage: MatchStage, index: number): Array<[MatchStage, number]> {
+  switch (stage) {
+    case 'Final':
+      return [
+        ['SF', 0],
+        ['SF', 1]
+      ];
+    case 'SF':
+      return [
+        ['QF', index],
+        ['QF', 3 - index]
+      ];
+    case 'QF':
+      return [
+        ['R16', index],
+        ['R16', 7 - index]
+      ];
+    case 'R16':
+      return [
+        ['R32', index],
+        ['R32', 15 - index]
+      ];
+    case 'R32':
+      return [];
+  }
+}
+
+function describeMatch(slot?: BracketSlot) {
+  if (!slot) return 'Match not set';
+
+  const teamA = teamForCode(slot.teamA)?.name ?? slot.teamA ?? 'TBD';
+  const teamB = teamForCode(slot.teamB)?.name ?? slot.teamB ?? 'TBD';
+  const winner = teamForCode(slot.winner)?.name ?? slot.winner;
+
+  return `${stageLabels[slot.stage]}: ${teamA} vs ${teamB}${winner ? `, winner ${winner}` : ''}`;
+}
+
+function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLayout {
+  const slotsByStage = new Map<BracketSlot['stage'], BracketSlot[]>();
+  bracket.forEach((slot) => {
+    const current = slotsByStage.get(slot.stage) ?? [];
+    current.push(slot);
+    slotsByStage.set(slot.stage, current);
+  });
+
+  const slotAt = (stage: BracketSlot['stage'], index = 0) => slotsByStage.get(stage)?.[index];
+
+  const makeDraftMatch = (stage: MatchStage, index: number): DraftMatch => {
+    const slot = slotAt(stage, index);
+
+    if (stage === 'R32') {
+      return {
+        kind: 'match',
+        id: slot?.id ?? `${stage}-${index}`,
+        stage,
+        index,
+        slot,
+        children: [
+          { kind: 'entrant', id: `${slot?.id ?? `${stage}-${index}`}-team-a`, parentSlot: slot, teamCode: slot?.teamA },
+          { kind: 'entrant', id: `${slot?.id ?? `${stage}-${index}`}-team-b`, parentSlot: slot, teamCode: slot?.teamB }
+        ]
+      };
+    }
+
+    return {
+      kind: 'match',
+      id: slot?.id ?? `${stage}-${index}`,
+      stage,
+      index,
+      slot,
+      children: childMatchIndexes(stage, index).map(([childStage, childIndex]) => makeDraftMatch(childStage, childIndex))
+    };
+  };
+
+  const draftRoot = makeDraftMatch('Final', 0);
+  let nextPosition = 0;
+
+  const layoutNode = (node: DraftNode): RadialNode => {
+    if (node.kind === 'entrant') {
+      const position = nextPosition;
+      nextPosition += 1;
+      const angle = angleForPosition(position);
+      const { x, y } = pointOnCircle(angle, TEAM_RADIUS);
+      const team = teamForCode(node.teamCode);
+      const active = Boolean(champion && (node.teamCode === champion || node.parentSlot?.winner === champion));
+
+      return {
+        kind: 'entrant',
+        id: node.id,
+        parentSlot: node.parentSlot,
+        team,
+        position,
+        angle,
+        radius: TEAM_RADIUS,
+        x,
+        y,
+        active,
+        title: team ? `${team.name} (${team.code})` : 'TBD'
+      };
+    }
+
+    const children = node.children.map(layoutNode);
+    const position = children.reduce((total, child) => total + child.position, 0) / children.length;
+    const angle = angleForPosition(position);
+    const radius = stageRadii[node.stage];
+    const { x, y } = pointOnCircle(angle, radius);
+    const active = Boolean(champion && node.slot?.winner === champion);
+
+    return {
+      kind: 'match',
+      id: node.id,
+      stage: node.stage,
+      index: node.index,
+      slot: node.slot,
+      children,
+      position,
+      angle,
+      radius,
+      x,
+      y,
+      active,
+      title: describeMatch(node.slot)
+    };
+  };
+
+  const root = layoutNode(draftRoot) as RadialMatch;
+  const entrants: RadialEntrant[] = [];
+  const matches: RadialMatch[] = [];
+
+  const collect = (node: RadialNode) => {
+    if (node.kind === 'entrant') {
+      entrants.push(node);
+      return;
+    }
+
+    matches.push(node);
+    node.children.forEach(collect);
+  };
+
+  collect(root);
+
+  const championSlot = slotAt('Champion');
+  const finalSlot = slotAt('Final');
+  const centerTeam = teamForCode(championSlot?.winner ?? champion);
+
+  return {
+    entrants,
+    matches,
+    finalSlot,
+    centerTeam,
+    centerLabel: centerTeam?.name ?? 'TBD'
+  };
+}
+
+function radialConnectorPath(parent: RadialMatch) {
+  const [first, second] = parent.children;
+  if (!first || !second) return '';
+
+  const childRadius = Math.min(first.radius, second.radius);
+  const bridgeRadius = parent.radius + (childRadius - parent.radius) * 0.48;
+  const bridgeStart = pointOnCircle(first.angle, bridgeRadius);
+  const bridgeEnd = pointOnCircle(second.angle, bridgeRadius);
+  const bridgeMid = pointOnCircle(parent.angle, bridgeRadius);
+  let delta = second.angle - first.angle;
+  while (delta < 0) delta += 360;
+  const largeArcFlag = delta > 180 ? 1 : 0;
+
+  return [
+    `M ${first.x.toFixed(2)} ${first.y.toFixed(2)}`,
+    `L ${bridgeStart.x.toFixed(2)} ${bridgeStart.y.toFixed(2)}`,
+    `A ${bridgeRadius.toFixed(2)} ${bridgeRadius.toFixed(2)} 0 ${largeArcFlag} 1 ${bridgeEnd.x.toFixed(2)} ${bridgeEnd.y.toFixed(2)}`,
+    `L ${second.x.toFixed(2)} ${second.y.toFixed(2)}`,
+    `M ${bridgeMid.x.toFixed(2)} ${bridgeMid.y.toFixed(2)}`,
+    `L ${parent.x.toFixed(2)} ${parent.y.toFixed(2)}`
+  ].join(' ');
+}
+
+function classNames(...classes: Array<string | false | undefined>) {
+  return classes.filter(Boolean).join(' ');
+}
+
+function isDimmed(pathOnly: boolean, champion: string | undefined, active: boolean) {
+  return Boolean(pathOnly && champion && !active);
+}
+
+function matchDetail(slot?: BracketSlot) {
+  if (!slot || slot.stage === 'Champion') return null;
+  const teamA = teamForCode(slot.teamA);
+  const teamB = teamForCode(slot.teamB);
+  if (!teamA && !teamB) return null;
+
+  return `${teamA?.code ?? 'TBD'} vs ${teamB?.code ?? 'TBD'}`;
+}
+
+function scoreDetail(slot?: BracketSlot) {
+  if (typeof slot?.scoreA !== 'number' || typeof slot.scoreB !== 'number') return null;
+  return `${slot.scoreA}-${slot.scoreB}`;
+}
+
+export function BracketView({
+  bracket,
+  actualBracket,
+  goldenBoot,
+  champion
+}: {
+  bracket: BracketSlot[];
+  actualBracket: BracketSlot[];
+  goldenBoot: GoldenBootProjection[];
+  champion: string;
+}) {
   const [pathOnly, setPathOnly] = useState(false);
   const championTeam = teams.find((team) => team.code === champion);
 
   return (
     <div className="grid gap-5">
-      <StructuredBracket
+      <RadialBracketSection
         bracket={bracket}
         champion={champion}
         pathOnly={pathOnly}
@@ -67,7 +338,7 @@ export function BracketView({ bracket, goldenBoot, champion }: { bracket: Bracke
         }
       />
 
-      <StructuredBracket bracket={emptyActualBracket} title="Actual Bracket" eyebrow="Official results" emptyLabel="TBD" />
+      <RadialBracketSection bracket={actualBracket} title="Actual Bracket" eyebrow="Official results" emptyLabel="TBD" />
 
       <aside className="card p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -103,7 +374,7 @@ export function BracketView({ bracket, goldenBoot, champion }: { bracket: Bracke
   );
 }
 
-function StructuredBracket({
+function RadialBracketSection({
   bracket,
   champion,
   pathOnly = false,
@@ -120,8 +391,10 @@ function StructuredBracket({
   emptyLabel?: string;
   action?: ReactNode;
 }) {
-  const finalSlot = bracket.find((slot) => slot.stage === 'Final');
-  const championSlot = bracket.find((slot) => slot.stage === 'Champion');
+  const layout = useMemo(() => buildRadialLayout(bracket, champion), [bracket, champion]);
+  const idPrefix = sanitizeId(useId());
+  const finalDetail = matchDetail(layout.finalSlot);
+  const finalScore = scoreDetail(layout.finalSlot);
 
   return (
     <section className="card overflow-hidden">
@@ -136,144 +409,96 @@ function StructuredBracket({
         {action}
       </div>
 
-      <div className="overflow-x-auto px-4 pb-5 pt-4">
-        <div className="structured-bracket">
-          <BracketSide side="left" bracket={bracket} champion={champion} pathOnly={pathOnly} emptyLabel={emptyLabel} />
+      <div className="radial-bracket-scroll">
+        <div className="radial-bracket-frame">
+          <svg className="radial-bracket-svg" viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`} role="img" aria-label={`${title} circular knockout bracket`}>
+            <defs>
+              {layout.entrants.map((entrant) => (
+                <clipPath key={entrant.id} id={`${idPrefix}-${sanitizeId(entrant.id)}`}>
+                  <circle cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2} />
+                </clipPath>
+              ))}
+            </defs>
 
-          <div className="structured-bracket-center">
-            <p className="structured-round-label">Final</p>
-            <BracketSlotCard slot={finalSlot} index={0} champion={champion} emptyLabel={emptyLabel} compact />
-            <div className="grid justify-items-center gap-2 rounded-lg border border-accent/35 bg-accent/10 p-3 text-center">
-              <Trophy className="h-7 w-7 text-accent" />
-              <BracketSlotCard slot={championSlot} index={1} champion={champion} emptyLabel={emptyLabel} compact championCard />
-            </div>
+            <circle className="radial-guide radial-guide-outer" cx={CENTER} cy={CENTER} r={TEAM_RADIUS} />
+            <circle className="radial-guide" cx={CENTER} cy={CENTER} r={stageRadii.R16} />
+            <circle className="radial-guide" cx={CENTER} cy={CENTER} r={stageRadii.SF} />
+
+            <g>
+              {layout.matches.map((match) => (
+                <path
+                  key={`path-${match.id}`}
+                  d={radialConnectorPath(match)}
+                  className={classNames('radial-connector', match.active && 'radial-connector-active', isDimmed(pathOnly, champion, match.active) && 'radial-muted')}
+                />
+              ))}
+            </g>
+
+            <g>
+              {layout.matches.map((match) => (
+                <g
+                  key={`node-${match.id}`}
+                  className={classNames('radial-node', match.active && 'radial-node-active', isDimmed(pathOnly, champion, match.active) && 'radial-muted')}
+                >
+                  <title>{match.title}</title>
+                  <circle cx={match.x} cy={match.y} r={match.stage === 'Final' ? 7 : 5.5} />
+                </g>
+              ))}
+            </g>
+
+            <g>
+              {layout.entrants.map((entrant) => {
+                const clipId = `${idPrefix}-${sanitizeId(entrant.id)}`;
+                const muted = isDimmed(pathOnly, champion, entrant.active);
+
+                return (
+                  <g
+                    key={entrant.id}
+                    className={classNames('radial-team-marker', entrant.active && 'radial-team-marker-active', muted && 'radial-muted')}
+                  >
+                    <title>{entrant.title}</title>
+                    <circle className="radial-team-bg" cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2 + 3} />
+                    {entrant.team ? (
+                      <image
+                        href={flagUrl(entrant.team)}
+                        x={entrant.x - TEAM_MARKER_SIZE / 2}
+                        y={entrant.y - TEAM_MARKER_SIZE / 2}
+                        width={TEAM_MARKER_SIZE}
+                        height={TEAM_MARKER_SIZE}
+                        preserveAspectRatio="xMidYMid slice"
+                        clipPath={`url(#${clipId})`}
+                      />
+                    ) : (
+                      <>
+                        <circle className="radial-placeholder" cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2} />
+                        <text className="radial-placeholder-text" x={entrant.x} y={entrant.y}>
+                          ?
+                        </text>
+                      </>
+                    )}
+                    <circle className="radial-team-ring" cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2} />
+                  </g>
+                );
+              })}
+            </g>
+          </svg>
+
+          <div className="radial-center-token" aria-label={`Champion ${layout.centerLabel}`}>
+            <Trophy className="h-7 w-7 text-accent" />
+            <p className="text-[10px] font-extrabold uppercase text-muted">Champion</p>
+            {layout.centerTeam ? (
+              <div className="grid justify-items-center gap-1">
+                <Flag team={layout.centerTeam} className="h-5 w-7" />
+                <span className="max-w-[118px] truncate text-center text-xs font-extrabold text-ink">{layout.centerTeam.name}</span>
+              </div>
+            ) : (
+              <span className="text-xs font-extrabold text-muted">{emptyLabel}</span>
+            )}
+            {finalDetail ? <p className="max-w-[124px] truncate text-[10px] font-bold text-muted">{finalDetail}</p> : null}
+            {finalScore ? <p className="data-number text-xs font-extrabold text-primary">{finalScore}</p> : null}
           </div>
-
-          <BracketSide side="right" bracket={bracket} champion={champion} pathOnly={pathOnly} emptyLabel={emptyLabel} />
         </div>
       </div>
     </section>
-  );
-}
-
-function BracketSide({
-  side,
-  bracket,
-  champion,
-  pathOnly,
-  emptyLabel
-}: {
-  side: 'left' | 'right';
-  bracket: BracketSlot[];
-  champion?: string;
-  pathOnly: boolean;
-  emptyLabel: string;
-}) {
-  return (
-    <div className={`structured-bracket-side structured-bracket-${side}`}>
-      <div className="structured-bracket-labels">
-        {(side === 'left' ? sideStages : [...sideStages].reverse()).map((stage) => (
-          <p key={stage} className="structured-round-label">
-            {stageLabels[stage]}
-          </p>
-        ))}
-      </div>
-      <div className="structured-bracket-grid">
-        {sideStages.flatMap((stage) => {
-          const slots = bracket.filter((slot) => slot.stage === stage);
-          const midpoint = Math.ceil(slots.length / 2);
-          const sideSlots = side === 'left' ? slots.slice(0, midpoint) : slots.slice(midpoint);
-          const filtered = sideSlots
-            .map((slot, index) => ({ slot, index }))
-            .filter(({ slot }) => !pathOnly || !champion || slot.winner === champion);
-
-          return filtered.map(({ slot, index }) => {
-            const column = side === 'left' ? stageColumn[stage] : 5 - stageColumn[stage];
-            const rowSpan = stageSpan[stage];
-            const rowStart = index * rowSpan + 1;
-
-            return (
-              <div
-                key={slot.id}
-                className={`structured-slot structured-slot-${side}`}
-                style={{
-                  gridColumn: column,
-                  gridRow: `${rowStart} / span ${rowSpan}`
-                }}
-              >
-                <BracketSlotCard slot={slot} index={index} champion={champion} emptyLabel={emptyLabel} compact={stage !== 'R32'} />
-              </div>
-            );
-          });
-        })}
-      </div>
-    </div>
-  );
-}
-
-function BracketSlotCard({
-  slot,
-  index,
-  champion,
-  emptyLabel,
-  compact = false,
-  championCard = false
-}: {
-  slot?: BracketSlot;
-  index: number;
-  champion?: string;
-  emptyLabel: string;
-  compact?: boolean;
-  championCard?: boolean;
-}) {
-  const teamA = slot?.teamA ? teams.find((team) => team.code === slot.teamA) : undefined;
-  const teamB = slot?.teamB ? teams.find((team) => team.code === slot.teamB) : undefined;
-  const winner = slot?.winner ? teams.find((team) => team.code === slot.winner) : undefined;
-  const isChampionPath = Boolean(champion && slot?.winner === champion);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.025 }}
-      whileHover={{ y: -2 }}
-      className={`structured-match-card ${isChampionPath ? 'structured-match-card-active' : ''} ${championCard ? 'w-full' : ''}`}
-    >
-      <div className="mb-2 flex items-center justify-between gap-2">
-        <span className="text-[10px] font-bold uppercase tracking-wide text-muted">{slot?.stage ?? 'Match'}</span>
-        {slot?.upset ? <Badge tone="danger" className="px-2 py-0.5 text-[10px]">Upset</Badge> : null}
-      </div>
-
-      {slot?.stage === 'Champion' ? (
-        <TeamLine team={winner} emptyLabel={emptyLabel} isWinner compact={compact} />
-      ) : (
-        <div className="grid gap-1.5">
-          <TeamLine team={teamA} emptyLabel={emptyLabel} isWinner={slot?.winner === teamA?.code} probability={slot?.winA} compact={compact} />
-          <TeamLine team={teamB} emptyLabel={emptyLabel} isWinner={slot?.winner === teamB?.code} probability={slot?.winB} compact={compact} />
-        </div>
-      )}
-    </motion.div>
-  );
-}
-
-function TeamLine({
-  team,
-  emptyLabel,
-  isWinner,
-  probability,
-  compact
-}: {
-  team?: Team;
-  emptyLabel: string;
-  isWinner?: boolean;
-  probability?: number;
-  compact?: boolean;
-}) {
-  return (
-    <div className="flex min-w-0 items-center gap-2">
-      {team ? <Flag team={team} className={compact ? 'h-4 w-6' : 'h-5 w-7'} /> : <span className={`${compact ? 'h-4 w-6' : 'h-5 w-7'} rounded bg-canvas ring-1 ring-line`} />}
-      <span className={`min-w-0 flex-1 truncate text-xs ${isWinner ? 'font-bold text-ink' : 'font-semibold text-muted'}`}>{team?.name ?? emptyLabel}</span>
-      {typeof probability === 'number' ? <span className="data-number text-[11px] font-bold text-primary">{probability}%</span> : null}
-    </div>
   );
 }
