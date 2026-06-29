@@ -1,9 +1,117 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-06-28",
-  "generatedAt": "2026-06-27T19:20:56.870Z",
+  "cacheDate": "2026-06-29",
+  "generatedAt": "2026-06-29T15:45:12.266Z",
   "matches": [
+    {
+      "id": "760494",
+      "kickoff": "2026-07-02T00:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Levi's Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760494",
+      "home": "United States",
+      "away": "Bosnia-Herzegovina",
+      "homeCode": "USA",
+      "awayCode": "BIH",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760493",
+      "kickoff": "2026-07-01T20:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Lumen Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760493",
+      "home": "Belgium",
+      "away": "Senegal",
+      "homeCode": "BEL",
+      "awayCode": "SEN",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760495",
+      "kickoff": "2026-07-01T16:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760495",
+      "home": "England",
+      "away": "Congo DR",
+      "homeCode": "ENG",
+      "awayCode": "COD",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760491",
+      "kickoff": "2026-07-01T01:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Estadio Banorte",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760491",
+      "home": "Mexico",
+      "away": "Ecuador",
+      "homeCode": "MEX",
+      "awayCode": "ECU",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760492",
+      "kickoff": "2026-06-30T21:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760492",
+      "home": "France",
+      "away": "Sweden",
+      "homeCode": "FRA",
+      "awayCode": "SWE",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760490",
+      "kickoff": "2026-06-30T17:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760490",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "homeCode": "CIV",
+      "awayCode": "NOR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
     {
       "id": "760488",
       "kickoff": "2026-06-30T01:00Z",
@@ -71,10 +179,18 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Canada",
+          "minute": "90+2'",
+          "scorer": "Stephen Eustáquio",
+          "text": "Goal! South Africa 0, Canada 1. Stephen Eustaquio (Canada) right footed shot from outside the box to the bottom left corner."
+        }
+      ],
+      "motm": "Tani Oluwaseyi (CAN)"
     },
     {
       "id": "760484",
@@ -88,11 +204,54 @@
       "awayCode": "AUT",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 3,
+      "awayScore": 3,
+      "score": "3-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Austria",
+          "minute": "28",
+          "scorer": "Marko Arnautovic",
+          "assist": "David Alaba",
+          "text": "Goal! Algeria 0, Austria 1. Marko Arnautovic (Austria) right footed shot from the centre of the box to the bottom right corner. Assisted by David Alaba with a through ball."
+        },
+        {
+          "team": "Algeria",
+          "minute": "45",
+          "scorer": "Rafik Belghali",
+          "text": "Goal! Algeria 1, Austria 1. Rafik Belghali (Algeria) left footed shot from the centre of the box to the top right corner."
+        },
+        {
+          "team": "Austria",
+          "minute": "55",
+          "scorer": "Marcel Sabitzer",
+          "assist": "Konrad Laimer",
+          "text": "Goal! Algeria 1, Austria 2. Marcel Sabitzer (Austria) right footed shot from outside the box to the top right corner. Assisted by Konrad Laimer."
+        },
+        {
+          "team": "Algeria",
+          "minute": "60",
+          "scorer": "Riyad Mahrez",
+          "assist": "Houssem Aouar",
+          "text": "Goal! Algeria 2, Austria 2. Riyad Mahrez (Algeria) left footed shot from the centre of the box to the top right corner. Assisted by Houssem Aouar."
+        },
+        {
+          "team": "Algeria",
+          "minute": "90+3'",
+          "scorer": "Riyad Mahrez",
+          "assist": "Houssem Aouar",
+          "text": "Goal! Algeria 3, Austria 2. Riyad Mahrez (Algeria) right footed shot from the centre of the box to the bottom left corner. Assisted by Houssem Aouar with a through ball."
+        },
+        {
+          "team": "Austria",
+          "minute": "90+6'",
+          "scorer": "Sasa Kalajdzic",
+          "assist": "Michael Gregoritsch",
+          "text": "Goal! Algeria 3, Austria 3. Sasa Kalajdzic (Austria) header from the centre of the box to the bottom right corner. Assisted by Michael Gregoritsch with a headed pass."
+        }
+      ],
+      "motm": "Ibrahim Maza (ALG)"
     },
     {
       "id": "760483",
@@ -106,11 +265,38 @@
       "awayCode": "ARG",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 1,
+      "awayScore": 3,
+      "score": "1-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Argentina",
+          "minute": "19",
+          "scorer": "Giovani Lo Celso",
+          "text": "Goal! Jordan 0, Argentina 1. Giovani Lo Celso (Argentina) from a free kick with a left footed shot to the top left corner."
+        },
+        {
+          "team": "Argentina",
+          "minute": "31",
+          "scorer": "Lautaro Martínez",
+          "text": "Goal! Jordan 0, Argentina 2. Lautaro Martínez (Argentina) converts the penalty with a right footed shot to the bottom left corner."
+        },
+        {
+          "team": "Jordan",
+          "minute": "55",
+          "scorer": "Mousa Al-Tamari",
+          "assist": "Ehsan Haddad",
+          "text": "Goal! Jordan 1, Argentina 2. Mousa Al Tamari (Jordan) left footed shot from the centre of the box to the top left corner. Assisted by Ehsan Haddad with a cross."
+        },
+        {
+          "team": "Argentina",
+          "minute": "80",
+          "scorer": "Lionel Messi",
+          "text": "Goal! Jordan 1, Argentina 3. Lionel Messi (Argentina) from a free kick with a left footed shot to the bottom left corner."
+        }
+      ],
+      "motm": "Lautaro Martínez (ARG)"
     },
     {
       "id": "760481",
@@ -127,8 +313,9 @@
       "homeScore": 0,
       "awayScore": 0,
       "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "status": "FT",
+      "goals": [],
+      "motm": "Gustavo Puerta (COL)"
     },
     {
       "id": "760482",
@@ -142,11 +329,39 @@
       "awayCode": "UZB",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 3,
+      "awayScore": 1,
+      "score": "3-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Uzbekistan",
+          "minute": "10",
+          "scorer": "Eldor Shomurodov",
+          "assist": "Akmal Mozgovoy",
+          "text": "Goal! Congo DR 0, Uzbekistan 1. Eldor Shomurodov (Uzbekistan) left footed shot from the left side of the box to the top right corner. Assisted by Akmal Mozgovoy."
+        },
+        {
+          "team": "Congo DR",
+          "minute": "68",
+          "scorer": "Yoane Wissa",
+          "text": "Goal! Congo DR 1, Uzbekistan 1. Yoane Wissa (Congo DR) converts the penalty with a right footed shot to the bottom right corner."
+        },
+        {
+          "team": "Congo DR",
+          "minute": "78",
+          "scorer": "Fiston Mayele",
+          "text": "Goal! Congo DR 2, Uzbekistan 1. Fiston Mayele (Congo DR) right footed shot from very close range to the top left corner."
+        },
+        {
+          "team": "Congo DR",
+          "minute": "90+1'",
+          "scorer": "Yoane Wissa",
+          "assist": "Meschack Elia",
+          "text": "Goal! Congo DR 3, Uzbekistan 1. Yoane Wissa (Congo DR) right footed shot from outside the box to the bottom right corner. Assisted by Meschack Elia."
+        }
+      ],
+      "motm": "Yoane Wissa (COD)"
     },
     {
       "id": "760480",
@@ -160,11 +375,34 @@
       "awayCode": "GHA",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Croatia",
+          "minute": "31",
+          "scorer": "Petar Sucic",
+          "assist": "Mateo Kovacic",
+          "text": "Goal! Croatia 1, Ghana 0. Petar Sucic (Croatia) right footed shot from outside the box to the bottom left corner. Assisted by Mateo Kovacic."
+        },
+        {
+          "team": "Ghana",
+          "minute": "73",
+          "scorer": "Derrick Luckassen",
+          "assist": "Ernest Nuamah",
+          "text": "Goal! Croatia 1, Ghana 1. Derrick Luckassen (Ghana) left footed shot from very close range to the bottom right corner. Assisted by Ernest Nuamah with a cross following a set piece situation.Goal awarded following VAR Review."
+        },
+        {
+          "team": "Croatia",
+          "minute": "83",
+          "scorer": "Nikola Vlasic",
+          "assist": "Luka Modric",
+          "text": "Goal! Croatia 2, Ghana 1. Nikola Vlasic (Croatia) header from the centre of the box to the bottom left corner. Assisted by Luka Modric with a cross following a corner."
+        }
+      ],
+      "motm": "Nikola Vlasic (CRO)"
     },
     {
       "id": "760485",
@@ -179,10 +417,26 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "awayScore": 2,
+      "score": "0-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "England",
+          "minute": "62",
+          "scorer": "Jude Bellingham",
+          "assist": "Bukayo Saka",
+          "text": "Goal! Panama 0, England 1. Jude Bellingham (England) left footed shot from the centre of the box to the bottom left corner. Assisted by Bukayo Saka with a cross following a corner."
+        },
+        {
+          "team": "England",
+          "minute": "67",
+          "scorer": "Harry Kane",
+          "assist": "Jude Bellingham",
+          "text": "Goal! Panama 0, England 2. Harry Kane (England) header from the centre of the box to the top left corner. Assisted by Jude Bellingham with a cross."
+        }
+      ],
+      "motm": "Marcus Rashford (ENG)"
     },
     {
       "id": "760476",
@@ -2620,7 +2874,7 @@
           "text": "Goal! Brazil 1, Morocco 1. Vinícius Júnior (Brazil) right footed shot from the left side of the box to the top right corner. Assisted by Bruno Guimarães."
         }
       ],
-      "motm": "Raphinha  (BRA)"
+      "motm": "Raphinha (BRA)"
     },
     {
       "id": "760420",
