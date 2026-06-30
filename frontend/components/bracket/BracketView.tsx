@@ -12,7 +12,7 @@ type MatchStage = Exclude<BracketSlot['stage'], 'Champion'>;
 
 const CENTER = 500;
 const LEAF_COUNT = 32;
-const START_ANGLE = -90;
+const START_ANGLE = -90 + 180 / LEAF_COUNT;
 const TEAM_RADIUS = 438;
 const SVG_SIZE = 1000;
 const TEAM_MARKER_SIZE = 46;
