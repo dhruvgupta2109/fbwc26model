@@ -23,10 +23,14 @@ export interface Team {
 }
 
 export type WeightKey =
+  | 'fifaRank'
   | 'elo'
   | 'form'
-  | 'xg'
+  | 'xgFor'
+  | 'xgAgainst'
   | 'squad'
+  | 'titles'
+  | 'appearances'
   | 'h2h'
   | 'home'
   | 'captainBirthday'

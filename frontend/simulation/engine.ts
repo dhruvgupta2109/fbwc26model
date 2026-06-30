@@ -254,6 +254,68 @@ function emptyAggregate(teams: Team[]): AggregateState {
   };
 }
 
+function pairCodes(codes: string[]): Array<[string | undefined, string | undefined]> {
+  const ordered = [...codes];
+  const pairs: Array<[string | undefined, string | undefined]> = [];
+
+  while (ordered.length > 0) {
+    pairs.push([ordered.shift(), ordered.pop()]);
+  }
+
+  return pairs;
+}
+
+function probabilityWinner(teamA: string | undefined, teamB: string | undefined, winProbabilityByCode: Record<string, number>) {
+  if (!teamA) return teamB;
+  if (!teamB) return teamA;
+  return (winProbabilityByCode[teamB] ?? 0) > (winProbabilityByCode[teamA] ?? 0) ? teamB : teamA;
+}
+
+function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: TeamProbability[]): BracketSlot[] {
+  const winProbabilityByCode = Object.fromEntries(teamResults.map((team) => [team.code, team.win]));
+  const slotsByStage = new Map<BracketSlot['stage'], BracketSlot[]>();
+  sampleBracket.forEach((slot) => {
+    const current = slotsByStage.get(slot.stage) ?? [];
+    current.push(slot);
+    slotsByStage.set(slot.stage, current);
+  });
+
+  const bracket: BracketSlot[] = [];
+  let previousWinners: string[] = [];
+
+  STAGE_ORDER.forEach((stage) => {
+    const sourceSlots = slotsByStage.get(stage) ?? [];
+    const pairs =
+      stage === 'R32'
+        ? sourceSlots.map((slot): [string | undefined, string | undefined] => [slot.teamA, slot.teamB])
+        : pairCodes(previousWinners);
+    const winners: string[] = [];
+
+    pairs.forEach(([teamA, teamB], index) => {
+      const sourceSlot = sourceSlots[index];
+      const winner = probabilityWinner(teamA, teamB, winProbabilityByCode);
+      if (winner) winners.push(winner);
+
+      bracket.push({
+        ...sourceSlot,
+        id: sourceSlot?.id ?? `${stage}-${index}`,
+        stage,
+        teamA,
+        teamB,
+        winner,
+        winA: teamA ? winProbabilityByCode[teamA] ?? 0 : undefined,
+        winB: teamB ? winProbabilityByCode[teamB] ?? 0 : undefined,
+        upset: false
+      });
+    });
+
+    previousWinners = winners;
+  });
+
+  const champion = previousWinners[0] ?? teamResults[0]?.code;
+  return [...bracket, { id: 'champion', stage: 'Champion', winner: champion }];
+}
+
 function buildResult(teams: Team[], iterations: number, aggregate: AggregateState): SimulationResult {
   const teamResults: TeamProbability[] = teams
     .map((team) => ({
@@ -312,10 +374,7 @@ function buildResult(teams: Team[], iterations: number, aggregate: AggregateStat
     generatedAt: new Date().toISOString(),
     teams: teamResults,
     groups,
-    bracket: [
-      ...aggregate.sampleBracket,
-      { id: 'champion', stage: 'Champion', winner: champion }
-    ],
+    bracket: buildProbabilityBracket(aggregate.sampleBracket, teamResults),
     champion,
     finalists: teamResults.slice(0, 2).map((team) => team.code),
     goldenBoot,

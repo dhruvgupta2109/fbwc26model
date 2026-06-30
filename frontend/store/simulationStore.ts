@@ -22,6 +22,10 @@ interface SimulationState {
   setResult: (result: SimulationResult) => void;
 }
 
+function hasCompleteWeights(weights: Partial<Weights> | undefined): weights is Weights {
+  return Boolean(weights && Object.keys(DEFAULT_WEIGHTS).every((key) => typeof weights[key as keyof Weights] === 'number'));
+}
+
 export const useSimulationStore = create<SimulationState>()(
   persist(
     (set) => ({
@@ -45,7 +49,17 @@ export const useSimulationStore = create<SimulationState>()(
     }),
     {
       name: 'wc26-oracle-state',
-      partialize: (state) => ({ weights: state.weights, history: state.history })
+      partialize: (state) => ({ weights: state.weights, history: state.history }),
+      merge: (persistedState, currentState) => {
+        const persisted = persistedState as Partial<SimulationState> | undefined;
+        const weights = hasCompleteWeights(persisted?.weights) ? persisted.weights : DEFAULT_WEIGHTS;
+        return {
+          ...currentState,
+          ...persisted,
+          weights: normalizeWeights(weights),
+          history: persisted?.history ?? currentState.history
+        };
+      }
     }
   )
 );

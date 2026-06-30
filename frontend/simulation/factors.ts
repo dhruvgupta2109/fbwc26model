@@ -2,24 +2,32 @@ import { getMoonPhase } from '@/lib/moonPhase';
 import type { Team, Weights } from './types';
 
 export const DEFAULT_WEIGHTS: Weights = {
-  elo: 0.25,
-  form: 0.2,
-  xg: 0.15,
-  squad: 0.15,
-  h2h: 0.1,
-  home: 0.08,
-  captainBirthday: 0.02,
-  managerBirthday: 0.02,
-  lucky: 0.01,
-  moon: 0.02
+  elo: 0.2,
+  fifaRank: 0.14,
+  form: 0.14,
+  xgFor: 0.105,
+  xgAgainst: 0.105,
+  squad: 0.14,
+  titles: 0.035,
+  appearances: 0.035,
+  h2h: 0.04,
+  home: 0.04,
+  captainBirthday: 0.005,
+  managerBirthday: 0.005,
+  lucky: 0.005,
+  moon: 0.005
 };
 
 export const FACTOR_LABELS: Record<keyof Weights, { label: string; detail: string; fun?: boolean }> = {
-  elo: { label: 'FIFA / Elo Rating', detail: 'Current team strength baseline from rating-style inputs.' },
+  elo: { label: 'Elo Rating', detail: 'Current team strength baseline from Elo-style inputs.' },
+  fifaRank: { label: 'FIFA Ranking', detail: 'Official ranking signal, inverted so lower ranks score higher.' },
   form: { label: 'Recent Form', detail: 'Recent wins, scoring pace, and defensive trend proxy.' },
-  xg: { label: 'xG Stats', detail: 'Expected goals for and against per 90 minutes.' },
+  xgFor: { label: 'Attacking xG', detail: 'Expected goals created per 90 minutes.' },
+  xgAgainst: { label: 'Defensive xG', detail: 'Expected goals allowed per 90 minutes, inverted so lower is better.' },
   squad: { label: 'Squad Quality', detail: 'Player quality proxy from squad depth and club level.' },
-  h2h: { label: 'Head-to-Head History', detail: 'Small matchup modifier from historical strength profile.' },
+  titles: { label: 'World Cup Titles', detail: 'Tournament-winning pedigree, capped so history does not dominate.' },
+  appearances: { label: 'World Cup Appearances', detail: 'Big-tournament experience across previous finals.' },
+  h2h: { label: 'Matchup Profile', detail: 'Small opponent-specific modifier from rating, form, and tournament profile gaps.' },
   home: { label: 'Home Continent Advantage', detail: 'CONCACAF gets a host-region boost; CONMEBOL gets a smaller nearby-region boost.' },
   captainBirthday: { label: "Captain's Birthday", detail: 'Fun boost if the captain birthday is within three days of matchday.', fun: true },
   managerBirthday: { label: "Manager's Birthday", detail: 'Fun boost if the manager birthday is within three days of matchday.', fun: true },
@@ -28,9 +36,14 @@ export const FACTOR_LABELS: Record<keyof Weights, { label: string; detail: strin
 };
 
 export function normalizeWeights(weights: Weights): Weights {
-  const total = Object.values(weights).reduce((sum, value) => sum + Math.max(0, value), 0) || 1;
+  const entries = Object.keys(DEFAULT_WEIGHTS).map((key) => {
+    const weightKey = key as keyof Weights;
+    const value = weights[weightKey];
+    return [weightKey, Number.isFinite(value) ? Math.max(0, value) : DEFAULT_WEIGHTS[weightKey]] as const;
+  });
+  const total = entries.reduce((sum, [, value]) => sum + value, 0) || 1;
   return Object.fromEntries(
-    Object.entries(weights).map(([key, value]) => [key, Math.max(0, value) / total])
+    entries.map(([key, value]) => [key, value / total])
   ) as Weights;
 }
 
@@ -59,13 +72,18 @@ function homeScore(team: Team): number {
 
 function h2hProxy(team: Team, opponent: Team): number {
   const ratingGap = normalize(team.elo - opponent.elo, -650, 650);
-  const tournamentPedigree = normalize(team.titles * 6 + team.appearances - opponent.titles * 6 - opponent.appearances, -50, 50);
-  return ratingGap * 0.7 + tournamentPedigree * 0.3;
+  const formGap = normalize(team.form - opponent.form, -40, 40);
+  const tournamentPedigree = normalize(team.titles * 4 + team.appearances - opponent.titles * 4 - opponent.appearances, -42, 42);
+  return ratingGap * 0.45 + formGap * 0.35 + tournamentPedigree * 0.2;
 }
 
 export function teamStrength(team: Team, opponent: Team, matchDate: string, weightsInput: Weights): number {
   const weights = normalizeWeights(weightsInput);
-  const xgScore = normalize(team.xgFor - team.xgAgainst, -0.7, 1.7);
+  const fifaRankScore = normalize(96 - team.fifaRank, 1, 95);
+  const attackScore = normalize(team.xgFor, 0.9, 2.25);
+  const defenseScore = normalize(1.45 - team.xgAgainst, 0.2, 0.75);
+  const titlesScore = normalize(Math.min(team.titles, 5), 0, 5);
+  const appearancesScore = normalize(Math.min(team.appearances, 20), 1, 20);
   const luckyScore = team.lucky / 6;
   const moon = getMoonPhase(matchDate);
   const underdog = team.elo < opponent.elo;
@@ -73,9 +91,13 @@ export function teamStrength(team: Team, opponent: Team, matchDate: string, weig
 
   return (
     weights.elo * normalize(team.elo, 1420, 2120) +
+    weights.fifaRank * fifaRankScore +
     weights.form * (team.form / 100) +
-    weights.xg * xgScore +
+    weights.xgFor * attackScore +
+    weights.xgAgainst * defenseScore +
     weights.squad * (team.squadQuality / 100) +
+    weights.titles * titlesScore +
+    weights.appearances * appearancesScore +
     weights.h2h * h2hProxy(team, opponent) +
     weights.home * homeScore(team) +
     weights.captainBirthday * birthdayWindow(team.captainBirthday, matchDate) +

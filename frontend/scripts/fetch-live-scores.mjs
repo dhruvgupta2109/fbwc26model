@@ -96,7 +96,7 @@ function teamFromCompetitor(competitor) {
 
 function parseMinute(value) {
   if (!value) return undefined;
-  return String(value).replace("'", '').trim() || undefined;
+  return String(value).replaceAll("'", '').trim() || undefined;
 }
 
 function goalEvents(summary) {
@@ -175,12 +175,10 @@ async function eventToMatch(event) {
 async function collectMatches(now) {
   const endDate = latestFetchDate(now);
   const matches = [];
+  const scoreboard = await fetchJson(`${SOURCE_URL}?dates=${espnDate(TOURNAMENT_START)}-${espnDate(endDate)}&limit=1000`);
 
-  for (let date = new Date(TOURNAMENT_START); date <= endDate; date = addDays(date, 1)) {
-    const scoreboard = await fetchJson(`${SOURCE_URL}?dates=${espnDate(date)}`);
-    for (const event of scoreboard.events ?? []) {
-      matches.push(await eventToMatch(event));
-    }
+  for (const event of scoreboard.events ?? []) {
+    matches.push(await eventToMatch(event));
   }
 
   return matches.sort((a, b) => new Date(b.kickoff).getTime() - new Date(a.kickoff).getTime());

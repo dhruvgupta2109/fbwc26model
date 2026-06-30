@@ -233,19 +233,41 @@ select {
 }
 
 .radial-node {
-  fill: rgb(var(--color-ink));
-  stroke: rgb(var(--color-surface));
-  stroke-width: 2;
   opacity: 0.88;
   transition:
-    fill 180ms ease,
     opacity 180ms ease,
     transform 180ms ease;
 }
 
 .radial-node-active {
-  fill: rgb(var(--color-primary));
   opacity: 1;
+}
+
+.radial-match-placeholder {
+  fill: rgb(var(--color-ink));
+  stroke: rgb(var(--color-surface));
+  stroke-width: 2;
+}
+
+.radial-node-active .radial-match-placeholder {
+  fill: rgb(var(--color-primary));
+}
+
+.radial-winner-bg {
+  fill: rgb(var(--color-surface));
+  stroke: rgb(var(--color-line));
+  stroke-width: 2;
+}
+
+.radial-winner-ring {
+  fill: none;
+  stroke: rgb(var(--color-surface));
+  stroke-width: 2.5;
+}
+
+.radial-node-active .radial-winner-ring {
+  stroke: rgb(var(--color-primary));
+  stroke-width: 3.5;
 }
 
 .radial-team-marker {
