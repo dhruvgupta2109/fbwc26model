@@ -52,6 +52,24 @@ interface AggregateState {
 
 const STAGE_ORDER: BracketSlot['stage'][] = ['R32', 'R16', 'QF', 'SF', 'Final'];
 const START_DATE = new Date('2026-06-11T16:00:00Z');
+const ACTUAL_R32_PAIRS: Array<[string, string]> = [
+  ['RSA', 'CAN'],
+  ['GER', 'PAR'],
+  ['NED', 'MAR'],
+  ['BRA', 'JPN'],
+  ['CIV', 'NOR'],
+  ['FRA', 'SWE'],
+  ['MEX', 'ECU'],
+  ['ENG', 'COD'],
+  ['BEL', 'SEN'],
+  ['USA', 'BIH'],
+  ['ESP', 'AUT'],
+  ['POR', 'CRO'],
+  ['SUI', 'ALG'],
+  ['AUS', 'EGY'],
+  ['ARG', 'CPV'],
+  ['COL', 'GHA']
+];
 
 function matchDate(offset: number): string {
   const date = new Date(START_DATE);
@@ -287,7 +305,7 @@ function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: Team
     const sourceSlots = slotsByStage.get(stage) ?? [];
     const pairs =
       stage === 'R32'
-        ? sourceSlots.map((slot): [string | undefined, string | undefined] => [slot.teamA, slot.teamB])
+        ? ACTUAL_R32_PAIRS
         : pairCodes(previousWinners);
     const winners: string[] = [];
 
