@@ -346,6 +346,18 @@ select {
   stroke-width: 4;
 }
 
+.radial-status-actual.radial-status-actual-purple .radial-team-bg,
+.radial-status-actual.radial-status-actual-purple .radial-winner-bg,
+.radial-status-actual.radial-status-actual-purple .radial-match-placeholder {
+  stroke: #a855f7;
+  filter: drop-shadow(0 0 10px rgb(168 85 247 / 0.58));
+}
+
+.radial-status-actual.radial-status-actual-purple .radial-team-ring,
+.radial-status-actual.radial-status-actual-purple .radial-winner-ring {
+  stroke: #a855f7;
+}
+
 .radial-placeholder {
   fill: rgb(var(--color-canvas));
   stroke: rgb(var(--color-line));
