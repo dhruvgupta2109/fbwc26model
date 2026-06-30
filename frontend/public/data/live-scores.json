@@ -1,9 +1,63 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-06-29",
-  "generatedAt": "2026-06-29T15:45:12.266Z",
+  "cacheDate": "2026-07-01",
+  "generatedAt": "2026-06-30T18:34:24.842Z",
   "matches": [
+    {
+      "id": "760498",
+      "kickoff": "2026-07-03T03:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760498",
+      "home": "Switzerland",
+      "away": "Algeria",
+      "homeCode": "SUI",
+      "awayCode": "ALG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760496",
+      "kickoff": "2026-07-02T23:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "BMO Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760496",
+      "home": "Portugal",
+      "away": "Croatia",
+      "homeCode": "POR",
+      "awayCode": "CRO",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760497",
+      "kickoff": "2026-07-02T19:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760497",
+      "home": "Spain",
+      "away": "Austria",
+      "homeCode": "ESP",
+      "awayCode": "AUT",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
     {
       "id": "760494",
       "kickoff": "2026-07-02T00:00Z",
@@ -107,10 +161,27 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "Live",
+      "minute": "74",
+      "goals": [
+        {
+          "team": "Norway",
+          "minute": "39",
+          "scorer": "Antonio Nusa",
+          "assist": "Martin Ødegaard",
+          "text": "Goal! Côte d'Ivoire 0, Norway 1. Antonio Nusa (Norway) right footed shot from the left side of the box to the top right corner. Assisted by Martin Ødegaard."
+        },
+        {
+          "team": "Ivory Coast",
+          "minute": "74",
+          "scorer": "Amad Diallo",
+          "assist": "Nicolas Pépé",
+          "text": "Goal! Côte d'Ivoire 1, Norway 1. Amad Diallo (Côte d'Ivoire) left footed shot from the right side of the six yard box."
+        }
+      ],
+      "motm": "Erling Haaland (NOR)"
     },
     {
       "id": "760488",
@@ -124,11 +195,27 @@
       "awayCode": "MAR",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Netherlands",
+          "minute": "72",
+          "scorer": "Cody Gakpo",
+          "assist": "Crysencio Summerville",
+          "text": "Goal! Netherlands 1, Morocco 0. Cody Gakpo (Netherlands) right footed shot from the centre of the box to the centre of the goal. Assisted by Crysencio Summerville."
+        },
+        {
+          "team": "Morocco",
+          "minute": "90+1",
+          "scorer": "Issa Diop",
+          "assist": "Chemsdine Talbi",
+          "text": "Goal! Netherlands 1, Morocco 1. Issa Diop (Morocco) header from the centre of the box to the top right corner. Assisted by Chemsdine Talbi with a cross."
+        }
+      ],
+      "motm": "Achraf Hakimi (MAR)"
     },
     {
       "id": "760489",
@@ -142,11 +229,27 @@
       "awayCode": "PAR",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Paraguay",
+          "minute": "42",
+          "scorer": "Julio Enciso",
+          "assist": "Matías Galarza",
+          "text": "Goal! Germany 0, Paraguay 1. Julio Enciso (Paraguay) header from the centre of the box to the bottom left corner. Assisted by Matías Galarza with a cross following a corner."
+        },
+        {
+          "team": "Germany",
+          "minute": "54",
+          "scorer": "Kai Havertz",
+          "assist": "Florian Wirtz",
+          "text": "Goal! Germany 1, Paraguay 1. Kai Havertz (Germany) header from the centre of the box to the bottom right corner. Assisted by Florian Wirtz with a cross."
+        }
+      ],
+      "motm": "Joshua Kimmich (GER)"
     },
     {
       "id": "760487",
@@ -160,11 +263,33 @@
       "awayCode": "JPN",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Japan",
+          "minute": "29",
+          "scorer": "Kaishu Sano",
+          "text": "Goal! Brazil 0, Japan 1. Kaishu Sano (Japan) right footed shot from outside the box to the bottom left corner following a fast break."
+        },
+        {
+          "team": "Brazil",
+          "minute": "56",
+          "scorer": "Casemiro",
+          "assist": "Gabriel Magalhães",
+          "text": "Goal! Brazil 1, Japan 1. Casemiro (Brazil) header from the right side of the six yard box to the top right corner. Assisted by Gabriel Magalhães with a cross."
+        },
+        {
+          "team": "Brazil",
+          "minute": "90+5",
+          "scorer": "Gabriel Martinelli",
+          "assist": "Bruno Guimarães",
+          "text": "Goal! Brazil 2, Japan 1. Gabriel Martinelli (Brazil) right footed shot from the centre of the box to the bottom right corner. Assisted by Bruno Guimarães."
+        }
+      ],
+      "motm": "Bruno Guimarães (BRA)"
     },
     {
       "id": "760486",
@@ -185,7 +310,7 @@
       "goals": [
         {
           "team": "Canada",
-          "minute": "90+2'",
+          "minute": "90+2",
           "scorer": "Stephen Eustáquio",
           "text": "Goal! South Africa 0, Canada 1. Stephen Eustaquio (Canada) right footed shot from outside the box to the bottom left corner."
         }
@@ -238,14 +363,14 @@
         },
         {
           "team": "Algeria",
-          "minute": "90+3'",
+          "minute": "90+3",
           "scorer": "Riyad Mahrez",
           "assist": "Houssem Aouar",
           "text": "Goal! Algeria 3, Austria 2. Riyad Mahrez (Algeria) right footed shot from the centre of the box to the bottom left corner. Assisted by Houssem Aouar with a through ball."
         },
         {
           "team": "Austria",
-          "minute": "90+6'",
+          "minute": "90+6",
           "scorer": "Sasa Kalajdzic",
           "assist": "Michael Gregoritsch",
           "text": "Goal! Algeria 3, Austria 3. Sasa Kalajdzic (Austria) header from the centre of the box to the bottom right corner. Assisted by Michael Gregoritsch with a headed pass."
@@ -355,7 +480,7 @@
         },
         {
           "team": "Congo DR",
-          "minute": "90+1'",
+          "minute": "90+1",
           "scorer": "Yoane Wissa",
           "assist": "Meschack Elia",
           "text": "Goal! Congo DR 3, Uzbekistan 1. Yoane Wissa (Congo DR) right footed shot from outside the box to the bottom right corner. Assisted by Meschack Elia."
@@ -522,7 +647,7 @@
         },
         {
           "team": "Belgium",
-          "minute": "90+4'",
+          "minute": "90+4",
           "scorer": "Alexis Saelemaekers",
           "assist": "Romelu Lukaku",
           "text": "Goal! New Zealand 1, Belgium 5. Alexis Saelemaekers (Belgium) right footed shot from the centre of the box to the bottom left corner. Assisted by Romelu Lukaku following a fast break."
@@ -623,7 +748,7 @@
         },
         {
           "team": "France",
-          "minute": "90+4'",
+          "minute": "90+4",
           "scorer": "Désiré Doué",
           "assist": "Bradley Barcola",
           "text": "Goal! Norway 1, France 4. Désiré Doué (France) header from the centre of the box to the bottom right corner. Assisted by Bradley Barcola with a cross."
@@ -751,7 +876,7 @@
         },
         {
           "team": "Türkiye",
-          "minute": "90+8'",
+          "minute": "90+8",
           "scorer": "Kaan Ayhan",
           "text": "Goal! Türkiye 3, USA 2. Kaan Ayhan (Türkiye) right footed shot from very close range to the bottom right corner."
         }
@@ -947,7 +1072,7 @@
         },
         {
           "team": "Mexico",
-          "minute": "90+4'",
+          "minute": "90+4",
           "scorer": "Álvaro Fidalgo",
           "assist": "Roberto Alvarado",
           "text": "Goal! Czechia 0, Mexico 3. Álvaro Fidalgo (Mexico) right footed shot from the centre of the box to the top left corner. Assisted by Roberto Alvarado."
@@ -1021,7 +1146,7 @@
         },
         {
           "team": "Morocco",
-          "minute": "45+1'",
+          "minute": "45+1",
           "scorer": "Ismael Saibari",
           "assist": "Achraf Hakimi",
           "text": "Goal! Morocco 2, Haiti 2. Ismael Saibari (Morocco) right footed shot from the centre of the box to the bottom left corner. Assisted by Achraf Hakimi."
@@ -1069,7 +1194,7 @@
         },
         {
           "team": "Brazil",
-          "minute": "45+3'",
+          "minute": "45+3",
           "scorer": "Vinícius Júnior",
           "assist": "Bruno Guimarães",
           "text": "Goal! Scotland 0, Brazil 2. Vinícius Júnior (Brazil) header from very close range to the top left corner. Assisted by Bruno Guimarães with a cross."
@@ -1383,7 +1508,7 @@
         },
         {
           "team": "Senegal",
-          "minute": "90+3'",
+          "minute": "90+3",
           "scorer": "Ismaïla Sarr",
           "assist": "Nicolas Jackson",
           "text": "Goal! Norway 3, Senegal 2. Ismaïla Sarr (Senegal) right footed shot from the centre of the box to the top right corner. Assisted by Nicolas Jackson."
@@ -1458,7 +1583,7 @@
         },
         {
           "team": "Argentina",
-          "minute": "90+5'",
+          "minute": "90+5",
           "scorer": "Lionel Messi",
           "text": "Goal! Argentina 2, Austria 0. Lionel Messi (Argentina) left footed shot from the left side of the six yard box to the centre of the goal following a fast break."
         }
@@ -1544,7 +1669,7 @@
         },
         {
           "team": "Uruguay",
-          "minute": "45+6'",
+          "minute": "45+6",
           "scorer": "Agustín Canobbio",
           "assist": "Maxi Araújo",
           "text": "Goal! Uruguay 2, Cabo Verde 1. Agustín Canobbio (Uruguay) right footed shot from the centre of the box to the centre of the goal. Assisted by Maxi Araújo with a headed pass."
@@ -1723,7 +1848,7 @@
         },
         {
           "team": "Germany",
-          "minute": "90+4'",
+          "minute": "90+4",
           "scorer": "Deniz Undav",
           "assist": "Felix Nmecha",
           "text": "Goal! Germany 2, Côte d'Ivoire 1. Deniz Undav (Germany) left footed shot from the centre of the box to the bottom left corner. Assisted by Felix Nmecha with a through ball."
@@ -1852,7 +1977,7 @@
         },
         {
           "team": "Brazil",
-          "minute": "45+3'",
+          "minute": "45+3",
           "scorer": "Vinícius Júnior",
           "assist": "Lucas Paquetá",
           "text": "Goal! Brazil 3, Haiti 0. Vinícius Júnior (Brazil) right footed shot from the left side of the box to the centre of the goal. Assisted by Lucas Paquetá with a through ball."
@@ -1976,7 +2101,7 @@
         },
         {
           "team": "Canada",
-          "minute": "45+3'",
+          "minute": "45+3",
           "scorer": "Jonathan David",
           "text": "Goal! Canada 3, Qatar 0. Jonathan David (Canada) right footed shot from very close range to the centre of the goal."
         },
@@ -1994,7 +2119,7 @@
         },
         {
           "team": "Canada",
-          "minute": "90+2'",
+          "minute": "90+2",
           "scorer": "Jonathan David",
           "assist": "Nathan Saliba",
           "text": "Goal! Canada 6, Qatar 0. Jonathan David (Canada) left footed shot from the centre of the box to the top left corner. Assisted by Nathan Saliba."
@@ -2041,13 +2166,13 @@
         },
         {
           "team": "Bosnia-Herzegovina",
-          "minute": "90+3'",
+          "minute": "90+3",
           "scorer": "Ermin Mahmic",
           "text": "Goal! Switzerland 3, Bosnia and Herzegovina 1. Ermin Mahmic (Bosnia and Herzegovina) right footed shot from the centre of the box to the high centre of the goal following a corner."
         },
         {
           "team": "Switzerland",
-          "minute": "90+7'",
+          "minute": "90+7",
           "scorer": "Granit Xhaka",
           "text": "Goal! Switzerland 4, Bosnia and Herzegovina 1. Granit Xhaka (Switzerland) converts the penalty with a left footed shot to the bottom right corner."
         }
@@ -2126,7 +2251,7 @@
         },
         {
           "team": "Colombia",
-          "minute": "90+9'",
+          "minute": "90+9",
           "scorer": "Jáminton Campaz",
           "assist": "Cucho Hernández",
           "text": "Goal! Uzbekistan 1, Colombia 3. Jaminton Campaz (Colombia) header from the centre of the box to the bottom left corner. Assisted by Cucho Hernández with a cross."
@@ -2153,7 +2278,7 @@
       "goals": [
         {
           "team": "Ghana",
-          "minute": "90+5'",
+          "minute": "90+5",
           "scorer": "Caleb Yirenkyi",
           "assist": "Brandon Thomas-Asante",
           "text": "Goal! Ghana 1, Panama 0. Caleb Yirenkyi (Ghana) right footed shot from very close range to the top right corner. Assisted by Brandon Thomas-Asante following a fast break."
@@ -2200,7 +2325,7 @@
         },
         {
           "team": "Croatia",
-          "minute": "45+5'",
+          "minute": "45+5",
           "scorer": "Petar Musa",
           "assist": "Ivan Perisic",
           "text": "Goal! England 2, Croatia 2. Petar Musa (Croatia) right footed shot from the centre of the box to the centre of the goal. Assisted by Ivan Perisic with a headed pass."
@@ -2248,7 +2373,7 @@
         },
         {
           "team": "Congo DR",
-          "minute": "45+5'",
+          "minute": "45+5",
           "scorer": "Yoane Wissa",
           "assist": "Arthur Masuaku",
           "text": "Goal! Portugal 1, Congo DR 1. Yoane Wissa (Congo DR) header from very close range to the top left corner. Assisted by Arthur Masuaku with a cross following a corner."
@@ -2295,7 +2420,7 @@
         },
         {
           "team": "Austria",
-          "minute": "90+12'",
+          "minute": "90+12",
           "scorer": "Marko Arnautovic",
           "text": "Goal! Austria 3, Jordan 1. Marko Arnautovic (Austria) converts the penalty with a right footed shot to the bottom left corner."
         }
@@ -2388,7 +2513,7 @@
         },
         {
           "team": "Norway",
-          "minute": "90+6'",
+          "minute": "90+6",
           "scorer": "Aymen Hussein",
           "text": "Own Goal by Aymen Hussein, Iraq. Iraq 1, Norway 4."
         }
@@ -2428,14 +2553,14 @@
         },
         {
           "team": "Senegal",
-          "minute": "90+5'",
+          "minute": "90+5",
           "scorer": "Ibrahim Mbaye",
           "assist": "Iliman Ndiaye",
           "text": "Goal! France 2, Senegal 1. Ibrahim Mbaye (Senegal) right footed shot from the right side of the box to the top right corner. Assisted by Iliman Ndiaye following a fast break."
         },
         {
           "team": "France",
-          "minute": "90+6'",
+          "minute": "90+6",
           "scorer": "Kylian Mbappé",
           "text": "Goal! France 3, Senegal 1. Kylian Mbappé (France) right footed shot from outside the box to the top left corner."
         }
@@ -2626,7 +2751,7 @@
         },
         {
           "team": "Sweden",
-          "minute": "90+6'",
+          "minute": "90+6",
           "scorer": "Yasin Ayari",
           "assist": "Lucas Bergvall",
           "text": "Goal! Sweden 5, Tunisia 1. Yasin Ayari (Sweden) right footed shot from outside the box to the bottom left corner. Assisted by Lucas Bergvall."
@@ -2748,7 +2873,7 @@
         },
         {
           "team": "Germany",
-          "minute": "45+5'",
+          "minute": "45+5",
           "scorer": "Kai Havertz",
           "text": "Goal! Germany 3, Curaçao 1. Kai Havertz (Germany) converts the penalty with a left footed shot to the bottom left corner."
         },
@@ -2901,7 +3026,7 @@
         },
         {
           "team": "Qatar",
-          "minute": "90+4'",
+          "minute": "90+4",
           "scorer": "Miro Muheim",
           "assist": "Homam Ahmed",
           "text": "Own Goal by Miro Muheim, Switzerland. Qatar 1, Switzerland 1."
@@ -2941,7 +3066,7 @@
         },
         {
           "team": "United States",
-          "minute": "45+5'",
+          "minute": "45+5",
           "scorer": "Folarin Balogun",
           "assist": "Malik Tillman",
           "text": "Goal! USA 3, Paraguay 0. Folarin Balogun (USA) left footed shot from the centre of the box to the top left corner. Assisted by Malik Tillman."
@@ -2955,7 +3080,7 @@
         },
         {
           "team": "United States",
-          "minute": "90+8'",
+          "minute": "90+8",
           "scorer": "Giovanni Reyna",
           "assist": "Alex Freeman",
           "text": "Goal! USA 4, Paraguay 1. Giovanni Reyna (USA) right footed shot from the centre of the box to the bottom left corner. Assisted by Alex Freeman."

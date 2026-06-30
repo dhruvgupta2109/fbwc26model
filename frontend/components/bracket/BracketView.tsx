@@ -16,6 +16,7 @@ const START_ANGLE = -90;
 const TEAM_RADIUS = 438;
 const SVG_SIZE = 1000;
 const TEAM_MARKER_SIZE = 46;
+const WINNER_MARKER_SIZE = 28;
 
 const stageLabels: Record<BracketSlot['stage'], string> = {
   R32: 'R32',
@@ -74,6 +75,7 @@ interface RadialMatch extends RadialBase {
   stage: MatchStage;
   index: number;
   slot?: BracketSlot;
+  winnerTeam?: Team;
   children: RadialNode[];
 }
 
@@ -85,6 +87,12 @@ interface RadialLayout {
   finalSlot?: BracketSlot;
   centerTeam?: Team;
   centerLabel: string;
+}
+
+interface RadialConnectorSegment {
+  id: string;
+  d: string;
+  active: boolean;
 }
 
 const teamByCode = new Map(teams.map((team) => [team.code, team]));
@@ -193,7 +201,7 @@ function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLay
       const angle = angleForPosition(position);
       const { x, y } = pointOnCircle(angle, TEAM_RADIUS);
       const team = teamForCode(node.teamCode);
-      const active = Boolean(champion && (node.teamCode === champion || node.parentSlot?.winner === champion));
+      const active = Boolean(champion && node.teamCode === champion);
 
       return {
         kind: 'entrant',
@@ -215,6 +223,7 @@ function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLay
     const angle = angleForPosition(position);
     const radius = stageRadii[node.stage];
     const { x, y } = pointOnCircle(angle, radius);
+    const winnerTeam = teamForCode(node.slot?.winner);
     const active = Boolean(champion && node.slot?.winner === champion);
 
     return {
@@ -223,6 +232,7 @@ function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLay
       stage: node.stage,
       index: node.index,
       slot: node.slot,
+      winnerTeam,
       children,
       position,
       angle,
@@ -263,27 +273,52 @@ function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLay
   };
 }
 
-function radialConnectorPath(parent: RadialMatch) {
+function arcDelta(fromAngle: number, toAngle: number, sweepFlag: 0 | 1) {
+  let delta = sweepFlag === 1 ? toAngle - fromAngle : fromAngle - toAngle;
+  while (delta < 0) delta += 360;
+  return delta;
+}
+
+function radialConnectorSegments(parent: RadialMatch): RadialConnectorSegment[] {
   const [first, second] = parent.children;
-  if (!first || !second) return '';
+  if (!first || !second) return [];
 
   const childRadius = Math.min(first.radius, second.radius);
   const bridgeRadius = parent.radius + (childRadius - parent.radius) * 0.48;
-  const bridgeStart = pointOnCircle(first.angle, bridgeRadius);
-  const bridgeEnd = pointOnCircle(second.angle, bridgeRadius);
   const bridgeMid = pointOnCircle(parent.angle, bridgeRadius);
-  let delta = second.angle - first.angle;
-  while (delta < 0) delta += 360;
-  const largeArcFlag = delta > 180 ? 1 : 0;
+  const target = parent.stage === 'Final' ? { x: CENTER, y: CENTER } : parent;
+
+  const childPath = (child: RadialNode, sweepFlag: 0 | 1) => {
+    const childBridge = pointOnCircle(child.angle, bridgeRadius);
+    const largeArcFlag = arcDelta(child.angle, parent.angle, sweepFlag) > 180 ? 1 : 0;
+
+    return [
+      `M ${child.x.toFixed(2)} ${child.y.toFixed(2)}`,
+      `L ${childBridge.x.toFixed(2)} ${childBridge.y.toFixed(2)}`,
+      `A ${bridgeRadius.toFixed(2)} ${bridgeRadius.toFixed(2)} 0 ${largeArcFlag} ${sweepFlag} ${bridgeMid.x.toFixed(2)} ${bridgeMid.y.toFixed(2)}`
+    ].join(' ');
+  };
 
   return [
-    `M ${first.x.toFixed(2)} ${first.y.toFixed(2)}`,
-    `L ${bridgeStart.x.toFixed(2)} ${bridgeStart.y.toFixed(2)}`,
-    `A ${bridgeRadius.toFixed(2)} ${bridgeRadius.toFixed(2)} 0 ${largeArcFlag} 1 ${bridgeEnd.x.toFixed(2)} ${bridgeEnd.y.toFixed(2)}`,
-    `L ${second.x.toFixed(2)} ${second.y.toFixed(2)}`,
-    `M ${bridgeMid.x.toFixed(2)} ${bridgeMid.y.toFixed(2)}`,
-    `L ${parent.x.toFixed(2)} ${parent.y.toFixed(2)}`
-  ].join(' ');
+    {
+      id: `${parent.id}-first`,
+      d: childPath(first, 1),
+      active: parent.active && first.active
+    },
+    {
+      id: `${parent.id}-second`,
+      d: childPath(second, 0),
+      active: parent.active && second.active
+    },
+    {
+      id: `${parent.id}-stem`,
+      d: [
+        `M ${bridgeMid.x.toFixed(2)} ${bridgeMid.y.toFixed(2)}`,
+        `L ${target.x.toFixed(2)} ${target.y.toFixed(2)}`
+      ].join(' '),
+      active: parent.active
+    }
+  ];
 }
 
 function classNames(...classes: Array<string | false | undefined>) {
@@ -391,7 +426,9 @@ function RadialBracketSection({
   emptyLabel?: string;
   action?: ReactNode;
 }) {
-  const layout = useMemo(() => buildRadialLayout(bracket, champion), [bracket, champion]);
+  const bracketChampion = useMemo(() => bracket.find((slot) => slot.stage === 'Champion')?.winner ?? champion, [bracket, champion]);
+  const layout = useMemo(() => buildRadialLayout(bracket, bracketChampion), [bracket, bracketChampion]);
+  const visibleMatches = layout.matches.filter((match) => match.stage !== 'Final');
   const idPrefix = sanitizeId(useId());
   const finalDetail = matchDetail(layout.finalSlot);
   const finalScore = scoreDetail(layout.finalSlot);
@@ -418,6 +455,11 @@ function RadialBracketSection({
                   <circle cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2} />
                 </clipPath>
               ))}
+              {visibleMatches.map((match) => (
+                <clipPath key={`winner-${match.id}`} id={`${idPrefix}-${sanitizeId(match.id)}-winner`}>
+                  <circle cx={match.x} cy={match.y} r={WINNER_MARKER_SIZE / 2} />
+                </clipPath>
+              ))}
             </defs>
 
             <circle className="radial-guide radial-guide-outer" cx={CENTER} cy={CENTER} r={TEAM_RADIUS} />
@@ -425,23 +467,41 @@ function RadialBracketSection({
             <circle className="radial-guide" cx={CENTER} cy={CENTER} r={stageRadii.SF} />
 
             <g>
-              {layout.matches.map((match) => (
-                <path
-                  key={`path-${match.id}`}
-                  d={radialConnectorPath(match)}
-                  className={classNames('radial-connector', match.active && 'radial-connector-active', isDimmed(pathOnly, champion, match.active) && 'radial-muted')}
-                />
-              ))}
+              {layout.matches.flatMap((match) =>
+                radialConnectorSegments(match).map((segment) => (
+                  <path
+                    key={`path-${segment.id}`}
+                    d={segment.d}
+                    className={classNames('radial-connector', segment.active && 'radial-connector-active', isDimmed(pathOnly, bracketChampion, segment.active) && 'radial-muted')}
+                  />
+                ))
+              )}
             </g>
 
             <g>
-              {layout.matches.map((match) => (
+              {visibleMatches.map((match) => (
                 <g
                   key={`node-${match.id}`}
-                  className={classNames('radial-node', match.active && 'radial-node-active', isDimmed(pathOnly, champion, match.active) && 'radial-muted')}
+                  className={classNames('radial-node', match.active && 'radial-node-active', isDimmed(pathOnly, bracketChampion, match.active) && 'radial-muted')}
                 >
                   <title>{match.title}</title>
-                  <circle cx={match.x} cy={match.y} r={match.stage === 'Final' ? 7 : 5.5} />
+                  {match.winnerTeam ? (
+                    <>
+                      <circle className="radial-winner-bg" cx={match.x} cy={match.y} r={WINNER_MARKER_SIZE / 2 + 2.5} />
+                      <image
+                        href={flagUrl(match.winnerTeam)}
+                        x={match.x - WINNER_MARKER_SIZE / 2}
+                        y={match.y - WINNER_MARKER_SIZE / 2}
+                        width={WINNER_MARKER_SIZE}
+                        height={WINNER_MARKER_SIZE}
+                        preserveAspectRatio="xMidYMid slice"
+                        clipPath={`url(#${idPrefix}-${sanitizeId(match.id)}-winner)`}
+                      />
+                      <circle className="radial-winner-ring" cx={match.x} cy={match.y} r={WINNER_MARKER_SIZE / 2} />
+                    </>
+                  ) : (
+                    <circle className="radial-match-placeholder" cx={match.x} cy={match.y} r={match.stage === 'Final' ? 7 : 5.5} />
+                  )}
                 </g>
               ))}
             </g>
@@ -449,7 +509,7 @@ function RadialBracketSection({
             <g>
               {layout.entrants.map((entrant) => {
                 const clipId = `${idPrefix}-${sanitizeId(entrant.id)}`;
-                const muted = isDimmed(pathOnly, champion, entrant.active);
+                const muted = isDimmed(pathOnly, bracketChampion, entrant.active);
 
                 return (
                   <g

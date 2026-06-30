@@ -16,9 +16,13 @@ export default function TeamPage({ params }: { params: { code: string } }) {
   const team = getTeam(params.code) ?? teams[0];
   const inputs = [
     ['elo', Math.round(((team.elo - 1450) / 670) * 100)],
+    ['fifaRank', Math.round(((96 - team.fifaRank - 1) / 94) * 100)],
     ['form', team.form],
-    ['xg', Math.round(((team.xgFor - team.xgAgainst + 0.6) / 2.3) * 100)],
+    ['xgFor', Math.round(((team.xgFor - 0.9) / 1.35) * 100)],
+    ['xgAgainst', Math.round(((1.45 - team.xgAgainst - 0.2) / 0.55) * 100)],
     ['squad', team.squadQuality],
+    ['titles', Math.round((Math.min(team.titles, 5) / 5) * 100)],
+    ['appearances', Math.round(((Math.min(team.appearances, 20) - 1) / 19) * 100)],
     ['home', team.confederation === 'CONCACAF' ? 100 : team.confederation === 'CONMEBOL' ? 45 : 10],
     ['lucky', Math.round((team.lucky / 6) * 100)]
   ] as const;
