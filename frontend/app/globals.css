@@ -297,6 +297,55 @@ select {
   stroke-width: 4;
 }
 
+.radial-status-correct .radial-team-bg,
+.radial-status-correct .radial-winner-bg {
+  stroke: #22c55e;
+  filter: drop-shadow(0 0 8px rgb(34 197 94 / 0.45));
+}
+
+.radial-status-correct .radial-team-ring,
+.radial-status-correct .radial-winner-ring {
+  stroke: #22c55e;
+  stroke-width: 4;
+}
+
+.radial-status-wrong .radial-team-bg,
+.radial-status-wrong .radial-winner-bg {
+  stroke: #ef4444;
+  filter: drop-shadow(0 0 8px rgb(239 68 68 / 0.45));
+}
+
+.radial-status-wrong .radial-team-ring,
+.radial-status-wrong .radial-winner-ring {
+  stroke: #ef4444;
+  stroke-width: 4;
+}
+
+.radial-status-pending .radial-team-bg,
+.radial-status-pending .radial-winner-bg {
+  stroke: #f59e0b;
+  filter: drop-shadow(0 0 8px rgb(245 158 11 / 0.44));
+}
+
+.radial-status-pending .radial-team-ring,
+.radial-status-pending .radial-winner-ring {
+  stroke: #f59e0b;
+  stroke-width: 4;
+}
+
+.radial-status-actual .radial-team-bg,
+.radial-status-actual .radial-winner-bg,
+.radial-status-actual .radial-match-placeholder {
+  stroke: rgb(var(--color-primary));
+  filter: drop-shadow(0 0 10px rgb(var(--color-primary) / 0.58));
+}
+
+.radial-status-actual .radial-team-ring,
+.radial-status-actual .radial-winner-ring {
+  stroke: rgb(var(--color-primary));
+  stroke-width: 4;
+}
+
 .radial-placeholder {
   fill: rgb(var(--color-canvas));
   stroke: rgb(var(--color-line));
