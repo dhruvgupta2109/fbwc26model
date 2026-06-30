@@ -153,18 +153,18 @@ function childMatchIndexes(stage: MatchStage, index: number): Array<[MatchStage,
       ];
     case 'SF':
       return [
-        ['QF', index],
-        ['QF', 3 - index]
+        ['QF', index * 2],
+        ['QF', index * 2 + 1]
       ];
     case 'QF':
       return [
-        ['R16', index],
-        ['R16', 7 - index]
+        ['R16', index * 2],
+        ['R16', index * 2 + 1]
       ];
     case 'R16':
       return [
-        ['R32', index],
-        ['R32', 15 - index]
+        ['R32', index * 2],
+        ['R32', index * 2 + 1]
       ];
     case 'R32':
       return [];
@@ -617,13 +617,14 @@ function RadialBracketSection({
             </g>
 
             <g>
-              {visibleMatches.map((match) => (
+              {visibleMatches.map((match, index) => (
                 <g
                   key={`node-${match.id}`}
                   className={classNames(
                     'radial-node',
                     match.active && 'radial-node-active',
                     statusClass(advancingTeamStatus(match, actualProgress), markerMode),
+                    markerMode === 'actual' && index % 2 === 1 && 'radial-status-actual-purple',
                     isDimmed(pathOnly, bracketChampion, match.active) && 'radial-muted'
                   )}
                 >
@@ -650,7 +651,7 @@ function RadialBracketSection({
             </g>
 
             <g>
-              {layout.entrants.map((entrant) => {
+              {layout.entrants.map((entrant, index) => {
                 const clipId = `${idPrefix}-${sanitizeId(entrant.id)}`;
                 const muted = isDimmed(pathOnly, bracketChampion, entrant.active);
                 const markerStatus = markerMode === 'prediction' ? 'correct' : roundTeamStatus(entrant.team?.code, 'R32', actualProgress);
@@ -658,7 +659,13 @@ function RadialBracketSection({
                 return (
                   <g
                     key={entrant.id}
-                    className={classNames('radial-team-marker', entrant.active && 'radial-team-marker-active', statusClass(markerStatus, markerMode), muted && 'radial-muted')}
+                    className={classNames(
+                      'radial-team-marker',
+                      entrant.active && 'radial-team-marker-active',
+                      statusClass(markerStatus, markerMode),
+                      markerMode === 'actual' && index % 2 === 1 && 'radial-status-actual-purple',
+                      muted && 'radial-muted'
+                    )}
                   >
                     <title>{entrant.title}</title>
                     <circle className="radial-team-bg" cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2 + 3} />
