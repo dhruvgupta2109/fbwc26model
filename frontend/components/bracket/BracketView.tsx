@@ -9,6 +9,8 @@ import { Flag } from '@/components/ui/Flag';
 import type { BracketSlot, GoldenBootProjection, Team } from '@/simulation/types';
 
 type MatchStage = Exclude<BracketSlot['stage'], 'Champion'>;
+type MarkerStatus = 'correct' | 'wrong' | 'pending';
+type BracketMarkerMode = 'prediction' | 'actual';
 
 const CENTER = 500;
 const LEAF_COUNT = 32;
@@ -33,6 +35,23 @@ const stageRadii: Record<MatchStage, number> = {
   QF: 214,
   SF: 146,
   Final: 78
+};
+
+const stageCounts: Record<BracketSlot['stage'], number> = {
+  R32: 16,
+  R16: 8,
+  QF: 4,
+  SF: 2,
+  Final: 1,
+  Champion: 1
+};
+
+const nextStageByStage: Record<MatchStage, BracketSlot['stage']> = {
+  R32: 'R16',
+  R16: 'QF',
+  QF: 'SF',
+  SF: 'Final',
+  Final: 'Champion'
 };
 
 interface DraftEntrant {
@@ -93,6 +112,14 @@ interface RadialConnectorSegment {
   id: string;
   d: string;
   active: boolean;
+}
+
+interface ActualProgress {
+  teamsByStage: Record<BracketSlot['stage'], Set<string>>;
+  winnersByStage: Record<MatchStage, Set<string>>;
+  matchByStageTeam: Record<MatchStage, Map<string, BracketSlot>>;
+  teamsCompleteByStage: Record<BracketSlot['stage'], boolean>;
+  winnersCompleteByStage: Record<MatchStage, boolean>;
 }
 
 const teamByCode = new Map(teams.map((team) => [team.code, team]));
@@ -329,6 +356,110 @@ function isDimmed(pathOnly: boolean, champion: string | undefined, active: boole
   return Boolean(pathOnly && champion && !active);
 }
 
+function emptyStageSets(): Record<BracketSlot['stage'], Set<string>> {
+  return {
+    R32: new Set<string>(),
+    R16: new Set<string>(),
+    QF: new Set<string>(),
+    SF: new Set<string>(),
+    Final: new Set<string>(),
+    Champion: new Set<string>()
+  };
+}
+
+function emptyMatchStageSets(): Record<MatchStage, Set<string>> {
+  return {
+    R32: new Set<string>(),
+    R16: new Set<string>(),
+    QF: new Set<string>(),
+    SF: new Set<string>(),
+    Final: new Set<string>()
+  };
+}
+
+function emptyMatchStageMaps(): Record<MatchStage, Map<string, BracketSlot>> {
+  return {
+    R32: new Map<string, BracketSlot>(),
+    R16: new Map<string, BracketSlot>(),
+    QF: new Map<string, BracketSlot>(),
+    SF: new Map<string, BracketSlot>(),
+    Final: new Map<string, BracketSlot>()
+  };
+}
+
+function buildActualProgress(actualBracket?: BracketSlot[]): ActualProgress | undefined {
+  if (!actualBracket) return undefined;
+
+  const teamsByStage = emptyStageSets();
+  const winnersByStage = emptyMatchStageSets();
+  const matchByStageTeam = emptyMatchStageMaps();
+  const teamsCompleteByStage = {} as Record<BracketSlot['stage'], boolean>;
+  const winnersCompleteByStage = {} as Record<MatchStage, boolean>;
+
+  (Object.keys(stageCounts) as BracketSlot['stage'][]).forEach((stage) => {
+    const slots = actualBracket.filter((slot) => slot.stage === stage);
+    slots.forEach((slot) => {
+      if (slot.teamA) teamsByStage[stage].add(slot.teamA);
+      if (slot.teamB) teamsByStage[stage].add(slot.teamB);
+
+      if (stage !== 'Champion') {
+        const matchStage = stage as MatchStage;
+        if (slot.teamA) matchByStageTeam[matchStage].set(slot.teamA, slot);
+        if (slot.teamB) matchByStageTeam[matchStage].set(slot.teamB, slot);
+        if (slot.winner) {
+          winnersByStage[matchStage].add(slot.winner);
+          teamsByStage[nextStageByStage[matchStage]].add(slot.winner);
+        }
+      }
+    });
+
+    teamsCompleteByStage[stage] =
+      slots.length >= stageCounts[stage] && slots.every((slot) => stage === 'Champion' || Boolean(slot.teamA && slot.teamB));
+
+    if (stage !== 'Champion') {
+      winnersCompleteByStage[stage] = slots.length >= stageCounts[stage] && slots.every((slot) => Boolean(slot.winner));
+    }
+  });
+
+  actualBracket
+    .filter((slot) => slot.stage === 'Champion' && slot.winner)
+    .forEach((slot) => teamsByStage.Champion.add(slot.winner!));
+
+  return {
+    teamsByStage,
+    winnersByStage,
+    matchByStageTeam,
+    teamsCompleteByStage,
+    winnersCompleteByStage
+  };
+}
+
+function roundTeamStatus(teamCode: string | undefined, stage: BracketSlot['stage'], actual?: ActualProgress): MarkerStatus | undefined {
+  if (!teamCode || !actual) return undefined;
+  if (actual.teamsByStage[stage].has(teamCode)) return 'correct';
+  if (actual.teamsCompleteByStage[stage]) return 'wrong';
+  return 'pending';
+}
+
+function advancingTeamStatus(match: RadialMatch, actual?: ActualProgress): MarkerStatus | undefined {
+  const winner = match.slot?.winner;
+  if (!winner || !actual) return undefined;
+
+  const nextStage = nextStageByStage[match.stage];
+  if (actual.teamsByStage[nextStage].has(winner) || actual.winnersByStage[match.stage].has(winner)) return 'correct';
+
+  const actualMatch = actual.matchByStageTeam[match.stage].get(winner);
+  if (actualMatch?.winner) return 'wrong';
+  if (actual.winnersCompleteByStage[match.stage] || actual.teamsCompleteByStage[match.stage]) return 'wrong';
+  return 'pending';
+}
+
+function statusClass(status: MarkerStatus | undefined, mode: BracketMarkerMode) {
+  if (mode === 'actual') return 'radial-status-actual';
+  if (!status) return undefined;
+  return `radial-status-${status}`;
+}
+
 function matchDetail(slot?: BracketSlot) {
   if (!slot || slot.stage === 'Champion') return null;
   const teamA = teamForCode(slot.teamA);
@@ -361,8 +492,10 @@ export function BracketView({
     <div className="grid gap-5">
       <RadialBracketSection
         bracket={bracket}
+        comparisonBracket={actualBracket}
         champion={champion}
         pathOnly={pathOnly}
+        markerMode="prediction"
         title="Prediction Bracket"
         eyebrow="Model projection"
         action={
@@ -373,7 +506,7 @@ export function BracketView({
         }
       />
 
-      <RadialBracketSection bracket={actualBracket} title="Actual Bracket" eyebrow="Official results" emptyLabel="TBD" />
+      <RadialBracketSection bracket={actualBracket} markerMode="actual" title="Actual Bracket" eyebrow="Official results" emptyLabel="TBD" />
 
       <aside className="card p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -411,16 +544,20 @@ export function BracketView({
 
 function RadialBracketSection({
   bracket,
+  comparisonBracket,
   champion,
   pathOnly = false,
+  markerMode = 'prediction',
   title,
   eyebrow,
   emptyLabel = 'TBD',
   action
 }: {
   bracket: BracketSlot[];
+  comparisonBracket?: BracketSlot[];
   champion?: string;
   pathOnly?: boolean;
+  markerMode?: BracketMarkerMode;
   title: string;
   eyebrow: string;
   emptyLabel?: string;
@@ -428,6 +565,7 @@ function RadialBracketSection({
 }) {
   const bracketChampion = useMemo(() => bracket.find((slot) => slot.stage === 'Champion')?.winner ?? champion, [bracket, champion]);
   const layout = useMemo(() => buildRadialLayout(bracket, bracketChampion), [bracket, bracketChampion]);
+  const actualProgress = useMemo(() => buildActualProgress(comparisonBracket), [comparisonBracket]);
   const visibleMatches = layout.matches.filter((match) => match.stage !== 'Final');
   const idPrefix = sanitizeId(useId());
   const finalDetail = matchDetail(layout.finalSlot);
@@ -482,7 +620,12 @@ function RadialBracketSection({
               {visibleMatches.map((match) => (
                 <g
                   key={`node-${match.id}`}
-                  className={classNames('radial-node', match.active && 'radial-node-active', isDimmed(pathOnly, bracketChampion, match.active) && 'radial-muted')}
+                  className={classNames(
+                    'radial-node',
+                    match.active && 'radial-node-active',
+                    statusClass(advancingTeamStatus(match, actualProgress), markerMode),
+                    isDimmed(pathOnly, bracketChampion, match.active) && 'radial-muted'
+                  )}
                 >
                   <title>{match.title}</title>
                   {match.winnerTeam ? (
@@ -510,11 +653,12 @@ function RadialBracketSection({
               {layout.entrants.map((entrant) => {
                 const clipId = `${idPrefix}-${sanitizeId(entrant.id)}`;
                 const muted = isDimmed(pathOnly, bracketChampion, entrant.active);
+                const markerStatus = markerMode === 'prediction' ? 'correct' : roundTeamStatus(entrant.team?.code, 'R32', actualProgress);
 
                 return (
                   <g
                     key={entrant.id}
-                    className={classNames('radial-team-marker', entrant.active && 'radial-team-marker-active', muted && 'radial-muted')}
+                    className={classNames('radial-team-marker', entrant.active && 'radial-team-marker-active', statusClass(markerStatus, markerMode), muted && 'radial-muted')}
                   >
                     <title>{entrant.title}</title>
                     <circle className="radial-team-bg" cx={entrant.x} cy={entrant.y} r={TEAM_MARKER_SIZE / 2 + 3} />
