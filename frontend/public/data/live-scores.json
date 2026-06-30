@@ -2,7 +2,7 @@
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
   "cacheDate": "2026-07-01",
-  "generatedAt": "2026-06-30T18:34:24.842Z",
+  "generatedAt": "2026-06-30T20:02:55.674Z",
   "matches": [
     {
       "id": "760498",
@@ -160,11 +160,10 @@
       "awayCode": "NOR",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-      "homeScore": 0,
-      "awayScore": 1,
-      "score": "0-1",
-      "status": "Live",
-      "minute": "74",
+      "homeScore": 1,
+      "awayScore": 2,
+      "score": "1-2",
+      "status": "FT",
       "goals": [
         {
           "team": "Norway",
@@ -178,7 +177,14 @@
           "minute": "74",
           "scorer": "Amad Diallo",
           "assist": "Nicolas Pépé",
-          "text": "Goal! Côte d'Ivoire 1, Norway 1. Amad Diallo (Côte d'Ivoire) left footed shot from the right side of the six yard box."
+          "text": "Goal! Côte d'Ivoire 1, Norway 1. Amad Diallo (Côte d'Ivoire) left footed shot from the right side of the six yard box to the bottom left corner. Assisted by Nicolas Pépé."
+        },
+        {
+          "team": "Norway",
+          "minute": "86",
+          "scorer": "Erling Haaland",
+          "assist": "Patrick Berg",
+          "text": "Goal! Côte d'Ivoire 1, Norway 2. Erling Haaland (Norway) left footed shot from the centre of the box to the centre of the goal. Assisted by Patrick Berg."
         }
       ],
       "motm": "Erling Haaland (NOR)"
