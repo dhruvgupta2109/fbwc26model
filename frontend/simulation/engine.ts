@@ -53,22 +53,22 @@ interface AggregateState {
 const STAGE_ORDER: BracketSlot['stage'][] = ['R32', 'R16', 'QF', 'SF', 'Final'];
 const START_DATE = new Date('2026-06-11T16:00:00Z');
 const ACTUAL_R32_PAIRS: Array<[string, string]> = [
-  ['RSA', 'CAN'],
   ['GER', 'PAR'],
+  ['FRA', 'SWE'],
+  ['RSA', 'CAN'],
   ['NED', 'MAR'],
   ['BRA', 'JPN'],
   ['CIV', 'NOR'],
-  ['FRA', 'SWE'],
   ['MEX', 'ECU'],
   ['ENG', 'COD'],
-  ['BEL', 'SEN'],
-  ['USA', 'BIH'],
-  ['ESP', 'AUT'],
   ['POR', 'CRO'],
+  ['ESP', 'AUT'],
+  ['USA', 'BIH'],
+  ['BEL', 'SEN'],
   ['SUI', 'ALG'],
-  ['AUS', 'EGY'],
+  ['COL', 'GHA'],
   ['ARG', 'CPV'],
-  ['COL', 'GHA']
+  ['AUS', 'EGY']
 ];
 
 function matchDate(offset: number): string {
@@ -272,12 +272,11 @@ function emptyAggregate(teams: Team[]): AggregateState {
   };
 }
 
-function pairCodes(codes: string[]): Array<[string | undefined, string | undefined]> {
-  const ordered = [...codes];
+function adjacentPairs(codes: string[]): Array<[string | undefined, string | undefined]> {
   const pairs: Array<[string | undefined, string | undefined]> = [];
 
-  while (ordered.length > 0) {
-    pairs.push([ordered.shift(), ordered.pop()]);
+  for (let index = 0; index < codes.length; index += 2) {
+    pairs.push([codes[index], codes[index + 1]]);
   }
 
   return pairs;
@@ -306,7 +305,7 @@ function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: Team
     const pairs =
       stage === 'R32'
         ? ACTUAL_R32_PAIRS
-        : pairCodes(previousWinners);
+        : adjacentPairs(previousWinners);
     const winners: string[] = [];
 
     pairs.forEach(([teamA, teamB], index) => {
