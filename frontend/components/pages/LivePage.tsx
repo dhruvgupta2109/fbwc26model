@@ -65,7 +65,7 @@ const flagCodes: Record<string, string> = {
 export function LivePage() {
   const [showUpcoming, setShowUpcoming] = useState(false);
   const { run, isRunning } = useSimulation();
-  const { matches, inTournamentWindow, countdownMs, mutate, isLoading, error, source, generatedAt } = useLiveScores();
+  const { matches, inTournamentWindow, countdownMs, refresh, isRefreshing, error, warning, source, generatedAt } = useLiveScores();
   const days = Math.ceil(countdownMs / 86_400_000);
   const now = new Date();
   const completedAndLive = matches.filter((match) => match.status !== 'Upcoming');
@@ -82,8 +82,8 @@ export function LivePage() {
             </h1>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="ghost" onClick={() => mutate()} disabled={isLoading}>
-              <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
+            <Button variant="ghost" onClick={refresh} disabled={isRefreshing}>
+              <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
               Refresh
             </Button>
             <Activity className="h-10 w-10 text-success" />
@@ -105,7 +105,7 @@ export function LivePage() {
                     : 'Tournament window has closed.'}
               </p>
               <p className="mt-1 text-xs text-muted">
-                {source ? `${source}${generatedAt ? ` / cached ${formatCacheTime(generatedAt)}` : ''}` : 'Loading score cache...'}
+                {source ? `${source}${generatedAt ? ` / updated ${formatCacheTime(generatedAt)}` : ''}` : 'Loading score feed...'}
               </p>
             </div>
           </div>
@@ -114,7 +114,13 @@ export function LivePage() {
 
         {error ? (
           <div className="mt-5 rounded-lg border border-danger/30 bg-danger/10 p-3 text-sm font-semibold text-danger">
-            Could not load the hourly ESPN score cache.
+            Could not load the ESPN live feed or bundled score cache.
+          </div>
+        ) : null}
+
+        {warning ? (
+          <div className="mt-5 rounded-lg border border-accent/30 bg-accent/10 p-3 text-sm font-semibold text-accent">
+            {warning}
           </div>
         ) : null}
 

@@ -138,13 +138,14 @@ export function OverviewPage() {
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {funFacts.map((fact, index) => (
             <motion.div
-              key={fact}
+              key={fact.title}
               initial={false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.05 }}
               className="card cinematic-card p-4"
             >
-              <p className="text-sm font-semibold text-ink">{fact}</p>
+              <h3 className="text-sm font-semibold leading-5 text-ink">{fact.title}</h3>
+              <p className="mt-3 text-xs leading-5 text-muted">{fact.description}</p>
               <p className="mt-3 text-xs text-muted">Fun Stats - not all are statistically significant.</p>
             </motion.div>
           ))}

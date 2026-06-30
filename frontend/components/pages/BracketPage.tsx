@@ -1,6 +1,6 @@
 'use client';
 
-import { Play } from 'lucide-react';
+import { Play, RefreshCw } from 'lucide-react';
 import { BracketView } from '@/components/bracket/BracketView';
 import { Button } from '@/components/ui/Button';
 import { ProgressBar } from '@/components/ui/ProgressBar';
@@ -20,19 +20,9 @@ const actualStageCounts: Record<BracketSlot['stage'], number> = {
   Champion: 1
 };
 
-const actualStageLabels: Record<string, BracketSlot['stage']> = {
-  'Round of 32': 'R32',
-  'Round of 16': 'R16',
-  Quarterfinals: 'QF',
-  'Quarter-finals': 'QF',
-  Semifinals: 'SF',
-  'Semi-finals': 'SF',
-  Final: 'Final'
-};
-
 export function BracketPage() {
   const { result, run, isRunning, progress, completed, total } = useSimulation();
-  const { matches } = useLiveScores();
+  const { matches, refresh, isRefreshing, source, generatedAt, warning } = useLiveScores();
   const actualBracket = buildActualBracket(matches);
 
   return (
@@ -45,10 +35,16 @@ export function BracketPage() {
               <GradientText>Animated Knockout Bracket</GradientText>
             </h1>
           </div>
-          <Button onClick={run} disabled={isRunning}>
-            <Play className="h-4 w-4" />
-            {isRunning ? 'Running...' : 'Resimulate'}
-          </Button>
+          <div className="flex flex-wrap items-center gap-2">
+            <Button variant="ghost" onClick={refresh} disabled={isRefreshing}>
+              <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+              Refresh Actuals
+            </Button>
+            <Button onClick={run} disabled={isRunning}>
+              <Play className="h-4 w-4" />
+              {isRunning ? 'Running...' : 'Resimulate'}
+            </Button>
+          </div>
         </div>
         <div className="relative z-10 mt-5">
           <div className="mb-2 flex justify-between text-sm text-muted">
@@ -56,6 +52,14 @@ export function BracketPage() {
             <span className="data-number">{progress}%</span>
           </div>
           <ProgressBar value={progress} />
+          <p className="mt-2 text-xs text-muted">
+            {source ? `Actual bracket feed: ${source}${generatedAt ? ` / updated ${formatCacheTime(generatedAt)}` : ''}` : 'Actual bracket feed loading...'}
+          </p>
+          {warning ? (
+            <div className="mt-3 rounded-lg border border-accent/30 bg-accent/10 p-3 text-sm font-semibold text-accent">
+              {warning}
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -94,7 +98,7 @@ function buildActualBracket(matches: LiveMatch[]): BracketSlot[] {
     slot.teamB = match.awayCode;
     slot.scoreA = match.status === 'Upcoming' ? undefined : match.homeScore;
     slot.scoreB = match.status === 'Upcoming' ? undefined : match.awayScore;
-    slot.winner = match.status === 'Upcoming' ? undefined : winnerCode(match);
+    slot.winner = match.status === 'FT' ? winnerCode(match) : undefined;
     filledByStage.set(stage, stageIndex + 1);
   }
 
@@ -106,11 +110,27 @@ function buildActualBracket(matches: LiveMatch[]): BracketSlot[] {
 }
 
 function actualStageFromMatch(match: LiveMatch) {
-  return Object.entries(actualStageLabels).find(([label]) => match.stage.includes(label))?.[1];
+  const stage = match.stage.toLowerCase();
+  if (stage.includes('round of 32')) return 'R32';
+  if (stage.includes('round of 16')) return 'R16';
+  if (stage.includes('quarterfinal') || stage.includes('quarter-final')) return 'QF';
+  if (stage.includes('semifinal') || stage.includes('semi-final')) return 'SF';
+  if (stage.includes('final') && !stage.includes('3rd-place')) return 'Final';
+  return undefined;
 }
 
 function winnerCode(match: LiveMatch) {
+  if (match.winnerCode) return match.winnerCode;
   if (match.homeScore > match.awayScore) return match.homeCode;
   if (match.awayScore > match.homeScore) return match.awayCode;
   return undefined;
+}
+
+function formatCacheTime(value: string) {
+  return new Intl.DateTimeFormat('en', {
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit'
+  }).format(new Date(value));
 }
