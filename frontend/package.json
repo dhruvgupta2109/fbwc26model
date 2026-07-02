@@ -1,6 +1,7 @@
 {
   "name": "wc26-oracle",
   "version": "1.0.0",
+  "description": "Monte Carlo World Cup 2026 prediction dashboard with bracket projections, group tables, model controls, and live-score context.",
   "private": true,
   "scripts": {
     "dev": "next dev",
