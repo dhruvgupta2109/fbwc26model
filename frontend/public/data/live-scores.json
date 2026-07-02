@@ -1,9 +1,99 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-07-01",
-  "generatedAt": "2026-06-30T20:02:55.674Z",
+  "cacheDate": "2026-07-02",
+  "generatedAt": "2026-07-02T15:48:44.599Z",
   "matches": [
+    {
+      "id": "760503",
+      "kickoff": "2026-07-04T21:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760503",
+      "home": "Paraguay",
+      "away": "France",
+      "homeCode": "PAR",
+      "awayCode": "FRA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760502",
+      "kickoff": "2026-07-04T17:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "NRG Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760502",
+      "home": "Canada",
+      "away": "Morocco",
+      "homeCode": "CAN",
+      "awayCode": "MAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760501",
+      "kickoff": "2026-07-04T01:30Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760501",
+      "home": "Colombia",
+      "away": "Ghana",
+      "homeCode": "COL",
+      "awayCode": "GHA",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760500",
+      "kickoff": "2026-07-03T22:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760500",
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "homeCode": "ARG",
+      "awayCode": "CPV",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760499",
+      "kickoff": "2026-07-03T18:00Z",
+      "stage": "FIFA World Cup, Round of 32",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760499",
+      "home": "Australia",
+      "away": "Egypt",
+      "homeCode": "AUS",
+      "awayCode": "EGY",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
     {
       "id": "760498",
       "kickoff": "2026-07-03T03:00Z",
@@ -70,11 +160,25 @@
       "awayCode": "BIH",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
-      "homeScore": 0,
+      "homeScore": 2,
       "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "United States",
+          "minute": "45",
+          "scorer": "Folarin Balogun",
+          "text": "Goal! USA 1, Bosnia and Herzegovina 0. Folarin Balogun (USA) left footed shot from the centre of the box to the centre of the goal."
+        },
+        {
+          "team": "United States",
+          "minute": "82",
+          "scorer": "Malik Tillman",
+          "text": "Goal! USA 2, Bosnia and Herzegovina 0. Malik Tillman (USA) from a free kick with a right footed shot to the top left corner."
+        }
+      ],
+      "motm": "Folarin Balogun (USA)"
     },
     {
       "id": "760493",
@@ -88,11 +192,46 @@
       "awayCode": "SEN",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 3,
+      "awayScore": 2,
+      "score": "3-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Senegal",
+          "minute": "24",
+          "scorer": "Habib Diarra",
+          "text": "Goal! Belgium 0, Senegal 1. Habib Diarra (Senegal) right footed shot from very close range to the centre of the goal."
+        },
+        {
+          "team": "Senegal",
+          "minute": "51",
+          "scorer": "Ismaïla Sarr",
+          "assist": "Moussa Niakhaté",
+          "text": "Goal! Belgium 0, Senegal 2. Ismaïla Sarr (Senegal) right footed shot from the centre of the box to the bottom right corner. Assisted by Moussa Niakhaté with a through ball."
+        },
+        {
+          "team": "Belgium",
+          "minute": "86",
+          "scorer": "Romelu Lukaku",
+          "assist": "Thomas Meunier",
+          "text": "Goal! Belgium 1, Senegal 2. Romelu Lukaku (Belgium) right footed shot from the right side of the six yard box to the high centre of the goal. Assisted by Thomas Meunier with a cross."
+        },
+        {
+          "team": "Belgium",
+          "minute": "89",
+          "scorer": "Youri Tielemans",
+          "assist": "Leandro Trossard",
+          "text": "Goal! Belgium 2, Senegal 2. Youri Tielemans (Belgium) header from the centre of the box to the bottom left corner. Assisted by Leandro Trossard."
+        },
+        {
+          "team": "Belgium",
+          "minute": "120+5",
+          "scorer": "Youri Tielemans",
+          "text": "Goal! Belgium 3, Senegal 2. Youri Tielemans (Belgium) converts the penalty with a right footed shot to the top right corner."
+        }
+      ],
+      "motm": "Youri Tielemans (BEL)"
     },
     {
       "id": "760495",
@@ -106,15 +245,38 @@
       "awayCode": "COD",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Congo DR",
+          "minute": "7",
+          "scorer": "Brian Cipenga",
+          "assist": "Chancel Mbemba",
+          "text": "Goal! England 0, Congo DR 1. Brian Cipenga (Congo DR) right footed shot from the left side of the box to the bottom left corner. Assisted by Chancel Mbemba."
+        },
+        {
+          "team": "England",
+          "minute": "75",
+          "scorer": "Harry Kane",
+          "assist": "Anthony Gordon",
+          "text": "Goal! England 1, Congo DR 1. Harry Kane (England) header from the centre of the box to the bottom left corner. Assisted by Anthony Gordon with a cross."
+        },
+        {
+          "team": "England",
+          "minute": "86",
+          "scorer": "Harry Kane",
+          "assist": "Anthony Gordon",
+          "text": "Goal! England 2, Congo DR 1. Harry Kane (England) right footed shot from the right side of the box to the top right corner. Assisted by Anthony Gordon."
+        }
+      ],
+      "motm": "Harry Kane (ENG)"
     },
     {
       "id": "760491",
-      "kickoff": "2026-07-01T01:00Z",
+      "kickoff": "2026-07-01T02:00Z",
       "stage": "FIFA World Cup, Round of 32",
       "venue": "Estadio Banorte",
       "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760491",
@@ -124,11 +286,27 @@
       "awayCode": "ECU",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
-      "homeScore": 0,
+      "homeScore": 2,
       "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Mexico",
+          "minute": "22",
+          "scorer": "Julián Quiñones",
+          "assist": "Roberto Alvarado",
+          "text": "Goal! Mexico 1, Ecuador 0. Julián Quiñones (Mexico) right footed shot from the left side of the box to the top left corner. Assisted by Roberto Alvarado with a through ball."
+        },
+        {
+          "team": "Mexico",
+          "minute": "31",
+          "scorer": "Raúl Jiménez",
+          "assist": "Julián Quiñones",
+          "text": "Goal! Mexico 2, Ecuador 0. Raúl Jiménez (Mexico) right footed shot from the centre of the box to the top right corner. Assisted by Julián Quiñones."
+        }
+      ],
+      "motm": "Raúl Jiménez (MEX)"
     },
     {
       "id": "760492",
@@ -142,11 +320,34 @@
       "awayCode": "SWE",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-      "homeScore": 0,
+      "homeScore": 3,
       "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "score": "3-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "France",
+          "minute": "45",
+          "scorer": "Kylian Mbappé",
+          "assist": "Ousmane Dembélé",
+          "text": "Goal! France 1, Sweden 0. Kylian Mbappé (France) right footed shot from the centre of the box to the top right corner. Assisted by Ousmane Dembélé following a corner."
+        },
+        {
+          "team": "France",
+          "minute": "53",
+          "scorer": "Bradley Barcola",
+          "assist": "Michael Olise",
+          "text": "Goal! France 2, Sweden 0. Bradley Barcola (France) right footed shot from the centre of the box to the top left corner. Assisted by Michael Olise with a through ball following a fast break."
+        },
+        {
+          "team": "France",
+          "minute": "74",
+          "scorer": "Kylian Mbappé",
+          "assist": "Michael Olise",
+          "text": "Goal! France 3, Sweden 0. Kylian Mbappé (France) right footed shot from the left side of the box to the bottom right corner. Assisted by Michael Olise with a through ball."
+        }
+      ],
+      "motm": "Michael Olise (FRA)"
     },
     {
       "id": "760490",
