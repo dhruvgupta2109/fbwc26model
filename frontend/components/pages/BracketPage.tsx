@@ -16,6 +16,7 @@ const actualStageCounts: Record<BracketSlot['stage'], number> = {
   R16: 8,
   QF: 4,
   SF: 2,
+  ThirdPlace: 1,
   Final: 1,
   Champion: 1
 };
@@ -78,6 +79,7 @@ function buildActualBracket(matches: LiveMatch[]): BracketSlot[] {
     ...Array.from({ length: actualStageCounts.R16 }, (_, index) => ({ id: `actual-r16-${index + 1}`, stage: 'R16' as const })),
     ...Array.from({ length: actualStageCounts.QF }, (_, index) => ({ id: `actual-qf-${index + 1}`, stage: 'QF' as const })),
     ...Array.from({ length: actualStageCounts.SF }, (_, index) => ({ id: `actual-sf-${index + 1}`, stage: 'SF' as const })),
+    { id: 'actual-third-place', stage: 'ThirdPlace' },
     { id: 'actual-final', stage: 'Final' },
     { id: 'actual-champion', stage: 'Champion' }
   ];
@@ -115,7 +117,8 @@ function actualStageFromMatch(match: LiveMatch) {
   if (stage.includes('round of 16')) return 'R16';
   if (stage.includes('quarterfinal') || stage.includes('quarter-final')) return 'QF';
   if (stage.includes('semifinal') || stage.includes('semi-final')) return 'SF';
-  if (stage.includes('final') && !stage.includes('3rd-place')) return 'Final';
+  if (stage.includes('3rd-place') || stage.includes('third place') || stage.includes('third-place')) return 'ThirdPlace';
+  if (stage.includes('final')) return 'Final';
   return undefined;
 }
 
