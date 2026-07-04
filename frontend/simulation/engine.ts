@@ -35,6 +35,7 @@ interface MatchResult {
 interface Counters {
   win: number;
   finalist: number;
+  thirdPlace: number;
   semiFinal: number;
   quarterFinal: number;
   roundOf16: number;
@@ -50,7 +51,17 @@ interface AggregateState {
   upsets: Record<string, UpsetProjection & { hits: number }>;
 }
 
-const STAGE_ORDER: BracketSlot['stage'][] = ['R32', 'R16', 'QF', 'SF', 'Final'];
+type PlayableStage = Exclude<BracketSlot['stage'], 'Champion'>;
+
+const STAGE_ORDER: PlayableStage[] = ['R32', 'R16', 'QF', 'SF', 'Final'];
+const MATCH_DATE_OFFSETS: Record<PlayableStage, number> = {
+  R32: 20,
+  R16: 24,
+  QF: 28,
+  SF: 32,
+  ThirdPlace: 36,
+  Final: 37
+};
 const START_DATE = new Date('2026-06-11T16:00:00Z');
 const ACTUAL_R32_PAIRS: Array<[string, string]> = [
   ['GER', 'PAR'],
@@ -82,7 +93,7 @@ function pct(value: number, iterations: number): number {
 }
 
 function makeCounters(): Counters {
-  return { win: 0, finalist: 0, semiFinal: 0, quarterFinal: 0, roundOf16: 0, roundOf32: 0 };
+  return { win: 0, finalist: 0, thirdPlace: 0, semiFinal: 0, quarterFinal: 0, roundOf16: 0, roundOf32: 0 };
 }
 
 function winProbability(teamA: Team, teamB: Team, date: string, weights: Weights): [number, number] {
@@ -208,12 +219,16 @@ function simulateGroups(teams: Team[], weights: Weights, aggregate: AggregateSta
   return qualifiers;
 }
 
-function playRound(teams: Team[], stage: BracketSlot['stage'], weights: Weights, aggregate: AggregateState, iteration: number): Team[] {
-  const winners: Team[] = [];
+function loserOf(result: MatchResult): Team {
+  return result.winner.code === result.teamA.code ? result.teamB : result.teamA;
+}
+
+function playRoundResults(teams: Team[], stage: PlayableStage, weights: Weights, aggregate: AggregateState, iteration: number): MatchResult[] {
+  const results: MatchResult[] = [];
   for (let i = 0; i < teams.length; i += 2) {
-    const date = matchDate(20 + STAGE_ORDER.indexOf(stage) * 4 + i / 2);
+    const date = matchDate(MATCH_DATE_OFFSETS[stage] + i / 2);
     const result = playMatch(teams[i], teams[i + 1], date, weights, true);
-    winners.push(result.winner);
+    results.push(result);
 
     if (iteration === 1) {
       aggregate.sampleBracket.push({
@@ -236,7 +251,11 @@ function playRound(teams: Team[], stage: BracketSlot['stage'], weights: Weights,
       aggregate.upsets[key].hits += 1;
     }
   }
-  return winners;
+  return results;
+}
+
+function playRound(teams: Team[], stage: PlayableStage, weights: Weights, aggregate: AggregateState, iteration: number): Team[] {
+  return playRoundResults(teams, stage, weights, aggregate, iteration).map((result) => result.winner);
 }
 
 function addStage(counters: Record<string, Counters>, teams: Team[], stage: keyof Counters): void {
@@ -299,6 +318,7 @@ function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: Team
 
   const bracket: BracketSlot[] = [];
   let previousWinners: string[] = [];
+  let semiFinalLosers: string[] = [];
 
   STAGE_ORDER.forEach((stage) => {
     const sourceSlots = slotsByStage.get(stage) ?? [];
@@ -312,6 +332,7 @@ function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: Team
       const sourceSlot = sourceSlots[index];
       const winner = probabilityWinner(teamA, teamB, winProbabilityByCode);
       if (winner) winners.push(winner);
+      if (stage === 'SF' && teamA && teamB && winner) semiFinalLosers.push(winner === teamA ? teamB : teamA);
 
       bracket.push({
         ...sourceSlot,
@@ -330,7 +351,22 @@ function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: Team
   });
 
   const champion = previousWinners[0] ?? teamResults[0]?.code;
-  return [...bracket, { id: 'champion', stage: 'Champion', winner: champion }];
+  const thirdPlaceWinner = probabilityWinner(semiFinalLosers[0], semiFinalLosers[1], winProbabilityByCode);
+
+  return [
+    ...bracket,
+    {
+      id: 'third-place',
+      stage: 'ThirdPlace',
+      teamA: semiFinalLosers[0],
+      teamB: semiFinalLosers[1],
+      winner: thirdPlaceWinner,
+      winA: semiFinalLosers[0] ? winProbabilityByCode[semiFinalLosers[0]] ?? 0 : undefined,
+      winB: semiFinalLosers[1] ? winProbabilityByCode[semiFinalLosers[1]] ?? 0 : undefined,
+      upset: false
+    },
+    { id: 'champion', stage: 'Champion', winner: champion }
+  ];
 }
 
 function buildResult(teams: Team[], iterations: number, aggregate: AggregateState): SimulationResult {
@@ -339,6 +375,7 @@ function buildResult(teams: Team[], iterations: number, aggregate: AggregateStat
       code: team.code,
       win: pct(aggregate.counters[team.code].win, iterations),
       finalist: pct(aggregate.counters[team.code].finalist, iterations),
+      thirdPlace: pct(aggregate.counters[team.code].thirdPlace, iterations),
       semiFinal: pct(aggregate.counters[team.code].semiFinal, iterations),
       quarterFinal: pct(aggregate.counters[team.code].quarterFinal, iterations),
       roundOf16: pct(aggregate.counters[team.code].roundOf16, iterations),
@@ -379,6 +416,7 @@ function buildResult(teams: Team[], iterations: number, aggregate: AggregateStat
     .slice(0, 3);
 
   const champion = teamResults[0].code;
+  const thirdPlace = [...teamResults].sort((a, b) => b.thirdPlace - a.thirdPlace || b.win - a.win)[0]?.code ?? teamResults[2]?.code ?? champion;
   const championTeam = teams.find((team) => team.code === champion)!;
   const explainability = [
     `${championTeam.name} combines a ${championTeam.elo} Elo baseline with ${championTeam.squadQuality}/100 squad quality.`,
@@ -393,6 +431,7 @@ function buildResult(teams: Team[], iterations: number, aggregate: AggregateStat
     groups,
     bracket: buildProbabilityBracket(aggregate.sampleBracket, teamResults),
     champion,
+    thirdPlace,
     finalists: teamResults.slice(0, 2).map((team) => team.code),
     goldenBoot,
     upsetWatch,
@@ -419,11 +458,15 @@ export function runSimulation(
     addStage(aggregate.counters, qf, 'quarterFinal');
     const sf = playRound(pairSeeds(qf), 'QF', weights, aggregate, iteration);
     addStage(aggregate.counters, sf, 'semiFinal');
-    const finalists = playRound(pairSeeds(sf), 'SF', weights, aggregate, iteration);
+    const semiFinalResults = playRoundResults(pairSeeds(sf), 'SF', weights, aggregate, iteration);
+    const finalists = semiFinalResults.map((result) => result.winner);
+    const thirdPlaceTeams = semiFinalResults.map(loserOf);
     addStage(aggregate.counters, finalists, 'finalist');
+    const thirdPlaceWinner = playRound(thirdPlaceTeams, 'ThirdPlace', weights, aggregate, iteration)[0];
+    aggregate.counters[thirdPlaceWinner.code].thirdPlace += 1;
     const champion = playRound(finalists, 'Final', weights, aggregate, iteration)[0];
     aggregate.counters[champion.code].win += 1;
-    recordGoldenBoot(aggregate, [...qualified, ...finalists, champion]);
+    recordGoldenBoot(aggregate, [...qualified, ...finalists, thirdPlaceWinner, champion]);
 
     if (iteration % 1000 === 0 || iteration === iterations) onProgress?.(iteration, iterations);
   }
