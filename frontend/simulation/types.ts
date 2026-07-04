@@ -70,7 +70,7 @@ export interface GroupProjection {
 
 export interface BracketSlot {
   id: string;
-  stage: 'R32' | 'R16' | 'QF' | 'SF' | 'Final' | 'Champion';
+  stage: 'R32' | 'R16' | 'QF' | 'SF' | 'ThirdPlace' | 'Final' | 'Champion';
   teamA?: string;
   teamB?: string;
   winner?: string;
@@ -85,6 +85,7 @@ export interface TeamProbability {
   code: string;
   win: number;
   finalist: number;
+  thirdPlace: number;
   semiFinal: number;
   quarterFinal: number;
   roundOf16: number;
@@ -111,6 +112,7 @@ export interface SimulationResult {
   groups: GroupProjection[];
   bracket: BracketSlot[];
   champion: string;
+  thirdPlace: string;
   finalists: string[];
   goldenBoot: GoldenBootProjection[];
   upsetWatch: UpsetProjection[];
