@@ -1,9 +1,175 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-07-02",
-  "generatedAt": "2026-07-02T15:48:44.599Z",
+  "cacheDate": "2026-07-07",
+  "generatedAt": "2026-07-06T19:39:00.860Z",
   "matches": [
+    {
+      "id": "760508",
+      "kickoff": "2026-07-07T20:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "BC Place",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760508",
+      "home": "Switzerland",
+      "away": "Colombia",
+      "homeCode": "SUI",
+      "awayCode": "COL",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760509",
+      "kickoff": "2026-07-07T16:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760509",
+      "home": "Argentina",
+      "away": "Egypt",
+      "homeCode": "ARG",
+      "awayCode": "EGY",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760507",
+      "kickoff": "2026-07-07T00:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "Lumen Field",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760507",
+      "home": "United States",
+      "away": "Belgium",
+      "homeCode": "USA",
+      "awayCode": "BEL",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760506",
+      "kickoff": "2026-07-06T19:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760506",
+      "home": "Portugal",
+      "away": "Spain",
+      "homeCode": "POR",
+      "awayCode": "ESP",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Live",
+      "minute": "25",
+      "goals": [],
+      "motm": "Cristiano Ronaldo (POR)"
+    },
+    {
+      "id": "760505",
+      "kickoff": "2026-07-06T01:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "Estadio Banorte",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760505",
+      "home": "Mexico",
+      "away": "England",
+      "homeCode": "MEX",
+      "awayCode": "ENG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "homeScore": 2,
+      "awayScore": 3,
+      "score": "2-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "England",
+          "minute": "36",
+          "scorer": "Jude Bellingham",
+          "assist": "Bukayo Saka",
+          "text": "Goal! Mexico 0, England 1. Jude Bellingham (England) header from very close range to the bottom left corner. Assisted by Bukayo Saka with a cross."
+        },
+        {
+          "team": "England",
+          "minute": "38",
+          "scorer": "Jude Bellingham",
+          "assist": "Harry Kane",
+          "text": "Goal! Mexico 0, England 2. Jude Bellingham (England) right footed shot from very close range to the bottom left corner. Assisted by Harry Kane."
+        },
+        {
+          "team": "Mexico",
+          "minute": "42",
+          "scorer": "Julián Quiñones",
+          "text": "Goal! Mexico 1, England 2. Julián Quiñones (Mexico) right footed shot from the centre of the box to the high centre of the goal following a set piece situation."
+        },
+        {
+          "team": "England",
+          "minute": "60",
+          "scorer": "Harry Kane",
+          "text": "Goal! Mexico 1, England 3. Harry Kane (England) converts the penalty with a right footed shot to the bottom left corner."
+        },
+        {
+          "team": "Mexico",
+          "minute": "69",
+          "scorer": "Raúl Jiménez",
+          "text": "Goal! Mexico 2, England 3. Raúl Jiménez (Mexico) converts the penalty with a right footed shot to the bottom left corner."
+        }
+      ],
+      "motm": "Raúl Jiménez (MEX)"
+    },
+    {
+      "id": "760504",
+      "kickoff": "2026-07-05T20:00Z",
+      "stage": "FIFA World Cup, Round of 16",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760504",
+      "home": "Brazil",
+      "away": "Norway",
+      "homeCode": "BRA",
+      "awayCode": "NOR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+      "homeScore": 1,
+      "awayScore": 2,
+      "score": "1-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Norway",
+          "minute": "79",
+          "scorer": "Erling Haaland",
+          "assist": "Andreas Schjelderup",
+          "text": "Goal! Brazil 0, Norway 1. Erling Haaland (Norway) header from the centre of the box to the bottom right corner. Assisted by Andreas Schjelderup with a cross."
+        },
+        {
+          "team": "Norway",
+          "minute": "90",
+          "scorer": "Erling Haaland",
+          "assist": "Andreas Schjelderup",
+          "text": "Goal! Brazil 0, Norway 2. Erling Haaland (Norway) left footed shot from outside the box to the bottom right corner. Assisted by Andreas Schjelderup."
+        },
+        {
+          "team": "Brazil",
+          "minute": "90+10",
+          "scorer": "Neymar",
+          "text": "Goal! Brazil 1, Norway 2. Neymar (Brazil) converts the penalty with a right footed shot to the bottom right corner."
+        }
+      ],
+      "motm": "Erling Haaland (NOR)"
+    },
     {
       "id": "760503",
       "kickoff": "2026-07-04T21:00Z",
@@ -17,10 +183,18 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "France",
+          "minute": "70",
+          "scorer": "Kylian Mbappé",
+          "text": "Goal! Paraguay 0, France 1. Kylian Mbappé (France) converts the penalty with a right footed shot to the bottom right corner."
+        }
+      ],
+      "motm": "Kylian Mbappé (FRA)"
     },
     {
       "id": "760502",
@@ -35,10 +209,33 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "awayScore": 3,
+      "score": "0-3",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Morocco",
+          "minute": "50",
+          "scorer": "Azzedine Ounahi",
+          "assist": "Achraf Hakimi",
+          "text": "Goal! Canada 0, Morocco 1. Azzedine Ounahi (Morocco) right footed shot from outside the box to the bottom right corner. Assisted by Achraf Hakimi following a set piece situation."
+        },
+        {
+          "team": "Morocco",
+          "minute": "82",
+          "scorer": "Azzedine Ounahi",
+          "assist": "Brahim Díaz",
+          "text": "Goal! Canada 0, Morocco 2. Azzedine Ounahi (Morocco) right footed shot from the centre of the box to the top right corner. Assisted by Brahim Díaz following a fast break."
+        },
+        {
+          "team": "Morocco",
+          "minute": "90+8",
+          "scorer": "Soufiane Rahimi",
+          "assist": "Brahim Díaz",
+          "text": "Goal! Canada 0, Morocco 3. Soufiane Rahimi (Morocco) left footed shot from the centre of the box to the bottom right corner. Assisted by Brahim Díaz following a fast break."
+        }
+      ],
+      "motm": "Soufiane Rahimi (MAR)"
     },
     {
       "id": "760501",
@@ -52,11 +249,20 @@
       "awayCode": "GHA",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Colombia",
+          "minute": "14",
+          "scorer": "Jhon Arias",
+          "assist": "Luis Suárez",
+          "text": "Goal! Colombia 1, Ghana 0. Jhon Arias (Colombia) right footed shot from the centre of the box to the bottom right corner. Assisted by Luis Suárez with a cross."
+        }
+      ],
+      "motm": "Luis Díaz (COL)"
     },
     {
       "id": "760500",
@@ -70,11 +276,47 @@
       "awayCode": "CPV",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 3,
+      "awayScore": 2,
+      "score": "3-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Argentina",
+          "minute": "29",
+          "scorer": "Lionel Messi",
+          "assist": "Lisandro Martínez",
+          "text": "Goal! Argentina 1, Cabo Verde 0. Lionel Messi (Argentina) left footed shot from the right side of the six yard box to the top right corner. Assisted by Lisandro Martínez with a through ball."
+        },
+        {
+          "team": "Cape Verde",
+          "minute": "59",
+          "scorer": "Deroy Duarte",
+          "assist": "Ryan Mendes",
+          "text": "Goal! Argentina 1, Cabo Verde 1. Deroy Duarte (Cabo Verde) right footed shot from a difficult angle on the right to the bottom left corner. Assisted by Ryan Mendes."
+        },
+        {
+          "team": "Argentina",
+          "minute": "92",
+          "scorer": "Lisandro Martínez",
+          "assist": "Alexis Mac Allister",
+          "text": "Goal! Argentina 2, Cabo Verde 1. Lisandro Martínez (Argentina) left footed shot from the right side of the box to the top right corner. Assisted by Alexis Mac Allister with a headed pass following a corner."
+        },
+        {
+          "team": "Cape Verde",
+          "minute": "103",
+          "scorer": "Sidny Lopes Cabral",
+          "assist": "Yannick Semedo",
+          "text": "Goal! Argentina 2, Cabo Verde 2. Sidny Cabral (Cabo Verde) right footed shot from the left side of the box to the top right corner. Assisted by Yannick Semedo."
+        },
+        {
+          "team": "Argentina",
+          "minute": "111",
+          "scorer": "Diney Borges",
+          "text": "Own Goal by Diney Borges, Cabo Verde. Argentina 3, Cabo Verde 2."
+        }
+      ],
+      "motm": "Lionel Messi (ARG)"
     },
     {
       "id": "760499",
@@ -88,11 +330,26 @@
       "awayCode": "EGY",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 1,
+      "awayScore": 1,
+      "score": "1-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Egypt",
+          "minute": "13",
+          "scorer": "Emam Ashour",
+          "assist": "Karim Hafez",
+          "text": "Goal! Australia 0, Egypt 1. Emam Ashour (Egypt) header from the centre of the box to the bottom left corner. Assisted by Karim Hafez with a cross following a set piece situation."
+        },
+        {
+          "team": "Australia",
+          "minute": "55",
+          "scorer": "Mohamed Hany",
+          "text": "Own Goal by Mohamed Hany, Egypt. Australia 1, Egypt 1."
+        }
+      ],
+      "motm": "Emam Ashour (EGY)"
     },
     {
       "id": "760498",
@@ -106,11 +363,26 @@
       "awayCode": "ALG",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
-      "homeScore": 0,
+      "homeScore": 2,
       "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Switzerland",
+          "minute": "10",
+          "scorer": "Breel Embolo",
+          "assist": "Johan Manzambi",
+          "text": "Goal! Switzerland 1, Algeria 0. Breel Embolo (Switzerland) left footed shot from very close range to the bottom left corner. Assisted by Johan Manzambi following a fast break."
+        },
+        {
+          "team": "Switzerland",
+          "minute": "46",
+          "scorer": "Dan Ndoye",
+          "text": "Goal! Switzerland 2, Algeria 0. Dan Ndoye (Switzerland) right footed shot from the centre of the box to the bottom left corner."
+        }
+      ],
+      "motm": "Denis Zakaria (SUI)"
     },
     {
       "id": "760496",
@@ -124,11 +396,32 @@
       "awayCode": "CRO",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Croatia",
+          "minute": "53",
+          "scorer": "Ivan Perisic",
+          "text": "Goal! Portugal 0, Croatia 1. Ivan Perisic (Croatia) left footed shot from the left side of the box to the centre of the goal."
+        },
+        {
+          "team": "Portugal",
+          "minute": "68",
+          "scorer": "Cristiano Ronaldo",
+          "text": "Goal! Portugal 1, Croatia 1. Cristiano Ronaldo (Portugal) converts the penalty with a right footed shot to the centre of the goal."
+        },
+        {
+          "team": "Portugal",
+          "minute": "90+4",
+          "scorer": "Gonçalo Ramos",
+          "assist": "Rafael Leão",
+          "text": "Goal! Portugal 2, Croatia 1. Gonçalo Ramos (Portugal) header from the centre of the box to the bottom right corner. Assisted by Rafael Leão with a cross."
+        }
+      ],
+      "motm": "Mateo Kovacic (CRO)"
     },
     {
       "id": "760497",
@@ -142,11 +435,34 @@
       "awayCode": "AUT",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
-      "homeScore": 0,
+      "homeScore": 3,
       "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "score": "3-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "36",
+          "scorer": "Mikel Oyarzabal",
+          "assist": "Marc Cucurella",
+          "text": "Goal! Spain 1, Austria 0. Mikel Oyarzabal (Spain) left footed shot from the centre of the box to the centre of the goal. Assisted by Marc Cucurella with a cross."
+        },
+        {
+          "team": "Spain",
+          "minute": "66",
+          "scorer": "Pedro Porro",
+          "assist": "Álex Baena",
+          "text": "Goal! Spain 2, Austria 0. Pedro Porro (Spain) header from the centre of the box to the centre of the goal. Assisted by Álex Baena."
+        },
+        {
+          "team": "Spain",
+          "minute": "89",
+          "scorer": "Mikel Oyarzabal",
+          "assist": "Marc Cucurella",
+          "text": "Goal! Spain 3, Austria 0. Mikel Oyarzabal (Spain) right footed shot from the centre of the box to the bottom right corner. Assisted by Marc Cucurella."
+        }
+      ],
+      "motm": "Mikel Oyarzabal (ESP)"
     },
     {
       "id": "760494",
