@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Flag } from '@/components/ui/Flag';
 import type { BracketSlot, GoldenBootProjection, Team } from '@/simulation/types';
 
-type MatchStage = Exclude<BracketSlot['stage'], 'Champion'>;
+type MatchStage = Exclude<BracketSlot['stage'], 'Champion' | 'ThirdPlace'>;
 type MarkerStatus = 'correct' | 'wrong' | 'pending';
 type BracketMarkerMode = 'prediction' | 'actual';
 
@@ -19,12 +19,14 @@ const TEAM_RADIUS = 438;
 const SVG_SIZE = 1000;
 const TEAM_MARKER_SIZE = 46;
 const WINNER_MARKER_SIZE = 28;
+const ROUTE_FLAG_SIZE = 32;
 
 const stageLabels: Record<BracketSlot['stage'], string> = {
   R32: 'R32',
   R16: 'R16',
   QF: 'QF',
   SF: 'SF',
+  ThirdPlace: '3rd Place',
   Final: 'Final',
   Champion: 'Champion'
 };
@@ -42,6 +44,7 @@ const stageCounts: Record<BracketSlot['stage'], number> = {
   R16: 8,
   QF: 4,
   SF: 2,
+  ThirdPlace: 1,
   Final: 1,
   Champion: 1
 };
@@ -104,13 +107,27 @@ interface RadialLayout {
   entrants: RadialEntrant[];
   matches: RadialMatch[];
   finalSlot?: BracketSlot;
+  thirdPlaceSlot?: BracketSlot;
   centerTeam?: Team;
+  runnerUpTeam?: Team;
+  thirdPlaceTeam?: Team;
   centerLabel: string;
 }
 
 interface RadialConnectorSegment {
   id: string;
   d: string;
+  active: boolean;
+}
+
+interface CenterRoute {
+  id: string;
+  role: 'winner' | 'loser';
+  team?: Team;
+  title: string;
+  flagX: number;
+  flagY: number;
+  lineD: string;
   active: boolean;
 }
 
@@ -289,13 +306,25 @@ function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLay
 
   const championSlot = slotAt('Champion');
   const finalSlot = slotAt('Final');
-  const centerTeam = teamForCode(championSlot?.winner ?? champion);
+  const thirdPlaceSlot = slotAt('ThirdPlace');
+  const championCode = championSlot?.winner ?? champion;
+  const runnerUpCode = finalSlot
+    ? finalSlot.teamA === championCode
+      ? finalSlot.teamB
+      : finalSlot.teamB === championCode
+        ? finalSlot.teamA
+        : undefined
+    : undefined;
+  const centerTeam = teamForCode(championCode);
 
   return {
     entrants,
     matches,
     finalSlot,
+    thirdPlaceSlot,
     centerTeam,
+    runnerUpTeam: teamForCode(runnerUpCode),
+    thirdPlaceTeam: teamForCode(thirdPlaceSlot?.winner),
     centerLabel: centerTeam?.name ?? 'TBD'
   };
 }
@@ -348,6 +377,65 @@ function radialConnectorSegments(parent: RadialMatch): RadialConnectorSegment[] 
   ];
 }
 
+function slotLoser(slot?: BracketSlot) {
+  if (!slot?.winner) return undefined;
+  if (slot.teamA === slot.winner) return slot.teamB;
+  if (slot.teamB === slot.winner) return slot.teamA;
+  return undefined;
+}
+
+function linePath(fromX: number, fromY: number, toX: number, toY: number) {
+  return `M ${fromX.toFixed(2)} ${fromY.toFixed(2)} L ${toX.toFixed(2)} ${toY.toFixed(2)}`;
+}
+
+function pointBetween(fromX: number, fromY: number, toX: number, toY: number, amount: number) {
+  return {
+    x: fromX + (toX - fromX) * amount,
+    y: fromY + (toY - fromY) * amount
+  };
+}
+
+function centerRoutes(matches: RadialMatch[], champion?: string, thirdPlaceSlot?: BracketSlot): CenterRoute[] {
+  const winnerCardY = CENTER - 72;
+  const thirdPlaceCardY = CENTER + 78;
+  const cardEdgeOffset = 62;
+
+  return matches
+    .filter((match) => match.stage === 'SF')
+    .sort((a, b) => a.x - b.x)
+    .flatMap((match) => {
+      const side = match.x < CENTER ? -1 : 1;
+      const winnerCode = match.slot?.winner;
+      const loserCode = slotLoser(match.slot);
+      const lineEndX = CENTER + side * cardEdgeOffset;
+      const winnerPoint = pointBetween(match.x, match.y, lineEndX, winnerCardY, 0.5);
+      const loserPoint = pointBetween(match.x, match.y, lineEndX, thirdPlaceCardY, 0.5);
+
+      return [
+        {
+          id: `${match.id}-winner-route`,
+          role: 'winner' as const,
+          team: teamForCode(winnerCode),
+          title: winnerCode ? `Semi-final winner ${teamForCode(winnerCode)?.name ?? winnerCode}` : 'Semi-final winner TBD',
+          flagX: winnerPoint.x,
+          flagY: winnerPoint.y,
+          lineD: linePath(match.x, match.y, lineEndX, winnerCardY),
+          active: Boolean(champion && winnerCode === champion)
+        },
+        {
+          id: `${match.id}-loser-route`,
+          role: 'loser' as const,
+          team: teamForCode(loserCode),
+          title: loserCode ? `Semi-final loser ${teamForCode(loserCode)?.name ?? loserCode}` : 'Semi-final loser TBD',
+          flagX: loserPoint.x,
+          flagY: loserPoint.y,
+          lineD: linePath(match.x, match.y, lineEndX, thirdPlaceCardY),
+          active: Boolean(thirdPlaceSlot?.winner && loserCode === thirdPlaceSlot.winner)
+        }
+      ];
+    });
+}
+
 function classNames(...classes: Array<string | false | undefined>) {
   return classes.filter(Boolean).join(' ');
 }
@@ -362,6 +450,7 @@ function emptyStageSets(): Record<BracketSlot['stage'], Set<string>> {
     R16: new Set<string>(),
     QF: new Set<string>(),
     SF: new Set<string>(),
+    ThirdPlace: new Set<string>(),
     Final: new Set<string>(),
     Champion: new Set<string>()
   };
@@ -402,7 +491,7 @@ function buildActualProgress(actualBracket?: BracketSlot[]): ActualProgress | un
       if (slot.teamA) teamsByStage[stage].add(slot.teamA);
       if (slot.teamB) teamsByStage[stage].add(slot.teamB);
 
-      if (stage !== 'Champion') {
+      if (stage !== 'Champion' && stage !== 'ThirdPlace') {
         const matchStage = stage as MatchStage;
         if (slot.teamA) matchByStageTeam[matchStage].set(slot.teamA, slot);
         if (slot.teamB) matchByStageTeam[matchStage].set(slot.teamB, slot);
@@ -416,7 +505,7 @@ function buildActualProgress(actualBracket?: BracketSlot[]): ActualProgress | un
     teamsCompleteByStage[stage] =
       slots.length >= stageCounts[stage] && slots.every((slot) => stage === 'Champion' || Boolean(slot.teamA && slot.teamB));
 
-    if (stage !== 'Champion') {
+    if (stage !== 'Champion' && stage !== 'ThirdPlace') {
       winnersCompleteByStage[stage] = slots.length >= stageCounts[stage] && slots.every((slot) => Boolean(slot.winner));
     }
   });
@@ -467,6 +556,41 @@ function matchDetail(slot?: BracketSlot) {
   if (!teamA && !teamB) return null;
 
   return `${teamA?.code ?? 'TBD'} vs ${teamB?.code ?? 'TBD'}`;
+}
+
+function PodiumSlot({
+  rank,
+  label,
+  team,
+  detail,
+  score,
+  emptyLabel
+}: {
+  rank: '1' | '2' | '3';
+  label: string;
+  team?: Team;
+  detail?: string | null;
+  score?: string | null;
+  emptyLabel: string;
+}) {
+  return (
+    <div className={`radial-podium-slot radial-podium-rank-${rank}`}>
+      <div className="radial-podium-rank">{rank}</div>
+      <div className="min-w-0">
+        <p className="text-[10px] font-extrabold uppercase text-muted">{label}</p>
+        {team ? (
+          <div className="mt-1 flex min-w-0 items-center justify-center gap-1.5">
+            <Flag team={team} className="h-4 w-6" />
+            <span className="truncate text-xs font-extrabold text-ink">{team.name}</span>
+          </div>
+        ) : (
+          <span className="text-xs font-extrabold text-muted">{emptyLabel}</span>
+        )}
+        {detail ? <p className="mt-0.5 truncate text-[10px] font-bold text-muted">{detail}</p> : null}
+        {score ? <p className="data-number text-xs font-extrabold text-primary">{score}</p> : null}
+      </div>
+    </div>
+  );
 }
 
 function scoreDetail(slot?: BracketSlot) {
@@ -566,10 +690,13 @@ function RadialBracketSection({
   const bracketChampion = useMemo(() => bracket.find((slot) => slot.stage === 'Champion')?.winner ?? champion, [bracket, champion]);
   const layout = useMemo(() => buildRadialLayout(bracket, bracketChampion), [bracket, bracketChampion]);
   const actualProgress = useMemo(() => buildActualProgress(comparisonBracket), [comparisonBracket]);
-  const visibleMatches = layout.matches.filter((match) => match.stage !== 'Final');
+  const visibleMatches = layout.matches.filter((match) => match.stage !== 'Final' && match.stage !== 'SF');
   const idPrefix = sanitizeId(useId());
   const finalDetail = matchDetail(layout.finalSlot);
   const finalScore = scoreDetail(layout.finalSlot);
+  const thirdPlaceDetail = matchDetail(layout.thirdPlaceSlot);
+  const thirdPlaceScore = scoreDetail(layout.thirdPlaceSlot);
+  const centerRouteItems = centerRoutes(layout.matches, bracketChampion, layout.thirdPlaceSlot);
 
   return (
     <section className="card overflow-hidden">
@@ -598,6 +725,11 @@ function RadialBracketSection({
                   <circle cx={match.x} cy={match.y} r={WINNER_MARKER_SIZE / 2} />
                 </clipPath>
               ))}
+              {centerRouteItems.map((route) => (
+                <clipPath key={`route-${route.id}`} id={`${idPrefix}-${sanitizeId(route.id)}-route-flag`}>
+                  <circle cx={route.flagX} cy={route.flagY} r={ROUTE_FLAG_SIZE / 2} />
+                </clipPath>
+              ))}
             </defs>
 
             <circle className="radial-guide radial-guide-outer" cx={CENTER} cy={CENTER} r={TEAM_RADIUS} />
@@ -605,7 +737,7 @@ function RadialBracketSection({
             <circle className="radial-guide" cx={CENTER} cy={CENTER} r={stageRadii.SF} />
 
             <g>
-              {layout.matches.flatMap((match) =>
+              {layout.matches.filter((match) => match.stage !== 'Final').flatMap((match) =>
                 radialConnectorSegments(match).map((segment) => (
                   <path
                     key={`path-${segment.id}`}
@@ -614,6 +746,59 @@ function RadialBracketSection({
                   />
                 ))
               )}
+              {centerRouteItems.map((route) => (
+                <path
+                  key={`center-line-${route.id}`}
+                  d={route.lineD}
+                  className={classNames(
+                    'radial-center-route',
+                    route.role === 'loser' && 'radial-center-route-loser',
+                    route.active && 'radial-connector-active',
+                    isDimmed(pathOnly, bracketChampion, route.active) && 'radial-muted'
+                  )}
+                />
+              ))}
+            </g>
+
+            <g>
+              {centerRouteItems.map((route) => {
+                const clipId = `${idPrefix}-${sanitizeId(route.id)}-route-flag`;
+                const muted = isDimmed(pathOnly, bracketChampion, route.active);
+
+                return (
+                  <g
+                    key={`center-route-flag-${route.id}`}
+                    className={classNames(
+                      'radial-route-flag',
+                      route.role === 'loser' && 'radial-route-flag-loser',
+                      route.active && 'radial-route-flag-active',
+                      muted && 'radial-muted'
+                    )}
+                  >
+                    <title>{route.title}</title>
+                    <circle className="radial-route-flag-bg" cx={route.flagX} cy={route.flagY} r={ROUTE_FLAG_SIZE / 2 + 3} />
+                    {route.team ? (
+                      <image
+                        href={flagUrl(route.team)}
+                        x={route.flagX - ROUTE_FLAG_SIZE / 2}
+                        y={route.flagY - ROUTE_FLAG_SIZE / 2}
+                        width={ROUTE_FLAG_SIZE}
+                        height={ROUTE_FLAG_SIZE}
+                        preserveAspectRatio="xMidYMid slice"
+                        clipPath={`url(#${clipId})`}
+                      />
+                    ) : (
+                      <>
+                        <circle className="radial-placeholder" cx={route.flagX} cy={route.flagY} r={ROUTE_FLAG_SIZE / 2} />
+                        <text className="radial-placeholder-text" x={route.flagX} y={route.flagY}>
+                          ?
+                        </text>
+                      </>
+                    )}
+                    <circle className="radial-route-flag-ring" cx={route.flagX} cy={route.flagY} r={ROUTE_FLAG_SIZE / 2} />
+                  </g>
+                );
+              })}
             </g>
 
             <g>
@@ -694,19 +879,11 @@ function RadialBracketSection({
             </g>
           </svg>
 
-          <div className="radial-center-token" aria-label={`Champion ${layout.centerLabel}`}>
-            <Trophy className="h-7 w-7 text-accent" />
-            <p className="text-[10px] font-extrabold uppercase text-muted">Champion</p>
-            {layout.centerTeam ? (
-              <div className="grid justify-items-center gap-1">
-                <Flag team={layout.centerTeam} className="h-5 w-7" />
-                <span className="max-w-[118px] truncate text-center text-xs font-extrabold text-ink">{layout.centerTeam.name}</span>
-              </div>
-            ) : (
-              <span className="text-xs font-extrabold text-muted">{emptyLabel}</span>
-            )}
-            {finalDetail ? <p className="max-w-[124px] truncate text-[10px] font-bold text-muted">{finalDetail}</p> : null}
-            {finalScore ? <p className="data-number text-xs font-extrabold text-primary">{finalScore}</p> : null}
+          <div className="radial-podium" aria-label={`Podium: champion ${layout.centerLabel}`}>
+            <Trophy className="radial-podium-trophy h-6 w-6 text-accent" />
+            <PodiumSlot rank="1" label="Winner" team={layout.centerTeam} detail={finalDetail} score={finalScore} emptyLabel={emptyLabel} />
+            <PodiumSlot rank="2" label="Runner-up" team={layout.runnerUpTeam} emptyLabel={emptyLabel} />
+            <PodiumSlot rank="3" label="Third place" team={layout.thirdPlaceTeam} detail={thirdPlaceDetail} score={thirdPlaceScore} emptyLabel={emptyLabel} />
           </div>
         </div>
       </div>
