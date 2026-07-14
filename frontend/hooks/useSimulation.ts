@@ -27,6 +27,8 @@ export function useSimulation(iterations = 10_000) {
           setTotal(count);
         });
         setResult(next);
+        setCompleted(next.iterations);
+        setTotal(next.iterations);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Simulation failed');
       } finally {
@@ -45,6 +47,8 @@ export function useSimulation(iterations = 10_000) {
       }
       if (event.data.type === 'complete') {
         setResult(event.data.result);
+        setCompleted(event.data.result.iterations);
+        setTotal(event.data.result.iterations);
         setIsRunning(false);
         worker.terminate();
       }
@@ -62,14 +66,20 @@ export function useSimulation(iterations = 10_000) {
     return () => workerRef.current?.terminate();
   }, []);
 
+  const displayCompleted = result && !isRunning && !error ? result.iterations : completed;
+  const displayTotal = result && !isRunning && !error ? result.iterations : total;
+  const progress = displayTotal ? Math.round((displayCompleted / displayTotal) * 100) : 0;
+  const isComplete = Boolean(result && !isRunning && !error && progress >= 100);
+
   return {
     result,
     weights,
     run,
     isRunning,
+    isComplete,
     error,
-    completed,
-    total,
-    progress: total ? Math.round((completed / total) * 100) : 0
+    completed: displayCompleted,
+    total: displayTotal,
+    progress
   };
 }

@@ -22,7 +22,7 @@ const actualStageCounts: Record<BracketSlot['stage'], number> = {
 };
 
 export function BracketPage() {
-  const { result, run, isRunning, progress, completed, total } = useSimulation();
+  const { result, run, isRunning, isComplete, progress, completed, total } = useSimulation();
   const { matches, refresh, isRefreshing, source, generatedAt, warning } = useLiveScores();
   const actualBracket = buildActualBracket(matches);
 
@@ -49,10 +49,16 @@ export function BracketPage() {
         </div>
         <div className="relative z-10 mt-5">
           <div className="mb-2 flex justify-between text-sm text-muted">
-            <span>{isRunning ? `Simulating ${completed.toLocaleString()} / ${total.toLocaleString()}` : 'Simulation ready'}</span>
+            <span>
+              {isRunning
+                ? `Simulating ${completed.toLocaleString()} / ${total.toLocaleString()}`
+                : isComplete
+                  ? `Completed simulation: ${total.toLocaleString()} tournaments`
+                  : 'Simulation ready'}
+            </span>
             <span className="data-number">{progress}%</span>
           </div>
-          <ProgressBar value={progress} />
+          <ProgressBar value={progress} tone={isComplete ? 'success' : 'primary'} />
           <p className="mt-2 text-xs text-muted">
             {source ? `Actual bracket feed: ${source}${generatedAt ? ` / updated ${formatCacheTime(generatedAt)}` : ''}` : 'Actual bracket feed loading...'}
           </p>

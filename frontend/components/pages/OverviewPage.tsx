@@ -15,7 +15,7 @@ import { GradientText } from '@/components/visual/GradientText';
 import { PageTransition } from '@/components/layout/PageTransition';
 
 export function OverviewPage() {
-  const { result, weights, run, isRunning, completed, total, progress, error } = useSimulation();
+  const { result, weights, run, isRunning, isComplete, completed, total, progress, error } = useSimulation();
   const shareRef = useRef<HTMLDivElement>(null);
   const championTeam = teams.find((team) => team.code === result?.champion) ?? teams[0];
   const championProbability = result?.teams.find((team) => team.code === championTeam.code)?.win ?? 0;
@@ -62,10 +62,16 @@ export function OverviewPage() {
             </div>
             <div className="mt-7">
               <div className="mb-2 flex items-center justify-between text-sm text-muted">
-                <span>{isRunning ? `Simulating ${completed.toLocaleString()} / ${total.toLocaleString()} tournaments...` : `Last run: ${result?.iterations.toLocaleString() ?? 0} tournaments`}</span>
+                <span>
+                  {isRunning
+                    ? `Simulating ${completed.toLocaleString()} / ${total.toLocaleString()} tournaments...`
+                    : isComplete
+                      ? `Completed simulation: ${total.toLocaleString()} tournaments`
+                      : `Last run: ${result?.iterations.toLocaleString() ?? 0} tournaments`}
+                </span>
                 <span className="data-number">{progress}%</span>
               </div>
-              <ProgressBar value={progress} />
+              <ProgressBar value={progress} tone={isComplete ? 'success' : 'primary'} />
               {error ? <p className="mt-2 text-sm text-danger">{error}</p> : null}
             </div>
             <Ticker topEight={topEight} />
