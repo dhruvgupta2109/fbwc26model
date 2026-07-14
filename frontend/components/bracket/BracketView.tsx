@@ -11,6 +11,7 @@ import type { BracketSlot, GoldenBootProjection, Team } from '@/simulation/types
 type MatchStage = Exclude<BracketSlot['stage'], 'Champion' | 'ThirdPlace'>;
 type MarkerStatus = 'correct' | 'wrong' | 'pending';
 type BracketMarkerMode = 'prediction' | 'actual';
+type SemifinalPairing = 'adjacent' | 'cross';
 
 const CENTER = 500;
 const LEAF_COUNT = 32;
@@ -161,7 +162,7 @@ function angleForPosition(position: number) {
   return START_ANGLE + (360 / LEAF_COUNT) * position;
 }
 
-function childMatchIndexes(stage: MatchStage, index: number): Array<[MatchStage, number]> {
+function childMatchIndexes(stage: MatchStage, index: number, semifinalPairing: SemifinalPairing): Array<[MatchStage, number]> {
   switch (stage) {
     case 'Final':
       return [
@@ -169,10 +170,15 @@ function childMatchIndexes(stage: MatchStage, index: number): Array<[MatchStage,
         ['SF', 1]
       ];
     case 'SF':
-      return [
-        ['QF', index * 2],
-        ['QF', index * 2 + 1]
-      ];
+      return semifinalPairing === 'cross'
+        ? [
+            ['QF', index],
+            ['QF', index + 2]
+          ]
+        : [
+            ['QF', index * 2],
+            ['QF', index * 2 + 1]
+          ];
     case 'QF':
       return [
         ['R16', index * 2],
@@ -198,7 +204,7 @@ function describeMatch(slot?: BracketSlot) {
   return `${stageLabels[slot.stage]}: ${teamA} vs ${teamB}${winner ? `, winner ${winner}` : ''}`;
 }
 
-function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLayout {
+function buildRadialLayout(bracket: BracketSlot[], champion?: string, semifinalPairing: SemifinalPairing = 'adjacent'): RadialLayout {
   const slotsByStage = new Map<BracketSlot['stage'], BracketSlot[]>();
   bracket.forEach((slot) => {
     const current = slotsByStage.get(slot.stage) ?? [];
@@ -231,7 +237,7 @@ function buildRadialLayout(bracket: BracketSlot[], champion?: string): RadialLay
       stage,
       index,
       slot,
-      children: childMatchIndexes(stage, index).map(([childStage, childIndex]) => makeDraftMatch(childStage, childIndex))
+      children: childMatchIndexes(stage, index, semifinalPairing).map(([childStage, childIndex]) => makeDraftMatch(childStage, childIndex))
     };
   };
 
@@ -620,6 +626,7 @@ export function BracketView({
         champion={champion}
         pathOnly={pathOnly}
         markerMode="prediction"
+        semifinalPairing="cross"
         title="Prediction Bracket"
         eyebrow="Model projection"
         action={
@@ -672,6 +679,7 @@ function RadialBracketSection({
   champion,
   pathOnly = false,
   markerMode = 'prediction',
+  semifinalPairing = 'adjacent',
   title,
   eyebrow,
   emptyLabel = 'TBD',
@@ -682,13 +690,14 @@ function RadialBracketSection({
   champion?: string;
   pathOnly?: boolean;
   markerMode?: BracketMarkerMode;
+  semifinalPairing?: SemifinalPairing;
   title: string;
   eyebrow: string;
   emptyLabel?: string;
   action?: ReactNode;
 }) {
   const bracketChampion = useMemo(() => bracket.find((slot) => slot.stage === 'Champion')?.winner ?? champion, [bracket, champion]);
-  const layout = useMemo(() => buildRadialLayout(bracket, bracketChampion), [bracket, bracketChampion]);
+  const layout = useMemo(() => buildRadialLayout(bracket, bracketChampion, semifinalPairing), [bracket, bracketChampion, semifinalPairing]);
   const actualProgress = useMemo(() => buildActualProgress(comparisonBracket), [comparisonBracket]);
   const visibleMatches = layout.matches.filter((match) => match.stage !== 'Final' && match.stage !== 'SF');
   const idPrefix = sanitizeId(useId());

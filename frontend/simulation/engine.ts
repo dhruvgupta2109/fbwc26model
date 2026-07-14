@@ -301,6 +301,13 @@ function adjacentPairs(codes: string[]): Array<[string | undefined, string | und
   return pairs;
 }
 
+function semifinalPairs(codes: string[]): Array<[string | undefined, string | undefined]> {
+  return [
+    [codes[0], codes[2]],
+    [codes[1], codes[3]]
+  ];
+}
+
 function probabilityWinner(teamA: string | undefined, teamB: string | undefined, winProbabilityByCode: Record<string, number>) {
   if (!teamA) return teamB;
   if (!teamB) return teamA;
@@ -325,6 +332,8 @@ function buildProbabilityBracket(sampleBracket: BracketSlot[], teamResults: Team
     const pairs =
       stage === 'R32'
         ? ACTUAL_R32_PAIRS
+        : stage === 'SF'
+          ? semifinalPairs(previousWinners)
         : adjacentPairs(previousWinners);
     const winners: string[] = [];
 

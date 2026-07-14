@@ -1,9 +1,205 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-07-07",
-  "generatedAt": "2026-07-06T19:39:00.860Z",
+  "cacheDate": "2026-07-14",
+  "generatedAt": "2026-07-14T09:14:22.213Z",
   "matches": [
+    {
+      "id": "760515",
+      "kickoff": "2026-07-15T19:00Z",
+      "stage": "FIFA World Cup, Semifinals",
+      "venue": "Mercedes-Benz Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760515",
+      "home": "England",
+      "away": "Argentina",
+      "homeCode": "ENG",
+      "awayCode": "ARG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760514",
+      "kickoff": "2026-07-14T19:00Z",
+      "stage": "FIFA World Cup, Semifinals",
+      "venue": "AT&T Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760514",
+      "home": "France",
+      "away": "Spain",
+      "homeCode": "FRA",
+      "awayCode": "ESP",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "score": "0-0",
+      "status": "Upcoming",
+      "goals": []
+    },
+    {
+      "id": "760513",
+      "kickoff": "2026-07-12T01:00Z",
+      "stage": "FIFA World Cup, Quarterfinals",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760513",
+      "home": "Argentina",
+      "away": "Switzerland",
+      "homeCode": "ARG",
+      "awayCode": "SUI",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "homeScore": 3,
+      "awayScore": 1,
+      "score": "3-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Argentina",
+          "minute": "10",
+          "scorer": "Alexis Mac Allister",
+          "assist": "Lionel Messi",
+          "text": "Goal! Argentina 1, Switzerland 0. Alexis Mac Allister (Argentina) header from the left side of the six yard box to the bottom right corner. Assisted by Lionel Messi with a cross following a corner."
+        },
+        {
+          "team": "Switzerland",
+          "minute": "67",
+          "scorer": "Dan Ndoye",
+          "assist": "Ricardo Rodríguez",
+          "text": "Goal! Argentina 1, Switzerland 1. Dan Ndoye (Switzerland) right footed shot from a difficult angle on the left to the centre of the goal. Assisted by Ricardo Rodríguez with a through ball."
+        },
+        {
+          "team": "Argentina",
+          "minute": "112",
+          "scorer": "Julián Álvarez",
+          "assist": "José Manuel López",
+          "text": "Goal! Argentina 2, Switzerland 1. Julián Alvarez (Argentina) right footed shot from outside the box to the top right corner. Assisted by José Manuel López."
+        },
+        {
+          "team": "Argentina",
+          "minute": "120+1",
+          "scorer": "Lautaro Martínez",
+          "text": "Goal! Argentina 3, Switzerland 1. Lautaro Martínez (Argentina) right footed shot from the centre of the box to the bottom right corner following a fast break."
+        }
+      ],
+      "motm": "Alexis Mac Allister (ARG)"
+    },
+    {
+      "id": "760512",
+      "kickoff": "2026-07-11T21:00Z",
+      "stage": "FIFA World Cup, Quarterfinals",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760512",
+      "home": "Norway",
+      "away": "England",
+      "homeCode": "NOR",
+      "awayCode": "ENG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "homeScore": 1,
+      "awayScore": 2,
+      "score": "1-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Norway",
+          "minute": "36",
+          "scorer": "Andreas Schjelderup",
+          "assist": "Martin Ødegaard",
+          "text": "Goal! Norway 1, England 0. Andreas Schjelderup (Norway) left footed shot from the left side of the box to the top right corner. Assisted by Martin Ødegaard."
+        },
+        {
+          "team": "England",
+          "minute": "45+2",
+          "scorer": "Jude Bellingham",
+          "assist": "Anthony Gordon",
+          "text": "Goal! Norway 1, England 1. Jude Bellingham (England) left footed shot from the left side of the box to the bottom right corner. Assisted by Anthony Gordon."
+        },
+        {
+          "team": "England",
+          "minute": "93",
+          "scorer": "Jude Bellingham",
+          "text": "Goal! Norway 1, England 2. Jude Bellingham (England) right footed shot from the centre of the box to the bottom left corner following a corner."
+        }
+      ],
+      "motm": "Jude Bellingham (ENG)"
+    },
+    {
+      "id": "760511",
+      "kickoff": "2026-07-10T19:00Z",
+      "stage": "FIFA World Cup, Quarterfinals",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760511",
+      "home": "Spain",
+      "away": "Belgium",
+      "homeCode": "ESP",
+      "awayCode": "BEL",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+      "homeScore": 2,
+      "awayScore": 1,
+      "score": "2-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "30",
+          "scorer": "Fabián Ruiz",
+          "text": "Goal! Spain 1, Belgium 0. Fabián Ruiz (Spain) right footed shot from the centre of the box to the high centre of the goal."
+        },
+        {
+          "team": "Belgium",
+          "minute": "41",
+          "scorer": "Charles De Ketelaere",
+          "assist": "Timothy Castagne",
+          "text": "Goal! Spain 1, Belgium 1. Charles De Ketelaere (Belgium) header from the centre of the box to the centre of the goal. Assisted by Timothy Castagne with a cross."
+        },
+        {
+          "team": "Spain",
+          "minute": "88",
+          "scorer": "Mikel Merino",
+          "text": "Goal! Spain 2, Belgium 1. Mikel Merino (Spain) left footed shot from very close range to the top left corner."
+        }
+      ],
+      "motm": "Lamine Yamal (ESP)"
+    },
+    {
+      "id": "760510",
+      "kickoff": "2026-07-09T20:00Z",
+      "stage": "FIFA World Cup, Quarterfinals",
+      "venue": "Gillette Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760510",
+      "home": "France",
+      "away": "Morocco",
+      "homeCode": "FRA",
+      "awayCode": "MAR",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+      "homeScore": 2,
+      "awayScore": 0,
+      "score": "2-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "France",
+          "minute": "60",
+          "scorer": "Kylian Mbappé",
+          "assist": "Désiré Doué",
+          "text": "Goal! France 1, Morocco 0. Kylian Mbappé (France) right footed shot from the left side of the box to the top right corner. Assisted by Désiré Doué."
+        },
+        {
+          "team": "France",
+          "minute": "66",
+          "scorer": "Ousmane Dembélé",
+          "assist": "Kylian Mbappé",
+          "text": "Goal! France 2, Morocco 0. Ousmane Dembélé (France) right footed shot from outside the box to the bottom right corner. Assisted by Kylian Mbappé."
+        }
+      ],
+      "motm": "Ousmane Dembélé (FRA)"
+    },
     {
       "id": "760508",
       "kickoff": "2026-07-07T20:00Z",
@@ -19,8 +215,9 @@
       "homeScore": 0,
       "awayScore": 0,
       "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "status": "FT",
+      "goals": [],
+      "motm": "Luis Díaz (COL)"
     },
     {
       "id": "760509",
@@ -34,11 +231,48 @@
       "awayCode": "EGY",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 3,
+      "awayScore": 2,
+      "score": "3-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Egypt",
+          "minute": "15",
+          "scorer": "Yasser Ibrahim",
+          "assist": "Marawan Attia",
+          "text": "Goal! Argentina 0, Egypt 1. Yasser Ibrahim (Egypt) header from the centre of the box to the bottom right corner. Assisted by Marwan Attia with a cross following a corner."
+        },
+        {
+          "team": "Egypt",
+          "minute": "67",
+          "scorer": "Mostafa Zico",
+          "assist": "Haissem Hassan",
+          "text": "Goal! Argentina 0, Egypt 2. Mostafa Zico (Egypt) right footed shot from the centre of the box to the centre of the goal. Assisted by Haissem Hassan following a fast break."
+        },
+        {
+          "team": "Argentina",
+          "minute": "79",
+          "scorer": "Cristian Romero",
+          "assist": "Lionel Messi",
+          "text": "Goal! Argentina 1, Egypt 2. Cristian Romero (Argentina) header from the centre of the box to the top right corner. Assisted by Lionel Messi with a cross."
+        },
+        {
+          "team": "Argentina",
+          "minute": "83",
+          "scorer": "Lionel Messi",
+          "assist": "Gonzalo Montiel",
+          "text": "Goal! Argentina 2, Egypt 2. Lionel Messi (Argentina) left footed shot from the centre of the box to the high centre of the goal. Assisted by Gonzalo Montiel."
+        },
+        {
+          "team": "Argentina",
+          "minute": "90+2",
+          "scorer": "Enzo Fernández",
+          "assist": "Lautaro Martínez",
+          "text": "Goal! Argentina 3, Egypt 2. Enzo Fernández (Argentina) header from the centre of the box to the bottom right corner. Assisted by Lautaro Martínez with a cross following a fast break."
+        }
+      ],
+      "motm": "Lionel Messi (ARG)"
     },
     {
       "id": "760507",
@@ -52,11 +286,47 @@
       "awayCode": "BEL",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 1,
+      "awayScore": 4,
+      "score": "1-4",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Belgium",
+          "minute": "9",
+          "scorer": "Charles De Ketelaere",
+          "assist": "Nicolas Raskin",
+          "text": "Goal! USA 0, Belgium 1. Charles De Ketelaere (Belgium) right footed shot from very close range to the centre of the goal. Assisted by Nicolas Raskin."
+        },
+        {
+          "team": "United States",
+          "minute": "31",
+          "scorer": "Malik Tillman",
+          "text": "Goal! USA 1, Belgium 1. Malik Tillman (USA) from a free kick with a right footed shot to the high centre of the goal."
+        },
+        {
+          "team": "Belgium",
+          "minute": "33",
+          "scorer": "Charles De Ketelaere",
+          "assist": "Leandro Trossard",
+          "text": "Goal! USA 1, Belgium 2. Charles De Ketelaere (Belgium) header from very close range to the top right corner. Assisted by Leandro Trossard with a cross."
+        },
+        {
+          "team": "Belgium",
+          "minute": "57",
+          "scorer": "Hans Vanaken",
+          "assist": "Charles De Ketelaere",
+          "text": "Goal! USA 1, Belgium 3. Hans Vanaken (Belgium) right footed shot from outside the box to the bottom right corner. Assisted by Charles De Ketelaere."
+        },
+        {
+          "team": "Belgium",
+          "minute": "90+3",
+          "scorer": "Romelu Lukaku",
+          "assist": "Hans Vanaken",
+          "text": "Goal! USA 1, Belgium 4. Romelu Lukaku (Belgium) right footed shot from the left side of the box to the bottom right corner. Assisted by Hans Vanaken."
+        }
+      ],
+      "motm": "Folarin Balogun (USA)"
     },
     {
       "id": "760506",
@@ -71,11 +341,18 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Live",
-      "minute": "25",
-      "goals": [],
+      "awayScore": 1,
+      "score": "0-1",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "90+1",
+          "scorer": "Mikel Merino",
+          "assist": "Ferran Torres",
+          "text": "Goal! Portugal 0, Spain 1. Mikel Merino (Spain) left footed shot from the centre of the box to the bottom left corner. Assisted by Ferran Torres with a through ball."
+        }
+      ],
       "motm": "Cristiano Ronaldo (POR)"
     },
     {
