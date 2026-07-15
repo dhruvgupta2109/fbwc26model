@@ -4,6 +4,8 @@ import path from 'node:path';
 const SOURCE = 'ESPN FIFA World Cup scoreboard';
 const SOURCE_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
 const SUMMARY_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary';
+const FIFA_POTM_PAGE_URL = 'https://cxm-api.fifa.com/fifaplusweb/api/pages/en/tournaments/mens/worldcup/canadamexicousa2026/articles/michelob-ultra-superior-player-of-match-winner';
+const FIFA_API_BASE_URL = 'https://cxm-api.fifa.com/fifaplusweb/api';
 const OUTPUT_PATH = path.join(process.cwd(), 'public/data/live-scores.json');
 const TOURNAMENT_START = new Date('2026-06-11T00:00:00Z');
 const TOURNAMENT_END = new Date('2026-07-19T23:59:59Z');
@@ -113,31 +115,83 @@ function goalEvents(summary) {
     .sort((a, b) => (a.minute ?? 0) - (b.minute ?? 0));
 }
 
-function topPerformer(summary) {
-  const candidates = [];
+async function fetchOfficialPotm() {
+  const page = await fetchJson(FIFA_POTM_PAGE_URL);
+  const articleEndpoint = page.sections?.find((section) => section.entryType === 'article')?.entryEndpoint;
+  if (!articleEndpoint) throw new Error('FIFA Player of the Match article endpoint is missing');
 
-  for (const team of summary?.leaders ?? []) {
-    for (const category of team.leaders ?? []) {
-      for (const leader of category.leaders ?? []) {
-        const name = leader?.athlete?.displayName;
-        if (!name) continue;
-        const stats = Object.fromEntries((leader.statistics ?? []).map((stat) => [stat.name, Number(stat.value ?? 0)]));
-        const score =
-          (stats.goals ?? 0) * 10 +
-          (stats.goalAssists ?? stats.assists ?? 0) * 6 +
-          (stats.shotsOnTarget ?? 0) * 2 +
-          (stats.totalShots ?? 0) +
-          (stats.expectedGoals ?? 0);
-        candidates.push({ name, score, team: team.team?.abbreviation });
+  const articleUrl = `${FIFA_API_BASE_URL}${articleEndpoint.startsWith('/') ? '' : '/'}${articleEndpoint}`;
+  const article = await fetchJson(articleUrl);
+  return parseOfficialPotm(article);
+}
+
+function parseOfficialPotm(article) {
+  const awards = new Map();
+
+  for (const block of article.richtext?.content ?? []) {
+    if (block.nodeType !== 'paragraph') continue;
+    let pendingMatchKey;
+
+    for (const node of block.content ?? []) {
+      if (node.nodeType === 'hyperlink' && node.data?.uri?.includes('/match-centre/match/17/285023/')) {
+        pendingMatchKey = matchKeyFromFifaLabel(textContent(node));
+        continue;
+      }
+
+      if (pendingMatchKey && node.nodeType === 'text' && node.marks?.some((mark) => mark.type === 'bold')) {
+        const player = node.value?.trim();
+        if (player && /\([^)]+\)$/.test(player)) {
+          awards.set(pendingMatchKey, player);
+          pendingMatchKey = undefined;
+        }
       }
     }
   }
 
-  candidates.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
-  return candidates[0]?.score > 0 ? `${candidates[0].name}${candidates[0].team ? ` (${candidates[0].team})` : ''}` : undefined;
+  return awards;
 }
 
-async function eventToMatch(event) {
+function textContent(node) {
+  return node.value ?? (node.content ?? []).map(textContent).join('');
+}
+
+function matchKeyFromFifaLabel(label) {
+  const scoreline = label
+    .trim()
+    .replace(/\s+\((?:AET|PSO\b[^)]*)\)\s*$/i, '')
+    .match(/^(.+?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.+)$/);
+
+  if (!scoreline) return undefined;
+  return matchKey(scoreline[1], scoreline[4], Number(scoreline[2]), Number(scoreline[3]));
+}
+
+function matchKey(home, away, homeScore, awayScore) {
+  return `${teamKey(home)}:${homeScore}-${awayScore}:${teamKey(away)}`;
+}
+
+function teamKey(team) {
+  const normalized = team
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]/g, '');
+
+  return TEAM_KEY_ALIASES[normalized] ?? normalized;
+}
+
+const TEAM_KEY_ALIASES = {
+  unitedstates: 'usa',
+  bosniaherzegovina: 'bosniaandherzegovina',
+  capeverde: 'caboverde',
+  iran: 'iriran',
+  southkorea: 'korearepublic',
+  congodr: 'drcongo',
+  democraticrepublicofthecongo: 'drcongo',
+  ivorycoast: 'cotedivoire'
+};
+
+async function eventToMatch(event, officialPotm) {
   const competition = event.competitions?.[0];
   const competitors = competition?.competitors ?? [];
   const homeCompetitor = competitors.find((competitor) => competitor.homeAway === 'home') ?? competitors[0];
@@ -168,17 +222,20 @@ async function eventToMatch(event) {
     status,
     minute: status === 'Live' ? minuteFromCompetition(competition) : undefined,
     goals: goalEvents(summary),
-    motm: topPerformer(summary)
+    motm: officialPotm.get(matchKey(home.name, away.name, homeScore, awayScore))
   };
 }
 
 async function collectMatches(now) {
   const endDate = latestFetchDate(now);
   const matches = [];
-  const scoreboard = await fetchJson(`${SOURCE_URL}?dates=${espnDate(TOURNAMENT_START)}-${espnDate(endDate)}&limit=1000`);
+  const [scoreboard, officialPotm] = await Promise.all([
+    fetchJson(`${SOURCE_URL}?dates=${espnDate(TOURNAMENT_START)}-${espnDate(endDate)}&limit=1000`),
+    fetchOfficialPotm()
+  ]);
 
   for (const event of scoreboard.events ?? []) {
-    matches.push(await eventToMatch(event));
+    matches.push(await eventToMatch(event, officialPotm));
   }
 
   return matches.sort((a, b) => new Date(b.kickoff).getTime() - new Date(a.kickoff).getTime());
