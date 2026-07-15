@@ -30,7 +30,7 @@ export function WeightSliders({ onRun, isRunning }: { onRun: () => void; isRunni
         <div className="mt-6 grid gap-5 lg:grid-cols-2">
           <SliderGroup entries={regular} weights={weights} setWeight={setWeight} />
           <div>
-            <h3 className="mb-3 text-sm font-bold text-accent">Fun Chaos Factors</h3>
+            <h3 className="mb-3 text-sm font-bold text-accent">Chaos Factors</h3>
             <SliderGroup entries={fun} weights={weights} setWeight={setWeight} />
           </div>
         </div>
