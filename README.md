@@ -8,29 +8,38 @@ WC26 Oracle is a polished client-side prediction model for the 2026 FIFA World C
 
 ## Screenshots
 
-### Overview
-
-![WC26 Oracle overview dashboard](frontend/public/screenshots/overview.png)
-
-### Knockout Bracket
-
-![WC26 Oracle animated knockout bracket](frontend/public/screenshots/bracket.png)
-
-### Group Predictions
-
-![WC26 Oracle group-stage standings](frontend/public/screenshots/groups.png)
-
-### Teams
-
-![WC26 Oracle all 48 teams grid](frontend/public/screenshots/teams.png)
-
-### Model Settings
-
-![WC26 Oracle model settings and explainability](frontend/public/screenshots/model.png)
-
-### Live Match Feed
-
-![WC26 Oracle live scores and match feed](frontend/public/screenshots/live.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Overview</strong><br>
+      <img src="frontend/public/screenshots/overview.png" alt="WC26 Oracle overview dashboard" width="100%">
+    </td>
+    <td align="center" width="50%">
+      <strong>Knockout Bracket</strong><br>
+      <img src="frontend/public/screenshots/bracket.png" alt="WC26 Oracle animated knockout bracket" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Group Predictions</strong><br>
+      <img src="frontend/public/screenshots/groups.png" alt="WC26 Oracle group-stage standings" width="100%">
+    </td>
+    <td align="center" width="50%">
+      <strong>Teams</strong><br>
+      <img src="frontend/public/screenshots/teams.png" alt="WC26 Oracle all 48 teams grid" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Model Settings</strong><br>
+      <img src="frontend/public/screenshots/model.png" alt="WC26 Oracle model settings and explainability" width="100%">
+    </td>
+    <td align="center" width="50%">
+      <strong>Live Match Feed</strong><br>
+      <img src="frontend/public/screenshots/live.png" alt="WC26 Oracle live scores and match feed" width="100%">
+    </td>
+  </tr>
+</table>
 
 ## Features
 
