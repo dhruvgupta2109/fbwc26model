@@ -1,8 +1,8 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-07-14",
-  "generatedAt": "2026-07-14T09:14:22.213Z",
+  "cacheDate": "2026-07-15",
+  "generatedAt": "2026-07-15T16:16:43.677Z",
   "matches": [
     {
       "id": "760515",
@@ -35,10 +35,25 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "awayScore": 2,
+      "score": "0-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "22",
+          "scorer": "Mikel Oyarzabal",
+          "text": "Goal! France 0, Spain 1. Mikel Oyarzabal (Spain) converts the penalty with a left footed shot to the top right corner."
+        },
+        {
+          "team": "Spain",
+          "minute": "58",
+          "scorer": "Pedro Porro",
+          "assist": "Dani Olmo",
+          "text": "Goal! France 0, Spain 2. Pedro Porro (Spain) right footed shot from the centre of the box to the bottom right corner. Assisted by Dani Olmo."
+        }
+      ],
+      "motm": "Pedro Porro (Spain)"
     },
     {
       "id": "760513",
@@ -85,7 +100,7 @@
           "text": "Goal! Argentina 3, Switzerland 1. Lautaro Martínez (Argentina) right footed shot from the centre of the box to the bottom right corner following a fast break."
         }
       ],
-      "motm": "Alexis Mac Allister (ARG)"
+      "motm": "Julian Alvarez (Argentina)"
     },
     {
       "id": "760512",
@@ -125,7 +140,7 @@
           "text": "Goal! Norway 1, England 2. Jude Bellingham (England) right footed shot from the centre of the box to the bottom left corner following a corner."
         }
       ],
-      "motm": "Jude Bellingham (ENG)"
+      "motm": "Jude Bellingham (England)"
     },
     {
       "id": "760511",
@@ -164,7 +179,7 @@
           "text": "Goal! Spain 2, Belgium 1. Mikel Merino (Spain) left footed shot from very close range to the top left corner."
         }
       ],
-      "motm": "Lamine Yamal (ESP)"
+      "motm": "Lamine Yamal (Spain)"
     },
     {
       "id": "760510",
@@ -198,7 +213,7 @@
           "text": "Goal! France 2, Morocco 0. Ousmane Dembélé (France) right footed shot from outside the box to the bottom right corner. Assisted by Kylian Mbappé."
         }
       ],
-      "motm": "Ousmane Dembélé (FRA)"
+      "motm": "Kylian Mbappe (France)"
     },
     {
       "id": "760508",
@@ -217,7 +232,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Luis Díaz (COL)"
+      "motm": "Gregor Kobel (Switzerland)"
     },
     {
       "id": "760509",
@@ -272,7 +287,7 @@
           "text": "Goal! Argentina 3, Egypt 2. Enzo Fernández (Argentina) header from the centre of the box to the bottom right corner. Assisted by Lautaro Martínez with a cross following a fast break."
         }
       ],
-      "motm": "Lionel Messi (ARG)"
+      "motm": "Lionel Messi (Argentina)"
     },
     {
       "id": "760507",
@@ -326,7 +341,7 @@
           "text": "Goal! USA 1, Belgium 4. Romelu Lukaku (Belgium) right footed shot from the left side of the box to the bottom right corner. Assisted by Hans Vanaken."
         }
       ],
-      "motm": "Folarin Balogun (USA)"
+      "motm": "Charles De Ketelaere (Belgium)"
     },
     {
       "id": "760506",
@@ -353,7 +368,7 @@
           "text": "Goal! Portugal 0, Spain 1. Mikel Merino (Spain) left footed shot from the centre of the box to the bottom left corner. Assisted by Ferran Torres with a through ball."
         }
       ],
-      "motm": "Cristiano Ronaldo (POR)"
+      "motm": "Rodri (Spain)"
     },
     {
       "id": "760505",
@@ -405,7 +420,7 @@
           "text": "Goal! Mexico 2, England 3. Raúl Jiménez (Mexico) converts the penalty with a right footed shot to the bottom left corner."
         }
       ],
-      "motm": "Raúl Jiménez (MEX)"
+      "motm": "Jude Bellingham (England)"
     },
     {
       "id": "760504",
@@ -445,7 +460,7 @@
           "text": "Goal! Brazil 1, Norway 2. Neymar (Brazil) converts the penalty with a right footed shot to the bottom right corner."
         }
       ],
-      "motm": "Erling Haaland (NOR)"
+      "motm": "Erling Haaland (Norway)"
     },
     {
       "id": "760503",
@@ -471,7 +486,7 @@
           "text": "Goal! Paraguay 0, France 1. Kylian Mbappé (France) converts the penalty with a right footed shot to the bottom right corner."
         }
       ],
-      "motm": "Kylian Mbappé (FRA)"
+      "motm": "Orlando Gill (Paraguay)"
     },
     {
       "id": "760502",
@@ -512,7 +527,7 @@
           "text": "Goal! Canada 0, Morocco 3. Soufiane Rahimi (Morocco) left footed shot from the centre of the box to the bottom right corner. Assisted by Brahim Díaz following a fast break."
         }
       ],
-      "motm": "Soufiane Rahimi (MAR)"
+      "motm": "Azzedine Ounahi (Morocco)"
     },
     {
       "id": "760501",
@@ -539,7 +554,7 @@
           "text": "Goal! Colombia 1, Ghana 0. Jhon Arias (Colombia) right footed shot from the centre of the box to the bottom right corner. Assisted by Luis Suárez with a cross."
         }
       ],
-      "motm": "Luis Díaz (COL)"
+      "motm": "Luis Diaz (Colombia)"
     },
     {
       "id": "760500",
@@ -593,7 +608,7 @@
           "text": "Own Goal by Diney Borges, Cabo Verde. Argentina 3, Cabo Verde 2."
         }
       ],
-      "motm": "Lionel Messi (ARG)"
+      "motm": "Lionel Messi (Argentina)"
     },
     {
       "id": "760499",
@@ -626,7 +641,7 @@
           "text": "Own Goal by Mohamed Hany, Egypt. Australia 1, Egypt 1."
         }
       ],
-      "motm": "Emam Ashour (EGY)"
+      "motm": "Mohamed Salah (Egypt)"
     },
     {
       "id": "760498",
@@ -659,7 +674,7 @@
           "text": "Goal! Switzerland 2, Algeria 0. Dan Ndoye (Switzerland) right footed shot from the centre of the box to the bottom left corner."
         }
       ],
-      "motm": "Denis Zakaria (SUI)"
+      "motm": "Breel Embolo (Switzerland)"
     },
     {
       "id": "760496",
@@ -698,7 +713,7 @@
           "text": "Goal! Portugal 2, Croatia 1. Gonçalo Ramos (Portugal) header from the centre of the box to the bottom right corner. Assisted by Rafael Leão with a cross."
         }
       ],
-      "motm": "Mateo Kovacic (CRO)"
+      "motm": "Cristiano Ronaldo (Portugal)"
     },
     {
       "id": "760497",
@@ -739,7 +754,7 @@
           "text": "Goal! Spain 3, Austria 0. Mikel Oyarzabal (Spain) right footed shot from the centre of the box to the bottom right corner. Assisted by Marc Cucurella."
         }
       ],
-      "motm": "Mikel Oyarzabal (ESP)"
+      "motm": "Lamine Yamal (Spain)"
     },
     {
       "id": "760494",
@@ -771,7 +786,7 @@
           "text": "Goal! USA 2, Bosnia and Herzegovina 0. Malik Tillman (USA) from a free kick with a right footed shot to the top left corner."
         }
       ],
-      "motm": "Folarin Balogun (USA)"
+      "motm": "Malik Tillman (USA)"
     },
     {
       "id": "760493",
@@ -824,7 +839,7 @@
           "text": "Goal! Belgium 3, Senegal 2. Youri Tielemans (Belgium) converts the penalty with a right footed shot to the top right corner."
         }
       ],
-      "motm": "Youri Tielemans (BEL)"
+      "motm": "Youri Tielemans (Belgium)"
     },
     {
       "id": "760495",
@@ -865,7 +880,7 @@
           "text": "Goal! England 2, Congo DR 1. Harry Kane (England) right footed shot from the right side of the box to the top right corner. Assisted by Anthony Gordon."
         }
       ],
-      "motm": "Harry Kane (ENG)"
+      "motm": "Harry Kane (England)"
     },
     {
       "id": "760491",
@@ -899,7 +914,7 @@
           "text": "Goal! Mexico 2, Ecuador 0. Raúl Jiménez (Mexico) right footed shot from the centre of the box to the top right corner. Assisted by Julián Quiñones."
         }
       ],
-      "motm": "Raúl Jiménez (MEX)"
+      "motm": "Julian Quinones (Mexico)"
     },
     {
       "id": "760492",
@@ -940,7 +955,7 @@
           "text": "Goal! France 3, Sweden 0. Kylian Mbappé (France) right footed shot from the left side of the box to the bottom right corner. Assisted by Michael Olise with a through ball."
         }
       ],
-      "motm": "Michael Olise (FRA)"
+      "motm": "Kylian Mbappe (France)"
     },
     {
       "id": "760490",
@@ -981,7 +996,7 @@
           "text": "Goal! Côte d'Ivoire 1, Norway 2. Erling Haaland (Norway) left footed shot from the centre of the box to the centre of the goal. Assisted by Patrick Berg."
         }
       ],
-      "motm": "Erling Haaland (NOR)"
+      "motm": "Antonio Nusa (Norway)"
     },
     {
       "id": "760488",
@@ -1015,7 +1030,7 @@
           "text": "Goal! Netherlands 1, Morocco 1. Issa Diop (Morocco) header from the centre of the box to the top right corner. Assisted by Chemsdine Talbi with a cross."
         }
       ],
-      "motm": "Achraf Hakimi (MAR)"
+      "motm": "Issa Diop (Morocco)"
     },
     {
       "id": "760489",
@@ -1049,7 +1064,7 @@
           "text": "Goal! Germany 1, Paraguay 1. Kai Havertz (Germany) header from the centre of the box to the bottom right corner. Assisted by Florian Wirtz with a cross."
         }
       ],
-      "motm": "Joshua Kimmich (GER)"
+      "motm": "Orlando Gill (Paraguay)"
     },
     {
       "id": "760487",
@@ -1089,7 +1104,7 @@
           "text": "Goal! Brazil 2, Japan 1. Gabriel Martinelli (Brazil) right footed shot from the centre of the box to the bottom right corner. Assisted by Bruno Guimarães."
         }
       ],
-      "motm": "Bruno Guimarães (BRA)"
+      "motm": "Casemiro (Brazil)"
     },
     {
       "id": "760486",
@@ -1115,7 +1130,7 @@
           "text": "Goal! South Africa 0, Canada 1. Stephen Eustaquio (Canada) right footed shot from outside the box to the bottom left corner."
         }
       ],
-      "motm": "Tani Oluwaseyi (CAN)"
+      "motm": "Stephen Eustaquio (Canada)"
     },
     {
       "id": "760484",
@@ -1176,7 +1191,7 @@
           "text": "Goal! Algeria 3, Austria 3. Sasa Kalajdzic (Austria) header from the centre of the box to the bottom right corner. Assisted by Michael Gregoritsch with a headed pass."
         }
       ],
-      "motm": "Ibrahim Maza (ALG)"
+      "motm": "Riyad Mahrez (Algeria)"
     },
     {
       "id": "760483",
@@ -1221,7 +1236,7 @@
           "text": "Goal! Jordan 1, Argentina 3. Lionel Messi (Argentina) from a free kick with a left footed shot to the bottom left corner."
         }
       ],
-      "motm": "Lautaro Martínez (ARG)"
+      "motm": "Giovani Lo Celso (Argentina)"
     },
     {
       "id": "760481",
@@ -1240,7 +1255,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Gustavo Puerta (COL)"
+      "motm": "Diogo Costa (Portugal)"
     },
     {
       "id": "760482",
@@ -1286,7 +1301,7 @@
           "text": "Goal! Congo DR 3, Uzbekistan 1. Yoane Wissa (Congo DR) right footed shot from outside the box to the bottom right corner. Assisted by Meschack Elia."
         }
       ],
-      "motm": "Yoane Wissa (COD)"
+      "motm": "Yoane Wissa (Congo DR)"
     },
     {
       "id": "760480",
@@ -1327,7 +1342,7 @@
           "text": "Goal! Croatia 2, Ghana 1. Nikola Vlasic (Croatia) header from the centre of the box to the bottom left corner. Assisted by Luka Modric with a cross following a corner."
         }
       ],
-      "motm": "Nikola Vlasic (CRO)"
+      "motm": "Petar Sucic (Croatia)"
     },
     {
       "id": "760485",
@@ -1361,7 +1376,7 @@
           "text": "Goal! Panama 0, England 2. Harry Kane (England) header from the centre of the box to the top left corner. Assisted by Jude Bellingham with a cross."
         }
       ],
-      "motm": "Marcus Rashford (ENG)"
+      "motm": "Jude Bellingham (England)"
     },
     {
       "id": "760476",
@@ -1394,7 +1409,7 @@
           "text": "Goal! Egypt 1, IR Iran 1. Ramin Rezaeian (IR Iran) right footed shot from the right side of the six yard box to the bottom right corner."
         }
       ],
-      "motm": "Trézéguet (EGY)"
+      "motm": "Ramin Rezaeian (IR Iran)"
     },
     {
       "id": "760477",
@@ -1453,7 +1468,7 @@
           "text": "Goal! New Zealand 1, Belgium 5. Alexis Saelemaekers (Belgium) right footed shot from the centre of the box to the bottom left corner. Assisted by Romelu Lukaku following a fast break."
         }
       ],
-      "motm": "Leandro Trossard (BEL)"
+      "motm": "Leandro Trossard (Belgium)"
     },
     {
       "id": "760478",
@@ -1472,7 +1487,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Kevin Pina (CPV)"
+      "motm": "Deroy Duarte (Cabo Verde)"
     },
     {
       "id": "760479",
@@ -1499,7 +1514,7 @@
           "text": "Goal! Uruguay 0, Spain 1. Álex Baena (Spain) right footed shot from the centre of the box to the bottom left corner. Assisted by Marcos Llorente with a cross."
         }
       ],
-      "motm": "Pau Cubarsí (ESP)"
+      "motm": "Alex Baene (Spain)"
     },
     {
       "id": "760475",
@@ -1554,7 +1569,7 @@
           "text": "Goal! Norway 1, France 4. Désiré Doué (France) header from the centre of the box to the bottom right corner. Assisted by Bradley Barcola with a cross."
         }
       ],
-      "motm": "Désiré Doué (FRA)"
+      "motm": "Ousmane Dembele (France)"
     },
     {
       "id": "760474",
@@ -1609,7 +1624,7 @@
           "text": "Goal! Senegal 5, Iraq 0. Iliman Ndiaye (Senegal) right footed shot from outside the box to the top right corner. Assisted by Pape Gueye."
         }
       ],
-      "motm": "Pape Gueye (SEN)"
+      "motm": "Pape Gueye (Senegal)"
     },
     {
       "id": "760469",
@@ -1628,7 +1643,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Jordan Bos (AUS)"
+      "motm": "Aiden O’Neill (Australia)"
     },
     {
       "id": "760470",
@@ -1681,7 +1696,7 @@
           "text": "Goal! Türkiye 3, USA 2. Kaan Ayhan (Türkiye) right footed shot from very close range to the bottom right corner."
         }
       ],
-      "motm": "Auston Trusty (USA)"
+      "motm": "Arda Guler (Türkiye)"
     },
     {
       "id": "760471",
@@ -1715,7 +1730,7 @@
           "text": "Goal! Japan 1, Sweden 1. Anthony Elanga (Sweden) left footed shot from outside the box to the bottom left corner. Assisted by Viktor Gyökeres."
         }
       ],
-      "motm": "Daizen Maeda (JPN)"
+      "motm": "Anthony Elanga (Sweden)"
     },
     {
       "id": "760472",
@@ -1762,7 +1777,7 @@
           "text": "Goal! Tunisia 1, Netherlands 3. Jan Paul van Hecke (Netherlands) header from the left side of the six yard box to the top right corner. Assisted by Tijjani Reijnders with a cross following a corner."
         }
       ],
-      "motm": "Denzel Dumfries (NED)"
+      "motm": "Brian Brobbey (Netherlands)"
     },
     {
       "id": "760473",
@@ -1796,7 +1811,7 @@
           "text": "Goal! Curaçao 0, Côte d'Ivoire 2. Nicolas Pépé (Côte d'Ivoire) left footed shot from the right side of the box to the top left corner. Assisted by Ibrahim Sangaré."
         }
       ],
-      "motm": "Tahith Chong (CUW)"
+      "motm": "Nicolas Pepe (Côte d'Ivoire)"
     },
     {
       "id": "760468",
@@ -1837,7 +1852,7 @@
           "text": "Goal! Ecuador 2, Germany 1. Gonzalo Plata (Ecuador) left footed shot from very close range to the top right corner. Assisted by Kevin Rodríguez with a headed pass following a corner."
         }
       ],
-      "motm": "Gonzalo Plata (ECU)"
+      "motm": "Nilson Angulo (Ecuador)"
     },
     {
       "id": "760467",
@@ -1878,7 +1893,7 @@
           "text": "Goal! Czechia 0, Mexico 3. Álvaro Fidalgo (Mexico) right footed shot from the centre of the box to the top left corner. Assisted by Roberto Alvarado."
         }
       ],
-      "motm": "Julián Quiñones (MEX)"
+      "motm": "Mateo Chavez (Mexico)"
     },
     {
       "id": "760466",
@@ -1905,7 +1920,7 @@
           "text": "Goal! South Africa 1, Korea Republic 0. Thapelo Maseko (South Africa) left footed shot from the centre of the box to the bottom right corner. Assisted by Tshepang Moremi following a fast break."
         }
       ],
-      "motm": "Thapelo Maseko (RSA)"
+      "motm": "Thapelo Maseko (South Africa)"
     },
     {
       "id": "760464",
@@ -1966,7 +1981,7 @@
           "text": "Goal! Morocco 4, Haiti 2. Gessime Yassine (Morocco) left footed shot from the centre of the box to the centre of the goal. Assisted by Soufiane Rahimi."
         }
       ],
-      "motm": "Achraf Hakimi (MAR)"
+      "motm": "Achraf Hakimi (Morocco)"
     },
     {
       "id": "760465",
@@ -2007,7 +2022,7 @@
           "text": "Goal! Scotland 0, Brazil 3. Matheus Cunha (Brazil) right footed shot from the centre of the box to the bottom right corner. Assisted by Bruno Guimarães."
         }
       ],
-      "motm": "Vinícius Júnior (BRA)"
+      "motm": "Vinicius Junior (Brazil)"
     },
     {
       "id": "760462",
@@ -2054,7 +2069,7 @@
           "text": "Goal! Bosnia and Herzegovina 3, Qatar 1. Ermin Mahmic (Bosnia and Herzegovina) right footed shot from the centre of the box to the centre of the goal. Assisted by Dennis Hadzikadunic following a corner."
         }
       ],
-      "motm": "Pedro Miguel (QAT)"
+      "motm": "Kerim Alajbegovic (Bosnia and Herzegovina)"
     },
     {
       "id": "760463",
@@ -2095,7 +2110,7 @@
           "text": "Goal! Switzerland 2, Canada 1. Promise David (Canada) right footed shot from the centre of the box to the bottom left corner. Assisted by Nathan Saliba."
         }
       ],
-      "motm": "Promise David (CAN)"
+      "motm": "Johan Manzambi (Switzerland)"
     },
     {
       "id": "760459",
@@ -2122,7 +2137,7 @@
           "text": "Goal! Colombia 1, Congo DR 0. Daniel Muñoz (Colombia) left footed shot from the right side of the box to the bottom right corner. Assisted by Juan Fernando Quintero."
         }
       ],
-      "motm": "Gustavo Puerta (COL)"
+      "motm": "Daniel Munoz (Colombia)"
     },
     {
       "id": "760460",
@@ -2149,7 +2164,7 @@
           "text": "Goal! Panama 0, Croatia 1. Ante Budimir (Croatia) left footed shot from very close range to the bottom left corner. Assisted by Josip Stanisic with a cross."
         }
       ],
-      "motm": "Amir Murillo (PAN)"
+      "motm": "Cristian Martinez (Panama)"
     },
     {
       "id": "760458",
@@ -2168,7 +2183,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Elliot Anderson (ENG)"
+      "motm": "Jude Bellingham (England)"
     },
     {
       "id": "760461",
@@ -2220,7 +2235,7 @@
           "text": "Goal! Portugal 5, Uzbekistan 0. Rafael Leão (Portugal) right footed shot from the centre of the box to the top left corner."
         }
       ],
-      "motm": "Cristiano Ronaldo (POR)"
+      "motm": "Cristiano Ronaldo (Portugal)"
     },
     {
       "id": "760455",
@@ -2260,7 +2275,7 @@
           "text": "Goal! Jordan 1, Algeria 2. Amine Gouiri (Algeria) right footed shot from very close range to the centre of the goal following a corner."
         }
       ],
-      "motm": "Ibrahim Maza (ALG)"
+      "motm": "Ibrahim Maza (Algeria)"
     },
     {
       "id": "760454",
@@ -2314,7 +2329,7 @@
           "text": "Goal! Norway 3, Senegal 2. Ismaïla Sarr (Senegal) right footed shot from the centre of the box to the top right corner. Assisted by Nicolas Jackson."
         }
       ],
-      "motm": "Ismaïla Sarr (SEN)"
+      "motm": "Erling Haaland (Norway)"
     },
     {
       "id": "760457",
@@ -2355,7 +2370,7 @@
           "text": "Goal! France 3, Iraq 0. Ousmane Dembélé (France) right footed shot from the centre of the box to the bottom left corner. Assisted by Michael Olise with a through ball."
         }
       ],
-      "motm": "Kylian Mbappé (FRA)"
+      "motm": "Kylian Mbappe (France)"
     },
     {
       "id": "760456",
@@ -2388,7 +2403,7 @@
           "text": "Goal! Argentina 2, Austria 0. Lionel Messi (Argentina) left footed shot from the left side of the six yard box to the centre of the goal following a fast break."
         }
       ],
-      "motm": "Lionel Messi (ARG)"
+      "motm": "Lionel Messi (Argentina)"
     },
     {
       "id": "760452",
@@ -2436,7 +2451,7 @@
           "text": "Goal! New Zealand 1, Egypt 3. Trezeguet (Egypt) header from the centre of the box to the bottom left corner. Assisted by Mohamed Salah with a cross following a corner."
         }
       ],
-      "motm": "Mohamed Salah (EGY)"
+      "motm": "Mohamed Salah (Egypt)"
     },
     {
       "id": "760450",
@@ -2481,7 +2496,7 @@
           "text": "Goal! Uruguay 2, Cabo Verde 2. Hélio Varela (Cabo Verde) right footed shot from outside the box to the centre of the goal."
         }
       ],
-      "motm": "Federico Valverde (URU)"
+      "motm": "Kevin Pina (Cabo Verde)"
     },
     {
       "id": "760451",
@@ -2500,7 +2515,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Maxim De Cuyper (BEL)"
+      "motm": "Alireza Beiranvand (IR Iran)"
     },
     {
       "id": "760453",
@@ -2547,7 +2562,7 @@
           "text": "Own Goal by Hassan Al Tambakti, Saudi Arabia. Spain 4, Saudi Arabia 0."
         }
       ],
-      "motm": "Lamine Yamal (ESP)"
+      "motm": "Mikel Oyarzabal (Spain)"
     },
     {
       "id": "760449",
@@ -2595,7 +2610,7 @@
           "text": "Goal! Tunisia 0, Japan 4. Ayase Ueda (Japan) header from the centre of the box to the bottom right corner. Assisted by Kaishu Sano with a cross."
         }
       ],
-      "motm": "Ayase Ueda (JPN)"
+      "motm": "Ayase Ueda (Japan)"
     },
     {
       "id": "760446",
@@ -2614,7 +2629,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Enner Valencia (ECU)"
+      "motm": "Eloy Room (Curaçao)"
     },
     {
       "id": "760448",
@@ -2654,7 +2669,7 @@
           "text": "Goal! Germany 2, Côte d'Ivoire 1. Deniz Undav (Germany) left footed shot from the centre of the box to the bottom left corner. Assisted by Felix Nmecha with a through ball."
         }
       ],
-      "motm": "Kai Havertz (GER)"
+      "motm": "Deniz Undav (Germany)"
     },
     {
       "id": "760447",
@@ -2716,7 +2731,7 @@
           "text": "Goal! Netherlands 5, Sweden 1. Crysencio Summerville (Netherlands) right footed shot from outside the box to the bottom left corner. Assisted by Memphis Depay."
         }
       ],
-      "motm": "Cody Gakpo (NED)"
+      "motm": "Cody Gakpo (Netherlands)"
     },
     {
       "id": "760443",
@@ -2743,7 +2758,7 @@
           "text": "Goal! Türkiye 0, Paraguay 1. Matías Galarza (Paraguay) left footed shot from outside the box to the bottom right corner. Assisted by Julio Enciso."
         }
       ],
-      "motm": "Kenan Yildiz (TUR)"
+      "motm": "Matias Galarza (Paraguay)"
     },
     {
       "id": "760444",
@@ -2783,7 +2798,7 @@
           "text": "Goal! Brazil 3, Haiti 0. Vinícius Júnior (Brazil) right footed shot from the left side of the box to the centre of the goal. Assisted by Lucas Paquetá with a through ball."
         }
       ],
-      "motm": "Vinícius Júnior (BRA)"
+      "motm": "Vincius Junior (Brazil)"
     },
     {
       "id": "760445",
@@ -2810,7 +2825,7 @@
           "text": "Goal! Scotland 0, Morocco 1. Ismael Saibari (Morocco) right footed shot from the right side of the box to the high centre of the goal. Assisted by Brahim Díaz with a through ball."
         }
       ],
-      "motm": "Achraf Hakimi (MAR)"
+      "motm": "Ismael Saibari (Morocco)"
     },
     {
       "id": "760442",
@@ -2842,7 +2857,7 @@
           "text": "Goal! USA 2, Australia 0. Alex Freeman (USA) header from very close range to the bottom right corner following a set piece situation.Goal awarded following VAR Review."
         }
       ],
-      "motm": "Sergiño Dest (USA)"
+      "motm": "Folarin Balogun (USA)"
     },
     {
       "id": "760441",
@@ -2868,7 +2883,7 @@
           "text": "Goal! Mexico 1, Korea Republic 0. Luis Romo (Mexico) right footed shot from the centre of the box to the centre of the goal."
         }
       ],
-      "motm": "Raúl Jiménez (MEX)"
+      "motm": "Luis Romo (Mexico)"
     },
     {
       "id": "760440",
@@ -2925,7 +2940,7 @@
           "text": "Goal! Canada 6, Qatar 0. Jonathan David (Canada) left footed shot from the centre of the box to the top left corner. Assisted by Nathan Saliba."
         }
       ],
-      "motm": "Jonathan David (CAN)"
+      "motm": "Jonathan David (Canada)"
     },
     {
       "id": "760439",
@@ -2977,7 +2992,7 @@
           "text": "Goal! Switzerland 4, Bosnia and Herzegovina 1. Granit Xhaka (Switzerland) converts the penalty with a left footed shot to the bottom right corner."
         }
       ],
-      "motm": "Dan Ndoye (SUI)"
+      "motm": "Johan Manzambi (Switzerland)"
     },
     {
       "id": "760438",
@@ -3010,7 +3025,7 @@
           "text": "Goal! Czechia 1, South Africa 1. Teboho Mokoena (South Africa) converts the penalty with a right footed shot to the bottom left corner."
         }
       ],
-      "motm": "Ladislav Krejcí (CZE)"
+      "motm": "Ladislav Krejci (Czechia)"
     },
     {
       "id": "760436",
@@ -3057,7 +3072,7 @@
           "text": "Goal! Uzbekistan 1, Colombia 3. Jaminton Campaz (Colombia) header from the centre of the box to the bottom left corner. Assisted by Cucho Hernández with a cross."
         }
       ],
-      "motm": "Jefferson Lerma (COL)"
+      "motm": "Luis Diaz (Colombia)"
     },
     {
       "id": "760434",
@@ -3084,7 +3099,7 @@
           "text": "Goal! Ghana 1, Panama 0. Caleb Yirenkyi (Ghana) right footed shot from very close range to the top right corner. Assisted by Brandon Thomas-Asante following a fast break."
         }
       ],
-      "motm": "Caleb Yirenkyi (GHA)"
+      "motm": "Antoine Semenyo (Ghana)"
     },
     {
       "id": "760437",
@@ -3145,7 +3160,7 @@
           "text": "Goal! England 4, Croatia 2. Marcus Rashford (England) right footed shot from the centre of the box to the bottom right corner. Assisted by Bukayo Saka."
         }
       ],
-      "motm": "Harry Kane (ENG)"
+      "motm": "Harry Kane (England)"
     },
     {
       "id": "760435",
@@ -3179,7 +3194,7 @@
           "text": "Goal! Portugal 1, Congo DR 1. Yoane Wissa (Congo DR) header from very close range to the top left corner. Assisted by Arthur Masuaku with a cross following a corner."
         }
       ],
-      "motm": "Cristiano Ronaldo (POR)"
+      "motm": "Joao Neves (Portugal)"
     },
     {
       "id": "760431",
@@ -3225,7 +3240,7 @@
           "text": "Goal! Austria 3, Jordan 1. Marko Arnautovic (Austria) converts the penalty with a right footed shot to the bottom left corner."
         }
       ],
-      "motm": "Ali Olwan (JOR)"
+      "motm": "Ali Olwan (Jordan)"
     },
     {
       "id": "760433",
@@ -3265,7 +3280,7 @@
           "text": "Goal! Argentina 3, Algeria 0. Lionel Messi (Argentina) left footed shot from the centre of the box to the bottom left corner. Assisted by Nico González."
         }
       ],
-      "motm": "Lionel Messi (ARG)"
+      "motm": "Lionel Messi (Argentina)"
     },
     {
       "id": "760430",
@@ -3318,7 +3333,7 @@
           "text": "Own Goal by Aymen Hussein, Iraq. Iraq 1, Norway 4."
         }
       ],
-      "motm": "Erling Haaland (NOR)"
+      "motm": "Erling Haaland (Norway)"
     },
     {
       "id": "760432",
@@ -3365,7 +3380,7 @@
           "text": "Goal! France 3, Senegal 1. Kylian Mbappé (France) right footed shot from outside the box to the top left corner."
         }
       ],
-      "motm": "Kylian Mbappé (FRA)"
+      "motm": "Michael Olise (France)"
     },
     {
       "id": "760427",
@@ -3412,7 +3427,7 @@
           "text": "Goal! IR Iran 2, New Zealand 2. Mohammad Mohebbi (IR Iran) header from the centre of the box to the bottom left corner. Assisted by Ramin Rezaeian with a cross."
         }
       ],
-      "motm": "Chris Wood (NZL)"
+      "motm": "Ramin Rezaeian (IR Iran)"
     },
     {
       "id": "760429",
@@ -3444,7 +3459,7 @@
           "text": "Goal! Saudi Arabia 1, Uruguay 1. Maxi Araújo (Uruguay) left footed shot from the left side of the six yard box to the bottom left corner."
         }
       ],
-      "motm": "Federico Viñas (URU)"
+      "motm": "Federico Valverde (Uruguay)"
     },
     {
       "id": "760426",
@@ -3477,7 +3492,7 @@
           "text": "Own Goal by Mohamed Hany, Egypt. Belgium 1, Egypt 1."
         }
       ],
-      "motm": "Kevin De Bruyne (BEL)"
+      "motm": "Emam Ashour (Egypt)"
     },
     {
       "id": "760428",
@@ -3496,7 +3511,7 @@
       "score": "0-0",
       "status": "FT",
       "goals": [],
-      "motm": "Mikel Oyarzabal (ESP)"
+      "motm": "Vozinha (Cabo Verde)"
     },
     {
       "id": "760424",
@@ -3557,7 +3572,7 @@
           "text": "Goal! Sweden 5, Tunisia 1. Yasin Ayari (Sweden) right footed shot from outside the box to the bottom left corner. Assisted by Lucas Bergvall."
         }
       ],
-      "motm": "Viktor Gyökeres (SWE)"
+      "motm": "Alexander Isak (Sweden)"
     },
     {
       "id": "760423",
@@ -3584,7 +3599,7 @@
           "text": "Goal! Côte d'Ivoire 1, Ecuador 0. Amad Diallo (Côte d'Ivoire) left footed shot from the centre of the box to the bottom left corner. Assisted by Wilfried Singo."
         }
       ],
-      "motm": "Seko Fofana (CIV)"
+      "motm": "Yan Diomande (Côte d'Ivoire)"
     },
     {
       "id": "760425",
@@ -3632,7 +3647,7 @@
           "text": "Goal! Netherlands 2, Japan 2. Daichi Kamada (Japan) header from the centre of the box to the top right corner. Assisted by Koki Ogawa following a corner."
         }
       ],
-      "motm": "Keito Nakamura (JPN)"
+      "motm": "Virgil van Dijk (Netherlands)"
     },
     {
       "id": "760422",
@@ -3706,7 +3721,7 @@
           "text": "Goal! Germany 7, Curaçao 1. Kai Havertz (Germany) left footed shot from the centre of the box to the centre of the goal. Assisted by Deniz Undav with a through ball following a fast break."
         }
       ],
-      "motm": "Kai Havertz (GER)"
+      "motm": "Kai Havertz (Germany)"
     },
     {
       "id": "760421",
@@ -3739,7 +3754,7 @@
           "text": "Goal! Australia 2, Türkiye 0. Connor Metcalfe (Australia) left footed shot from outside the box to the bottom right corner."
         }
       ],
-      "motm": "Arda Güler (TUR)"
+      "motm": "Nestory Irankunda (Australia)"
     },
     {
       "id": "760418",
@@ -3765,7 +3780,7 @@
           "text": "Goal! Haiti 0, Scotland 1. John McGinn (Scotland) left footed shot from the centre of the box to the high centre of the goal."
         }
       ],
-      "motm": "Frantzdy Pierrot (HAI)"
+      "motm": "John McGinn (Scotland)"
     },
     {
       "id": "760419",
@@ -3799,7 +3814,7 @@
           "text": "Goal! Brazil 1, Morocco 1. Vinícius Júnior (Brazil) right footed shot from the left side of the box to the top right corner. Assisted by Bruno Guimarães."
         }
       ],
-      "motm": "Raphinha (BRA)"
+      "motm": "Vinicius Jr (Brazil)"
     },
     {
       "id": "760420",
@@ -3832,7 +3847,7 @@
           "text": "Own Goal by Miro Muheim, Switzerland. Qatar 1, Switzerland 1."
         }
       ],
-      "motm": "Dan Ndoye (SUI)"
+      "motm": "Mahmoud Abunada (Qatar)"
     },
     {
       "id": "760417",
@@ -3886,7 +3901,7 @@
           "text": "Goal! USA 4, Paraguay 1. Giovanni Reyna (USA) right footed shot from the centre of the box to the bottom left corner. Assisted by Alex Freeman."
         }
       ],
-      "motm": "Malik Tillman (USA)"
+      "motm": "Folarin Balogun (USA)"
     },
     {
       "id": "760416",
@@ -3920,7 +3935,7 @@
           "text": "Goal! Canada 1, Bosnia and Herzegovina 1. Cyle Larin (Canada) right footed shot from the centre of the box to the bottom right corner. Assisted by Promise David."
         }
       ],
-      "motm": "Jovo Lukic (BIH)"
+      "motm": "Ismael Kone (Canada)"
     },
     {
       "id": "760414",
@@ -3961,7 +3976,7 @@
           "text": "Goal! Korea Republic 2, Czechia 1. Oh Hyeon-Gyu (Korea Republic) left footed shot from very close range to the bottom left corner. Assisted by Hwang In-Beom."
         }
       ],
-      "motm": "Son Heung-Min (KOR)"
+      "motm": "Hwang Inbeom (Korea Republic)"
     },
     {
       "id": "760415",
@@ -3995,7 +4010,7 @@
           "text": "Goal! Mexico 2, South Africa 0. Raúl Jiménez (Mexico) header from very close range to the bottom left corner. Assisted by Roberto Alvarado with a cross."
         }
       ],
-      "motm": "Julián Quiñones (MEX)"
+      "motm": "Julian Quinones (Mexico)"
     }
   ]
 }
