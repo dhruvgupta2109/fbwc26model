@@ -1,5 +1,7 @@
 export const ESPN_SCOREBOARD_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
 const ESPN_SUMMARY_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary';
+const FIFA_POTM_PAGE_URL = 'https://cxm-api.fifa.com/fifaplusweb/api/pages/en/tournaments/mens/worldcup/canadamexicousa2026/articles/michelob-ultra-superior-player-of-match-winner';
+const FIFA_API_BASE_URL = 'https://cxm-api.fifa.com/fifaplusweb/api';
 const SOURCE = 'ESPN FIFA World Cup scoreboard';
 const TOURNAMENT_START = new Date('2026-06-11T00:00:00Z');
 const TOURNAMENT_END = new Date('2026-07-19T23:59:59Z');
@@ -108,24 +110,29 @@ interface EspnSummaryEvent {
   text?: string;
 }
 
-interface EspnLeader {
-  athlete?: {
-    displayName?: string;
-  };
-  statistics?: Array<{
-    name?: string;
-    value?: string | number;
+interface EspnSummary {
+  keyEvents?: EspnSummaryEvent[];
+}
+
+interface FifaPotmPage {
+  sections?: Array<{
+    entryType?: string;
+    entryEndpoint?: string;
   }>;
 }
 
-interface EspnSummary {
-  keyEvents?: EspnSummaryEvent[];
-  leaders?: Array<{
-    team?: EspnTeam;
-    leaders?: Array<{
-      leaders?: EspnLeader[];
-    }>;
-  }>;
+interface FifaRichTextNode {
+  nodeType?: string;
+  value?: string;
+  marks?: Array<{ type?: string }>;
+  data?: { uri?: string };
+  content?: FifaRichTextNode[];
+}
+
+interface FifaPotmArticle {
+  richtext?: {
+    content?: FifaRichTextNode[];
+  };
 }
 
 export function isInTournamentWindow(now = new Date()) {
@@ -169,8 +176,9 @@ async function fetchEspnLiveScores(now: Date): Promise<LiveScoreCache> {
   const scoreboard = await fetchJson<EspnScoreboard>(
     `${ESPN_SCOREBOARD_URL}?dates=${espnDate(TOURNAMENT_START)}-${espnDate(endDate)}&limit=1000`
   );
+  const officialPotm = await fetchOfficialPotm();
   const events = scoreboard.events ?? [];
-  const matches = await mapWithConcurrency(events, SUMMARY_CONCURRENCY, eventToMatch);
+  const matches = await mapWithConcurrency(events, SUMMARY_CONCURRENCY, (event) => eventToMatch(event, officialPotm));
 
   return {
     source: SOURCE,
@@ -181,7 +189,7 @@ async function fetchEspnLiveScores(now: Date): Promise<LiveScoreCache> {
   };
 }
 
-async function eventToMatch(event: EspnEvent): Promise<LiveMatch> {
+async function eventToMatch(event: EspnEvent, officialPotm: Map<string, string>): Promise<LiveMatch> {
   const competition = event.competitions?.[0];
   const competitors = competition?.competitors ?? [];
   const homeCompetitor = competitors.find((competitor) => competitor.homeAway === 'home') ?? competitors[0];
@@ -214,7 +222,7 @@ async function eventToMatch(event: EspnEvent): Promise<LiveMatch> {
     minute: status === 'Live' ? minuteFromCompetition(competition) : undefined,
     winnerCode,
     goals: goalEvents(summary),
-    motm: topPerformer(summary)
+    motm: officialPotm.get(matchKey(home.name, away.name, homeScore, awayScore))
   };
 }
 
@@ -280,29 +288,81 @@ function goalEvents(summary?: EspnSummary): GoalEvent[] {
     .sort((a, b) => minuteSortValue(a.minute) - minuteSortValue(b.minute));
 }
 
-function topPerformer(summary?: EspnSummary) {
-  const candidates: Array<{ name: string; score: number; team?: string }> = [];
+async function fetchOfficialPotm() {
+  const page = await fetchJson<FifaPotmPage>(FIFA_POTM_PAGE_URL);
+  const articleEndpoint = page.sections?.find((section) => section.entryType === 'article')?.entryEndpoint;
+  if (!articleEndpoint) throw new Error('FIFA Player of the Match article endpoint is missing');
 
-  for (const team of summary?.leaders ?? []) {
-    for (const category of team.leaders ?? []) {
-      for (const leader of category.leaders ?? []) {
-        const name = leader.athlete?.displayName;
-        if (!name) continue;
-        const stats = Object.fromEntries((leader.statistics ?? []).map((stat) => [stat.name, Number(stat.value ?? 0)]));
-        const score =
-          (stats.goals ?? 0) * 10 +
-          (stats.goalAssists ?? stats.assists ?? 0) * 6 +
-          (stats.shotsOnTarget ?? 0) * 2 +
-          (stats.totalShots ?? 0) +
-          (stats.expectedGoals ?? 0);
-        candidates.push({ name, score, team: team.team?.abbreviation });
+  const articleUrl = `${FIFA_API_BASE_URL}${articleEndpoint.startsWith('/') ? '' : '/'}${articleEndpoint}`;
+  const article = await fetchJson<FifaPotmArticle>(articleUrl);
+  return parseOfficialPotm(article);
+}
+
+function parseOfficialPotm(article: FifaPotmArticle) {
+  const awards = new Map<string, string>();
+
+  for (const block of article.richtext?.content ?? []) {
+    if (block.nodeType !== 'paragraph') continue;
+    let pendingMatchKey: string | undefined;
+
+    for (const node of block.content ?? []) {
+      if (node.nodeType === 'hyperlink' && node.data?.uri?.includes('/match-centre/match/17/285023/')) {
+        pendingMatchKey = matchKeyFromFifaLabel(textContent(node));
+        continue;
+      }
+
+      if (pendingMatchKey && node.nodeType === 'text' && node.marks?.some((mark) => mark.type === 'bold')) {
+        const player = node.value?.trim();
+        if (player && /\([^)]+\)$/.test(player)) {
+          awards.set(pendingMatchKey, player);
+          pendingMatchKey = undefined;
+        }
       }
     }
   }
 
-  candidates.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
-  return candidates[0]?.score > 0 ? `${candidates[0].name}${candidates[0].team ? ` (${candidates[0].team})` : ''}` : undefined;
+  return awards;
 }
+
+function textContent(node: FifaRichTextNode): string {
+  return node.value ?? (node.content ?? []).map(textContent).join('');
+}
+
+function matchKeyFromFifaLabel(label: string) {
+  const scoreline = label
+    .trim()
+    .replace(/\s+\((?:AET|PSO\b[^)]*)\)\s*$/i, '')
+    .match(/^(.+?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.+)$/);
+
+  if (!scoreline) return undefined;
+  return matchKey(scoreline[1], scoreline[4], Number(scoreline[2]), Number(scoreline[3]));
+}
+
+function matchKey(home: string, away: string, homeScore: number, awayScore: number) {
+  return `${teamKey(home)}:${homeScore}-${awayScore}:${teamKey(away)}`;
+}
+
+function teamKey(team: string) {
+  const normalized = team
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]/g, '');
+
+  return TEAM_KEY_ALIASES[normalized] ?? normalized;
+}
+
+const TEAM_KEY_ALIASES: Record<string, string> = {
+  unitedstates: 'usa',
+  bosniaherzegovina: 'bosniaandherzegovina',
+  capeverde: 'caboverde',
+  iran: 'iriran',
+  southkorea: 'korearepublic',
+  congodr: 'drcongo',
+  democraticrepublicofthecongo: 'drcongo',
+  ivorycoast: 'cotedivoire'
+};
 
 async function mapWithConcurrency<T, R>(items: T[], limit: number, task: (item: T) => Promise<R>): Promise<R[]> {
   const results = new Array<R>(items.length);
