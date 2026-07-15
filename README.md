@@ -20,9 +20,17 @@ WC26 Oracle is a polished client-side prediction model for the 2026 FIFA World C
 
 ![WC26 Oracle group-stage standings](frontend/public/screenshots/groups.png)
 
+### Teams
+
+![WC26 Oracle all 48 teams grid](frontend/public/screenshots/teams.png)
+
 ### Model Settings
 
 ![WC26 Oracle model settings and explainability](frontend/public/screenshots/model.png)
+
+### Live Match Feed
+
+![WC26 Oracle live scores and match feed](frontend/public/screenshots/live.png)
 
 ## Features
 
