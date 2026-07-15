@@ -106,7 +106,6 @@ export function OverviewPage() {
 
       <section className="grid gap-4">
         <div className="flex items-center gap-2">
-          <Trophy className="h-5 w-5 text-primary" />
           <h2 className="section-title">Top 8 Predictions</h2>
         </div>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
@@ -138,8 +137,7 @@ export function OverviewPage() {
 
       <section className="grid gap-4">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-accent" />
-          <h2 className="section-title">Fun Stats</h2>
+          <h2 className="section-title">Stats</h2>
         </div>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {funFacts.map((fact, index) => (
@@ -152,7 +150,7 @@ export function OverviewPage() {
             >
               <h3 className="text-sm font-semibold leading-5 text-ink">{fact.title}</h3>
               <p className="mt-3 text-xs leading-5 text-muted">{fact.description}</p>
-              <p className="mt-3 text-xs text-muted">Fun Stats - not all are statistically significant.</p>
+              <p className="mt-3 text-xs text-muted">Stats - not all are statistically significant.</p>
             </motion.div>
           ))}
         </div>
