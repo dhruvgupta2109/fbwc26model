@@ -1,9 +1,123 @@
 {
   "source": "ESPN FIFA World Cup scoreboard",
   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-  "cacheDate": "2026-07-15",
-  "generatedAt": "2026-07-15T16:16:43.677Z",
+  "cacheDate": "2026-07-24",
+  "generatedAt": "2026-07-23T19:34:19.584Z",
   "matches": [
+    {
+      "id": "760517",
+      "kickoff": "2026-07-19T19:00Z",
+      "stage": "FIFA World Cup, Final",
+      "venue": "MetLife Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760517",
+      "home": "Spain",
+      "away": "Argentina",
+      "homeCode": "ESP",
+      "awayCode": "ARG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "homeScore": 1,
+      "awayScore": 0,
+      "score": "1-0",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "Spain",
+          "minute": "106",
+          "scorer": "Ferran Torres",
+          "assist": "Nico Williams",
+          "text": "Goal! Spain 1, Argentina 0. Ferran Torres (Spain) left footed shot from the centre of the box to the high centre of the goal. Assisted by Nico Williams with a headed pass."
+        }
+      ],
+      "motm": "Ferran Torres (Spain)"
+    },
+    {
+      "id": "760516",
+      "kickoff": "2026-07-18T21:00Z",
+      "stage": "FIFA World Cup, 3rd-Place Match",
+      "venue": "Hard Rock Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760516",
+      "home": "France",
+      "away": "England",
+      "homeCode": "FRA",
+      "awayCode": "ENG",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "homeScore": 4,
+      "awayScore": 6,
+      "score": "4-6",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "England",
+          "minute": "3",
+          "scorer": "Declan Rice",
+          "text": "Goal! France 0, England 1. Declan Rice (England) right footed shot from outside the box to the bottom right corner."
+        },
+        {
+          "team": "England",
+          "minute": "18",
+          "scorer": "Ezri Konsa",
+          "assist": "Declan Rice",
+          "text": "Goal! France 0, England 2. Ezri Konsa (England) header from the centre of the box to the bottom right corner. Assisted by Declan Rice with a cross following a corner."
+        },
+        {
+          "team": "England",
+          "minute": "37",
+          "scorer": "Bukayo Saka",
+          "assist": "Marcus Rashford",
+          "text": "Goal! France 0, England 3. Bukayo Saka (England) left footed shot from the left side of the box to the high centre of the goal. Assisted by Marcus Rashford following a fast break."
+        },
+        {
+          "team": "England",
+          "minute": "45+1",
+          "scorer": "Bukayo Saka",
+          "assist": "Eberechi Eze",
+          "text": "Goal! France 0, England 4. Bukayo Saka (England) left footed shot from the centre of the box to the bottom right corner. Assisted by Eberechi Eze with a through ball."
+        },
+        {
+          "team": "France",
+          "minute": "48",
+          "scorer": "Kylian Mbappé",
+          "assist": "Michael Olise",
+          "text": "Goal! France 1, England 4. Kylian Mbappé (France) left footed shot from the centre of the box to the bottom right corner. Assisted by Michael Olise with a through ball following a fast break."
+        },
+        {
+          "team": "France",
+          "minute": "54",
+          "scorer": "Bradley Barcola",
+          "assist": "Kylian Mbappé",
+          "text": "Goal! France 2, England 4. Bradley Barcola (France) right footed shot from the centre of the box to the bottom left corner. Assisted by Kylian Mbappé with a through ball."
+        },
+        {
+          "team": "France",
+          "minute": "66",
+          "scorer": "Kylian Mbappé",
+          "assist": "Michael Olise",
+          "text": "Goal! France 3, England 4. Kylian Mbappé (France) left footed shot from the centre of the box to the bottom right corner. Assisted by Michael Olise."
+        },
+        {
+          "team": "England",
+          "minute": "87",
+          "scorer": "Bukayo Saka",
+          "text": "Goal! France 3, England 5. Bukayo Saka (England) converts the penalty with a left footed shot to the bottom right corner."
+        },
+        {
+          "team": "France",
+          "minute": "90+6",
+          "scorer": "Ousmane Dembélé",
+          "assist": "Dayot Upamecano",
+          "text": "Goal! France 4, England 5. Ousmane Dembélé (France) left footed shot from the centre of the box to the bottom left corner. Assisted by Dayot Upamecano following a fast break."
+        },
+        {
+          "team": "England",
+          "minute": "90+8",
+          "scorer": "Jude Bellingham",
+          "text": "Goal! France 4, England 6. Jude Bellingham (England) right footed shot from the centre of the box to the bottom right corner following a fast break."
+        }
+      ],
+      "motm": "Bukayo Saka (England)"
+    },
     {
       "id": "760515",
       "kickoff": "2026-07-15T19:00Z",
@@ -16,11 +130,34 @@
       "awayCode": "ARG",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "score": "0-0",
-      "status": "Upcoming",
-      "goals": []
+      "homeScore": 1,
+      "awayScore": 2,
+      "score": "1-2",
+      "status": "FT",
+      "goals": [
+        {
+          "team": "England",
+          "minute": "55",
+          "scorer": "Anthony Gordon",
+          "assist": "Morgan Rogers",
+          "text": "Goal! England 1, Argentina 0. Anthony Gordon (England) right footed shot from very close range to the bottom left corner. Assisted by Morgan Rogers with a cross."
+        },
+        {
+          "team": "Argentina",
+          "minute": "85",
+          "scorer": "Enzo Fernández",
+          "assist": "Lionel Messi",
+          "text": "Goal! England 1, Argentina 1. Enzo Fernández (Argentina) right footed shot from outside the box to the bottom left corner. Assisted by Lionel Messi following a corner."
+        },
+        {
+          "team": "Argentina",
+          "minute": "90+2",
+          "scorer": "Lautaro Martínez",
+          "assist": "Lionel Messi",
+          "text": "Goal! England 1, Argentina 2. Lautaro Martínez (Argentina) header from very close range to the top left corner. Assisted by Lionel Messi with a cross."
+        }
+      ],
+      "motm": "Lionel Messi (Argentina)"
     },
     {
       "id": "760514",
