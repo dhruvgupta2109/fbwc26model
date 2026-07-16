@@ -549,6 +549,23 @@ function advancingTeamStatus(match: RadialMatch, actual?: ActualProgress): Marke
   return 'pending';
 }
 
+function centerRouteStatus(route: CenterRoute, actual?: ActualProgress): MarkerStatus | undefined {
+  const teamCode = route.team?.code;
+  if (!teamCode || !actual) return undefined;
+
+  const actualSemifinal = actual.matchByStageTeam.SF.get(teamCode);
+
+  if (route.role === 'winner') {
+    if (actual.winnersByStage.SF.has(teamCode) || actual.teamsByStage.Final.has(teamCode)) return 'correct';
+    if (actualSemifinal?.winner || actual.winnersCompleteByStage.SF || actual.teamsCompleteByStage.SF) return 'wrong';
+    return 'pending';
+  }
+
+  if (actualSemifinal?.winner) return actualSemifinal.winner === teamCode ? 'wrong' : 'correct';
+  if (actual.winnersCompleteByStage.SF || actual.teamsCompleteByStage.SF) return 'wrong';
+  return 'pending';
+}
+
 function statusClass(status: MarkerStatus | undefined, mode: BracketMarkerMode) {
   if (mode === 'actual') return 'radial-status-actual';
   if (!status) return undefined;
@@ -762,6 +779,7 @@ function RadialBracketSection({
                   className={classNames(
                     'radial-center-route',
                     route.role === 'loser' && 'radial-center-route-loser',
+                    statusClass(centerRouteStatus(route, actualProgress), markerMode),
                     route.active && 'radial-connector-active',
                     isDimmed(pathOnly, bracketChampion, route.active) && 'radial-muted'
                   )}
@@ -779,7 +797,9 @@ function RadialBracketSection({
                     key={`center-route-flag-${route.id}`}
                     className={classNames(
                       'radial-route-flag',
+                      route.role === 'winner' && 'radial-route-flag-finalist',
                       route.role === 'loser' && 'radial-route-flag-loser',
+                      statusClass(centerRouteStatus(route, actualProgress), markerMode),
                       route.active && 'radial-route-flag-active',
                       muted && 'radial-muted'
                     )}
