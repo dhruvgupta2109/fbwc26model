@@ -37,12 +37,12 @@ export const funFacts = [
   {
     title: 'The Historic Run of the World Cups Smallest Nation',
     description:
-      'The expanded 48-team format opened the doors for four debut nations: Cape Verde, Jordan, Uzbekistan, and Curaçao. With a population of roughly 156,000, Curaçao officially becomes the smallest nation by population ever to reach a men\'s World Cup.'
+      'With a population of roughly 156,000, Curaçao officially becomes the smallest nation by population ever to reach a men\'s World Cup.'
   },
   {
-    title: 'Lionel Messi Broken All-Time Goal Records',
+    title: 'Kylian Mbappé and Lionel Messi Rewrite the All-Time Goal Records',
     description:
-      'During Argentina\'s group stage match against Austria on June 22, 2026, Lionel Messi scored twice to claim the title of all-time top scorer in FIFA World Cup history with 18 total tournament goals, breaking his tie with Miroslav Klose and Kylian Mbappé.'
+      'The race for the history books concluded with both superstars shattering the previous all-time World Cup scoring record of 16 goals. Lionel Messi scored 8 goals during the tournament to finish his World Cup career with a staggering 21 total goals. However, Frances Kylian Mbappé claimed the 2026 Golden Boot with 10 goals, bringing his lifetime tally to 22 goals to become the standalone highest scorer in World Cup history.'
   },
   {
     title: 'Extreme Travel Involving 25 "Non-Host" Cities',
