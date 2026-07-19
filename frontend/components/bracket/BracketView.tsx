@@ -910,9 +910,23 @@ function RadialBracketSection({
 
           <div className="radial-podium" aria-label={`Podium: champion ${layout.centerLabel}`}>
             <Trophy className="radial-podium-trophy h-6 w-6 text-accent" />
-            <PodiumSlot rank="1" label="Winner" team={layout.centerTeam} detail={finalDetail} score={finalScore} emptyLabel={emptyLabel} />
+            <PodiumSlot
+              rank="1"
+              label="Winner"
+              team={layout.centerTeam}
+              detail={finalDetail}
+              score={markerMode === 'prediction' ? finalScore : null}
+              emptyLabel={emptyLabel}
+            />
             <PodiumSlot rank="2" label="Runner-up" team={layout.runnerUpTeam} emptyLabel={emptyLabel} />
-            <PodiumSlot rank="3" label="Third place" team={layout.thirdPlaceTeam} detail={thirdPlaceDetail} score={thirdPlaceScore} emptyLabel={emptyLabel} />
+            <PodiumSlot
+              rank="3"
+              label="Third place"
+              team={layout.thirdPlaceTeam}
+              detail={thirdPlaceDetail}
+              score={markerMode === 'prediction' ? thirdPlaceScore : null}
+              emptyLabel={emptyLabel}
+            />
           </div>
         </div>
       </div>
