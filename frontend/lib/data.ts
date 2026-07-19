@@ -35,7 +35,7 @@ export const funFacts = [
       'FIFA strictly mandates that matches are played on living grass. Because eight of the 16 North American stadiums use artificial turf and five have roofs, scientists spent eight years engineering specialized turf blends, including a hybrid Bermuda grass called "Tacoma 31," grown on plastic sheets over concrete. This massive turf science project successfully sustained all 104 matches across the continent, culminating in the final at MetLife Stadium.'
   },
   {
-    title: 'The Debut of the Smallest Nation in World Cup History',
+    title: 'The Historic Run of the World Cups Smallest Nation',
     description:
       'The expanded 48-team format opened the doors for four debut nations: Cape Verde, Jordan, Uzbekistan, and Curaçao. With a population of roughly 156,000, Curaçao officially becomes the smallest nation by population ever to reach a men\'s World Cup.'
   },
