@@ -30,7 +30,7 @@ export const playerSpotlights: Record<string, Array<{ name: string; position: st
 
 export const funFacts = [
   {
-    title: 'Seven-Year Scientific Project to Replace NFL Turf',
+    title: 'Eight-Year Scientific Project Culminates at MetLife Final',
     description:
       'FIFA strictly mandates that matches are played on living grass. Because eight of the 16 North American stadiums use artificial turf and five have roofs, scientists spent eight years engineering specialized turf blends, including a hybrid Bermuda grass called "Tacoma 31," grown on plastic sheets over concrete. This massive turf science project successfully sustained all 104 matches across the continent, culminating in the final at MetLife Stadium.'
   },
