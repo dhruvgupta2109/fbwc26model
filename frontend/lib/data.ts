@@ -32,7 +32,7 @@ export const funFacts = [
   {
     title: 'Seven-Year Scientific Project to Replace NFL Turf',
     description:
-      'FIFA strictly mandates that matches are played on living grass. Because eight of the 16 North American stadiums use artificial turf and five have roofs, scientists spent seven years engineering a unique hybrid grass (95% natural, 5% artificial) that can thrive indoors.'
+      'FIFA strictly mandates that matches are played on living grass. Because eight of the 16 North American stadiums use artificial turf and five have roofs, scientists spent eight years engineering specialized turf blends, including a hybrid Bermuda grass called "Tacoma 31," grown on plastic sheets over concrete. This massive turf science project successfully sustained all 104 matches across the continent, culminating in the final at MetLife Stadium.'
   },
   {
     title: 'The Debut of the Smallest Nation in World Cup History',
