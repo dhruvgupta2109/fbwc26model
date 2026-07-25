@@ -47,6 +47,6 @@ export const funFacts = [
   {
     title: 'Extreme Travel Involving 25 "Non-Host" Cities',
     description:
-      'Because the two furthest venues are roughly 2,700 miles apart, teams are suffering heavy travel strain. To accommodate the massive footprint, FIFA finalized 48 separate Team Base Camps spread across 25 communities that aren\'t even hosting games, bringing the World Cup buzz to college towns like Wake Forest and Stockton University.'
+      'Because the furthest venues were thousands of miles apart, teams faced unprecedented travel strain across three host countries. To mitigate this massive footprint, FIFA utilized 48 separate Team Base Camps spread across 25 communities that didnt host games, allowing non-host college towns like Wake Forest and Stockton University to experience the daily buzz of the tournament.'
   }
 ];
